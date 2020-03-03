@@ -9,14 +9,14 @@
 import UIKit
 
 @IBDesignable
-public class SpriteView: ObjectView {
+open class SpriteView: ObjectView {
 
   // MARK: - IBInspectables
 
   ///
   /// The speed of the sprite is how many pixels it will move per frame. The defualt value is `5`.
   ///
-  @IBInspectable public var speed: CGFloat = 5 {
+  @IBInspectable open var speed: CGFloat = 5 {
     didSet {
       xSpeed = speed
       ySpeed = speed
@@ -26,7 +26,7 @@ public class SpriteView: ObjectView {
   ///
   /// The first image it will show when you add the sprite to the storyboard. after that it will show the `Freams`.
   ///
-  @IBInspectable public var initialImage: UIImage = UIImage() {
+  @IBInspectable open var initialImage: UIImage = UIImage() {
     didSet {
       backgroundColor = .clear
       imageView.image = initialImage
@@ -39,14 +39,14 @@ public class SpriteView: ObjectView {
   /// You can set the images (frames) that will show when the user move to right, left,
   /// top, bottom, topLeft, bottomLeft, topRight, bottomRight or idel.
   ///
-  public var frames = Frames()
+  open var frames = Frames()
 
   ///
   /// The ` SpriteView` will stop when it collide with one of this types.
   /// Like if some Tree has a Type of `8` and you add this number to this array when this sprite view
   /// collide with this tree it will not move through it.
   ///
-  public var stopWhenCollideTypes = [Int]()
+  open var stopWhenCollideTypes = [Int]()
 
   // MARK: - Private properties
 
@@ -84,7 +84,7 @@ public class SpriteView: ObjectView {
   ///
   /// It can be overrided to do extra setups in the subview side.
   ///
-  public func setup() {
+  open func setup() {
     imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
     addSubview(imageView)
@@ -101,7 +101,7 @@ public class SpriteView: ObjectView {
   ///
   /// Make the sprite move to specific `x` and `y`.
   ///
-  func moveTo(x: CGFloat, y: CGFloat) {
+  open func moveTo(x: CGFloat, y: CGFloat) {
     desireX = x
     desireY = y
 
@@ -146,14 +146,14 @@ public class SpriteView: ObjectView {
   /// By setting this, you are attaching this `SpriteView` to Analog to control it, each sprite view has
   /// one analog to control it.
   ///
-  func attachTo(_ analogView: AnalogView) {
+  open func attachTo(_ analogView: AnalogView) {
     analog = analogView.analog
     analogView.analogDidMove { [unowned self] (analog) in
       self.analog = analog
     }
   }
 
-  override public func onCollisionEnter(with object: ObjectView?) {
+  override open func onCollisionEnter(with object: ObjectView?) {
     guard let object = object, stopWhenCollideTypes.contains(object.type) else {
       xSpeed = speed
       ySpeed = speed
@@ -169,7 +169,7 @@ public class SpriteView: ObjectView {
     frame.origin.y += (y > objectY ? (speed/2 * 0.5) : (speed/2 * -0.5))
   }
   
-  override public func update() {
+  override open func update() {
     if let desireX = desireX, let desireY = desireY {
       // check if the sprite view reached to the desire x and y then stop it there.
       let xRange = (desireX - speed)...(desireX + speed)

@@ -8,26 +8,26 @@
 
 import UIKit
 
-class BaseGameViewController: UIViewController {
+open class BaseGameViewController: UIViewController {
 
   // MARK: - IBOutlet
 
-  @IBOutlet weak var sceneView: SceneView!
+  @IBOutlet open weak var sceneView: SceneView!
 
   // MARK: - Properties
 
   private var timer: Timer?
   private var shouldKeepUpdatingTheScene = true
-  var analogView: AnalogView!
+  open var analogView: AnalogView!
 
   // MARK: - ViewController lifecycle
 
-  override func viewDidLoad() {
+  override open func viewDidLoad() {
     super.viewDidLoad()
     addAnalogView()
   }
 
-  override func viewWillAppear(_ animated: Bool) {
+  override open func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     shouldKeepUpdatingTheScene = true
@@ -35,7 +35,7 @@ class BaseGameViewController: UIViewController {
     startTimer()
   }
 
-  override func viewWillDisappear(_ animated: Bool) {
+  override open func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
 
     shouldKeepUpdatingTheScene = false
@@ -64,12 +64,12 @@ class BaseGameViewController: UIViewController {
 
   /// override to make changes or move objects.
   @objc
-  func update() {
+  open func update() {
     checkIfObjectsCollided()
   }
 
   /// check if any two objects collided.
-  func checkIfObjectsCollided() {
+  open func checkIfObjectsCollided() {
     let subviews = sceneView.subviews.compactMap({ $0 as? ObjectView })
     for object1 in subviews {
       for object2 in subviews {
@@ -91,6 +91,6 @@ class BaseGameViewController: UIViewController {
 
   /// override this method to get notify when two objects collided.
   /// return true if you want to still get updates aftet two objects collide.
-  func objectsDidCollide(object1: ObjectView, object2: ObjectView) -> Bool { true }
+  open func objectsDidCollide(object1: ObjectView, object2: ObjectView) -> Bool { true }
 
 }

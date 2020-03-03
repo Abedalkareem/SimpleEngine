@@ -10,19 +10,19 @@ import UIKit
 
 /// An Analog controller to control the `Sprite` movement.
 @IBDesignable
-public class AnalogView: UIView {
+open class AnalogView: UIView {
 
   public typealias AnalogMoved = ((Analog) -> Void)
 
   // MARK: - IBInspectables
 
-  @IBInspectable public var analogImage: UIImage = UIImage() {
+  @IBInspectable open var analogImage: UIImage = UIImage() {
     didSet {
       analogImageView.image = analogImage
     }
   }
 
-  @IBInspectable public var backgroundImage: UIImage = UIImage() {
+  @IBInspectable open var backgroundImage: UIImage = UIImage() {
      didSet {
        backgroundImageView.image = backgroundImage
      }
@@ -30,7 +30,7 @@ public class AnalogView: UIView {
 
   // MARK: - Properties
 
-  public var analog: Analog = Analog(direction: .center, x: 0, y: 0) {
+  open var analog: Analog = Analog(direction: .center, x: 0, y: 0) {
     didSet {
       analogMoved?(analog)
     }
@@ -67,7 +67,7 @@ public class AnalogView: UIView {
 
   // MARK: - View lifecycle
 
-  override public func layoutSubviews() {
+  override open func layoutSubviews() {
     super.layoutSubviews()
     analogImageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
     analogImageView.center = CGPoint(x: bounds.midX, y: bounds.midY)
@@ -77,21 +77,21 @@ public class AnalogView: UIView {
 
   // MARK: - Touches
 
-  override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
     if let point = touches.first?.location(in: self) {
       moveTo(point: point)
     }
   }
 
-  override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesMoved(touches, with: event)
     if let point = touches.first?.location(in: self) {
       moveTo(point: point)
     }
   }
 
-  override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
     // animate the analog back to center
     UIView.animate(withDuration: 0.3) {
@@ -99,7 +99,7 @@ public class AnalogView: UIView {
     }
   }
 
-  override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesCancelled(touches, with: event)
     // animate the analog back to center
     UIView.animate(withDuration: 0.3) {
@@ -152,7 +152,7 @@ public class AnalogView: UIView {
 
   // MARK: - Public methods
 
-  public func analogDidMove(analogMoved: @escaping AnalogMoved) {
+  open func analogDidMove(analogMoved: @escaping AnalogMoved) {
     self.analogMoved = analogMoved
   }
 }

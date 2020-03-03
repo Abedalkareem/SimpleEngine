@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DialogView: UIView {
+open class DialogView: UIView {
 
   public typealias ActionClosure = (Action) -> Void
 
@@ -22,7 +22,7 @@ public class DialogView: UIView {
   ///
   /// A message to show in the dialog.
   ///
-  public var message = "" {
+  open var message = "" {
     didSet {
       label.text = message
     }
@@ -31,7 +31,7 @@ public class DialogView: UIView {
   ///
   /// First button title.
   ///
-  public var firstButtonTitle = "" {
+  open var firstButtonTitle = "" {
     didSet {
       firstButton.setTitle(firstButtonTitle, for: .normal)
     }
@@ -40,7 +40,7 @@ public class DialogView: UIView {
   ///
   /// Second button title.
   ///
-  public var secondButtonTitle = "" {
+  open var secondButtonTitle = "" {
     didSet {
       secondButton.setTitle(secondButtonTitle, for: .normal)
     }
@@ -132,13 +132,13 @@ public class DialogView: UIView {
     ])
   }
 
-  public func dismiss() {
+  open func dismiss() {
     animate(isShowing: false) { _ in
       self.removeFromSuperview()
     }
   }
 
-  public func animate(isShowing: Bool, completion: ((Bool) -> Void)? = nil) {
+  open func animate(isShowing: Bool, completion: ((Bool) -> Void)? = nil) {
     alpha = isShowing ? 0 : 1
     UIView.animate(withDuration: 0.5, animations: {
       self.alpha = isShowing ? 1 : 0
@@ -161,7 +161,7 @@ public class DialogView: UIView {
 
   // MARK: - Show
 
-  public class func showIn(view: UIView,
+  open class func showIn(view: UIView,
                            message: String,
                            firstButtonTitle: String,
                            secondButtonTitle: String = "",

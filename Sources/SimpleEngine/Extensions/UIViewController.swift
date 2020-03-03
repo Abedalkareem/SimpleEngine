@@ -16,7 +16,7 @@ extension UIViewController {
   /// - Parameter animated: A bool value to determine either changing the view controller
   ///  should set as root with animation or not.
   ///
-  func changeViewController(_ viewController: UIViewController?, animated: Bool = true) {
+  open func changeViewController(_ viewController: UIViewController?, animated: Bool = true) {
 
     guard let window = UIApplication.shared.keyWindow else {
       return

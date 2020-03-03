@@ -13,7 +13,7 @@ import UIKit
 /// Each `BaseGameViewController` should have 1 scene, and should be connected throgh `IBOutlet`.
 ///
 @IBDesignable
-public class SceneView: UIView {
+open class SceneView: UIView {
 
   // MARK: - init
 

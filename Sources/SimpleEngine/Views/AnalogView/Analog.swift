@@ -9,9 +9,9 @@
 import UIKit
 
 public struct Analog {
-  var direction: Direction
-  var x: CGFloat
-  var y: CGFloat
+  public var direction: Direction
+  public var x: CGFloat
+  public var y: CGFloat
 }
 
 extension Analog: Equatable {

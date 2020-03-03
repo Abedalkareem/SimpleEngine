@@ -12,7 +12,7 @@ import UIKit
 /// The parent class for the `NodeView` and `SpriteView`.
 /// this has the common properties and methods like the update method and the type property
 ///
-public class ObjectView: UIView {
+open class ObjectView: UIView {
 
   // MARK: - IBInspectables
 
@@ -20,14 +20,14 @@ public class ObjectView: UIView {
   /// The type of the `ObjectView` is a unique number for the same kind of objects, like the trees or enemy.
   /// This will be used when to object collides together. and if should the object stop when colliding with another object.
   ///
-  @IBInspectable public var type: Int = 0
+  @IBInspectable open var type: Int = 0
 
   // MARK: - Properties
 
   ///
   /// A unique id for each object.
   ///
-  public var id: String = { return UUID().uuidString }()
+  open var id: String = { return UUID().uuidString }()
 
   // MARK: - Private properties
 
@@ -50,7 +50,7 @@ public class ObjectView: UIView {
   }
 
   @objc
-  public func update() { }
+  open func update() { }
 
-  public func onCollisionEnter(with object: ObjectView?) { }
+  open func onCollisionEnter(with object: ObjectView?) { }
 }

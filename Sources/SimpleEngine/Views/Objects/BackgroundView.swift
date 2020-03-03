@@ -12,7 +12,7 @@ import UIKit
 /// A view to set as a background for the `SceneView` it could be a normal image or a pattern image.
 ///
 @IBDesignable
-public class BackgroundView: UIView {
+open class BackgroundView: UIView {
 
   // MARK: - IBInspectables
 
@@ -20,7 +20,7 @@ public class BackgroundView: UIView {
   /// An image to set as a background, the image could be a normal image or a pattern image.
   /// If you set a pattren image don't forget to set the `ImageType` to `pattern`.
   ///
-  @IBInspectable public var image: UIImage = UIImage() {
+  @IBInspectable open var image: UIImage = UIImage() {
     didSet {
       updateImage()
     }
@@ -31,7 +31,7 @@ public class BackgroundView: UIView {
   ///
   /// The type of the `image` it could be `full` or `pattern`.
   ///
-  public var imageType: ImageType = .full
+  open var imageType: ImageType = .full
 
   // MARK: - Private properties
 

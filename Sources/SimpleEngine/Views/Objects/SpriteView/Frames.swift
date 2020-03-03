@@ -15,22 +15,22 @@ import UIKit
 /// will get right images.
 /// You can set the duration of the frames by setting the duration property.
 ///
-public class Frames {
-  var duration = 0.3
-  var top: [UIImage]?
-  var left: [UIImage]?
-  var right: [UIImage]?
-  var bottom: [UIImage]?
-  var idel: [UIImage]?
-  var topLeft: [UIImage]?
-  var bottomLeft: [UIImage]?
-  var topRight: [UIImage]?
-  var bottomRight: [UIImage]?
+open class Frames {
+  open var duration = 0.3
+  open var top: [UIImage]?
+  open var left: [UIImage]?
+  open var right: [UIImage]?
+  open var bottom: [UIImage]?
+  open var idel: [UIImage]?
+  open var topLeft: [UIImage]?
+  open var bottomLeft: [UIImage]?
+  open var topRight: [UIImage]?
+  open var bottomRight: [UIImage]?
 
   ///
   /// A method that will return an array of images to animate depending on the direction you will pass.
   ///
-  public func framesFor(_ direction: Direction) -> [UIImage] {
+  open func framesFor(_ direction: Direction) -> [UIImage] {
     var movmentImages = [UIImage]()
     switch direction {
     case .left:

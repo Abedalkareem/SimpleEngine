@@ -11,7 +11,7 @@ import Foundation
 ///
 /// Use it to wait for some time before changing a value again.
 ///
-public class Debouncer {
+open class Debouncer {
 
   // MARK: - Private properties
 
@@ -21,13 +21,13 @@ public class Debouncer {
 
   // MARK: - init
 
-  init(interval: TimeInterval) {
+  public init(interval: TimeInterval) {
     self.interval = interval
   }
 
   // MARK: -
 
-  func debounce(action: @escaping (() -> Void)) {
+  open func debounce(action: @escaping (() -> Void)) {
     workItem?.cancel()
     workItem = DispatchWorkItem(block: { action() })
     queue.asyncAfter(deadline: .now() + interval, execute: workItem!)

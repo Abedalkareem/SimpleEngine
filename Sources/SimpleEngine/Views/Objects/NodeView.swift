@@ -12,11 +12,11 @@ import UIKit
 /// A `NodeView` is a thing that don't move, it's a chair, table or wall in your game.
 ///
 @IBDesignable
-public class NodeView: ObjectView {
+open class NodeView: ObjectView {
 
   // MARK: - IBInspectables
 
-  @IBInspectable public var image: UIImage = UIImage() {
+  @IBInspectable open var image: UIImage = UIImage() {
     didSet {
       backgroundColor = .clear
       imageView.image = image
