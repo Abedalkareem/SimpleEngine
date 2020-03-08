@@ -1,0 +1,11 @@
+framework module SimpleEngine {
+  umbrella header "SimpleEngine.h"
+
+  export *
+  module * { export * }
+}
+
+module SimpleEngine.Swift {
+    header "SimpleEngine-Swift.h"
+    requires objc
+}
