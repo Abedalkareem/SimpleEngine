@@ -1,0 +1,16 @@
+PODS:
+  - SimpleEngine (0.5.2)
+
+DEPENDENCIES:
+  - SimpleEngine (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleEngine:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SimpleEngine: ec0dc2b627a3a4b765f74252160d9337482ccac0
+
+PODFILE CHECKSUM: 73a466d5400a27a8731208d3160c2217cfac5b22
+
+COCOAPODS: 1.9.0

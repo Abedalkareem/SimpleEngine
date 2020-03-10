@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNg-pz-KrX" customClass="BackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-qU-DaY" customClass="MovingBackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-C3-zwK" customClass="SceneView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cNg-pz-KrX" secondAttribute="trailing" id="3EA-u7-Dhh"/>
+                            <constraint firstAttribute="trailing" secondItem="0kg-qU-DaY" secondAttribute="trailing" id="57P-0a-3rC"/>
+                            <constraint firstItem="0kg-qU-DaY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GmE-ZT-aZU"/>
+                            <constraint firstAttribute="bottom" secondItem="cs7-C3-zwK" secondAttribute="bottom" id="J5y-vt-1Sa"/>
+                            <constraint firstItem="cs7-C3-zwK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JkT-Hi-Up4"/>
+                            <constraint firstItem="0kg-qU-DaY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K4p-w9-w1r"/>
+                            <constraint firstItem="cNg-pz-KrX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KRS-qX-Kkl"/>
+                            <constraint firstItem="cs7-C3-zwK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LfW-zx-fy4"/>
+                            <constraint firstAttribute="trailing" secondItem="cs7-C3-zwK" secondAttribute="trailing" id="UzW-9O-0tu"/>
+                            <constraint firstAttribute="bottom" secondItem="0kg-qU-DaY" secondAttribute="bottom" id="dbE-1h-rqB"/>
+                            <constraint firstItem="cNg-pz-KrX" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mvh-GX-fsa"/>
+                            <constraint firstItem="cNg-pz-KrX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wJp-7f-VxO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="movingBackgroundView" destination="0kg-qU-DaY" id="znO-Xc-cs9"/>
+                        <outlet property="sceneView" destination="cs7-C3-zwK" id="Tvv-73-De1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.61607142857142" y="115.94202898550725"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1280" height="720"/>
+    </resources>
+</document>

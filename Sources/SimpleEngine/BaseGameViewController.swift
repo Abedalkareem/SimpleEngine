@@ -1,6 +1,6 @@
 //
 //  BaseGameViewController.swift
-//  Zaina
+//  SimpleEngine
 //
 //  Created by abedalkareem omreyh on 7/21/19.
 //  Copyright © 2019 abedalkareem. All rights reserved.
@@ -44,12 +44,10 @@ open class BaseGameViewController: UIViewController {
   }
 
   private func addAnalogView() {
-    let analogSize: CGFloat = 150
-    let margen: CGFloat = 10
+    let analogSize = AnalogView.Settings.analogSize
+    let margen = AnalogView.Settings.margen
     let y = view.bounds.height - (analogSize + margen)
     analogView = AnalogView(frame: CGRect(x: margen, y: y, width: analogSize, height: analogSize))
-    analogView.analogImage = #imageLiteral(resourceName: "controller_analog")
-    analogView.backgroundImage = #imageLiteral(resourceName: "controller_background")
     view.addSubview(analogView)
   }
 
