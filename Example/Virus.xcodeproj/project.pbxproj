@@ -14,6 +14,8 @@
 		C6FF68822417692E008F9B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68772417692E008F9B02 /* LaunchScreen.storyboard */; };
 		C6FF68832417692E008F9B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68792417692E008F9B02 /* Main.storyboard */; };
 		C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF687C2417692E008F9B02 /* AppDelegate.swift */; };
+		C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF688A2418929B008F9B02 /* StreamBackgroundView.swift */; };
+		C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */; };
 		F1B8D002087A963564ABE0AB /* Pods_Virus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5931627F095129915EA8B5A /* Pods_Virus.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		C6FF68782417692E008F9B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6FF687A2417692E008F9B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6FF687C2417692E008F9B02 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C6FF688A2418929B008F9B02 /* StreamBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamBackgroundView.swift; sourceTree = "<group>"; };
+		C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireSpriteView.swift; sourceTree = "<group>"; };
 		E5931627F095129915EA8B5A /* Pods_Virus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Virus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,7 @@
 		C6FF686B2417692D008F9B02 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C6FF688924189252008F9B02 /* Backgrounds */,
 				C6FF686C2417692D008F9B02 /* SpriteViews */,
 			);
 			path = Views;
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */,
+				C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */,
 			);
 			path = SpriteViews;
 			sourceTree = "<group>";
@@ -156,6 +162,14 @@
 				C6FF687C2417692E008F9B02 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C6FF688924189252008F9B02 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				C6FF688A2418929B008F9B02 /* StreamBackgroundView.swift */,
+			);
+			path = Backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +290,8 @@
 				C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */,
 				C6FF68802417692E008F9B02 /* ViewController.swift in Sources */,
 				C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */,
+				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,
+				C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

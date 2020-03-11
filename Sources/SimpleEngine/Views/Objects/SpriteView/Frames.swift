@@ -13,6 +13,8 @@ import UIKit
 /// when the user move to right, left, top, bottom, topLeft, bottomLeft, topRight, bottomRight or idel.
 /// If you did not pass the topLeft or bottomLeft the left images will be used, same for topRight and bottomRight you
 /// will get right images.
+/// At least you need to pass the idel images and it will be used for
+/// all the frames.
 /// You can set the duration of the frames by setting the duration property.
 ///
 open class Frames {
@@ -21,7 +23,7 @@ open class Frames {
   open var left: [UIImage]?
   open var right: [UIImage]?
   open var bottom: [UIImage]?
-  open var idel: [UIImage]?
+  open var idel: [UIImage]!
   open var topLeft: [UIImage]?
   open var bottomLeft: [UIImage]?
   open var topRight: [UIImage]?
@@ -34,23 +36,23 @@ open class Frames {
     var movmentImages = [UIImage]()
     switch direction {
     case .left:
-      movmentImages = left!
+      movmentImages = left ?? idel
     case .right:
-      movmentImages = right!
+      movmentImages = right ?? idel
     case .top:
-      movmentImages = top!
+      movmentImages = top ?? idel
     case .bottom:
-      movmentImages = bottom!
+      movmentImages = bottom ?? idel
     case .center:
-      movmentImages = idel!
+      movmentImages = idel
     case .topLeft:
-      movmentImages = topLeft ?? left!
+      movmentImages = topLeft ?? left ?? idel
     case .bottomLeft:
-      movmentImages = bottomLeft ?? left!
+      movmentImages = bottomLeft ?? left ?? idel
     case .topRight:
-      movmentImages = topRight ?? right!
+      movmentImages = topRight ?? right ?? idel
     case .bottomRight:
-      movmentImages = bottomRight ?? right!
+      movmentImages = bottomRight ?? right ?? idel
     }
     return movmentImages
   }

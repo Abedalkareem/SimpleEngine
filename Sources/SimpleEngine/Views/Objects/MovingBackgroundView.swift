@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovingBackgroundView: UIView {
+public class MovingBackgroundView: UIView {
 
   // MARK: - Properties
 
@@ -62,7 +62,7 @@ class MovingBackgroundView: UIView {
     var newFrame = orginalFrame
     newFrame.origin.x = -orginalFrame.size.width
     view.frame = newFrame
-    UIView.animate(withDuration: 1, delay: 0, options: [.repeat], animations: {
+    UIView.animate(withDuration: 0.5, delay: .zero, options: [.repeat, .curveLinear], animations: {
       view.frame = orginalFrame
     })
   }
@@ -75,7 +75,7 @@ class MovingBackgroundView: UIView {
     var newFrame = orginalFrame
     newFrame.origin.x = +orginalFrame.size.width
     secondView.frame = orginalFrame
-    UIView.animate(withDuration: 1, delay: 0, options: [.repeat], animations: {
+    UIView.animate(withDuration: 0.5, delay: .zero, options: [.repeat, .curveLinear], animations: {
       secondView.frame = newFrame
     })
   }

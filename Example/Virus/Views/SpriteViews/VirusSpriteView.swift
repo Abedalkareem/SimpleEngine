@@ -24,6 +24,7 @@ class VirusSpriteView: SpriteView {
     frame = CGRect(x: 0, y: 0, width: width, height: height)
 
     type = CollideTypes.virus
+    speed = 10
 
     stopWhenCollideTypes = []
 
@@ -33,5 +34,20 @@ class VirusSpriteView: SpriteView {
     frames.right = framesArray
     frames.bottom = framesArray
     frames.idel = framesArray
+
+  }
+
+  override func didMoveToSuperview() {
+    super.didMoveToSuperview()
+    Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+      self.startFiring()
+    }
+  }
+
+  private func startFiring() {
+    let sceneView = superview as! SceneView
+    let spriteView = FireSpriteView()
+    sceneView.addSubview(spriteView)
+    spriteView.moveTo(x: -20, y: center.y)
   }
 }

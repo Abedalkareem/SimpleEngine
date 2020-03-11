@@ -26,13 +26,20 @@ class ViewController: BaseGameViewController {
 
     addVirus()
 
-    movingBackgroundView.view = UIImageView(image: #imageLiteral(resourceName: "moving_strings"))
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    movingBackgroundView.view = StreamBackgroundView(frame: view.bounds)
   }
 
   private func addVirus() {
     virusSprite = VirusSpriteView()
     virusSprite.attachTo(analogView)
-    virusSprite.frame.origin = CGPoint(x: 30, y: 30)
+    let rightMargen: CGFloat = virusSprite.frame.width
+    let x = view.frame.width - virusSprite.frame.width - rightMargen
+    let y = (view.frame.height / 2) - virusSprite.frame.height
+    virusSprite.frame.origin = CGPoint(x: x, y: y)
     sceneView.addSubview(virusSprite)
   }
 
