@@ -14,6 +14,8 @@ class ViewController: BaseGameViewController {
   // MARK: - IBOutlets
 
   @IBOutlet weak var movingBackgroundView: MovingBackgroundView!
+  @IBOutlet weak var livesView: LivesView!
+
 
   // MARK: - Private properties
 
@@ -26,6 +28,7 @@ class ViewController: BaseGameViewController {
 
     addVirus()
 
+    livesView.livesCount = 4
   }
 
   override func viewDidAppear(_ animated: Bool) {

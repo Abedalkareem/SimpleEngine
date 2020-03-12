@@ -21,13 +21,16 @@ class FireSpriteView: SpriteView {
   override func setup() {
     super.setup()
 
-    frame = CGRect(x: 0, y: 0, width: width, height: height)
-
     type = CollideTypes.fire
     speed = 20
 
     stopWhenCollideTypes = []
 
-    frames.idel = [#imageLiteral(resourceName: "fire"), #imageLiteral(resourceName: "fire")]
+    frames.idel = [#imageLiteral(resourceName: "fire"), #imageLiteral(resourceName: "fire_2"), #imageLiteral(resourceName: "fire_3"), #imageLiteral(resourceName: "fire_4"), #imageLiteral(resourceName: "fire_5")]
+    frames.defaultDuration = 0.1
+  }
+
+  override func didRechedDesiredPoint() {
+    removeFromSuperview()
   }
 }

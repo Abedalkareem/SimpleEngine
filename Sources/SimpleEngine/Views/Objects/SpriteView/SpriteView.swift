@@ -101,9 +101,15 @@ open class SpriteView: ObjectView {
   ///
   /// Make the sprite move to specific `x` and `y`.
   ///
+  /// - Parameters:
+  ///   - x: X to move to.
+  ///   - y: Y to move to.
+  ///   - shouldBeRemovedAtTheEnd: Should it be removed at the end.
+  ///   default is `false`.
+  ///
   open func moveTo(x: CGFloat, y: CGFloat) {
-    desireX = x
-    desireY = y
+    self.desireX = x
+    self.desireY = y
 
     // get the defrence between the x and y,
     // so if the x equal to 100, and the y equal to 50,
@@ -177,13 +183,20 @@ open class SpriteView: ObjectView {
       if xRange.contains(frame.origin.x) && yRange.contains(frame.origin.y) {
         self.desireX = nil
         self.desireY = nil
-        // reset the analog to idel status.
+        // reset the analog to idel status (if there is an analog attached).
         self.analog = Analog(direction: .center, x: 0, y: 0)
+        self.didRechedDesiredPoint()
         return
       }
     }
     moveXandYBy(x: analog?.x, y: analog?.y)
   }
+
+  ///
+  /// override to be notifide when the `SpriteView` reaches the
+  /// desired point.
+  ///
+  open func didRechedDesiredPoint() { }
 
   // MARK: - Private
 
@@ -191,8 +204,8 @@ open class SpriteView: ObjectView {
     guard let direction = analog?.direction else {
       return // in case the the direction did not change go back.
     }
-    imageView.animationImages = frames.framesFor(direction)
-    imageView.animationDuration = frames.duration
+    imageView.animationImages = frames.framesFor(direction).frames
+    imageView.animationDuration = frames.framesFor(direction).duration
     imageView.startAnimating()
   }
 

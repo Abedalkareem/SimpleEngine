@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     AnalogView.Settings.analogImage = #imageLiteral(resourceName: "controller_analog")
     AnalogView.Settings.backgroundImage = #imageLiteral(resourceName: "controller_background")
+    AnalogView.Settings.alpha = 0.9
+    AnalogView.Settings.analogSize = 100
+    AnalogView.Settings.margen = 25
 
     return true
   }

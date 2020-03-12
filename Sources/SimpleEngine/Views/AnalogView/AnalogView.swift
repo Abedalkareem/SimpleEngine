@@ -181,10 +181,10 @@ open class AnalogView: UIView {
     ///
     /// Analog size. The default is `150`.
     ///
-    public static var analogSize: CGFloat = 150
+    public static var analogSize: CGFloat = 140
     ///
     /// Analog margen. The default is `0.5`.
     ///
-    public static var margen: CGFloat = 10
+    public static var margen: CGFloat = 15
   }
 }

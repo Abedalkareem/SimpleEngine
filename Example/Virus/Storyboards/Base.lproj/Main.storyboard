@@ -31,6 +31,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt5-rW-fEu" customClass="LivesView" customModule="Virus" customModuleProvider="target">
+                                <rect key="frame" x="727" y="0.0" width="100" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.10000000000000001"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="F3K-5b-lI6"/>
+                                    <constraint firstAttribute="width" priority="400" constant="100" id="OhL-wu-UqE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="lives_background"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="liveImage" value="live"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -43,13 +68,16 @@
                             <constraint firstItem="cNg-pz-KrX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KRS-qX-Kkl"/>
                             <constraint firstItem="cs7-C3-zwK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LfW-zx-fy4"/>
                             <constraint firstAttribute="trailing" secondItem="cs7-C3-zwK" secondAttribute="trailing" id="UzW-9O-0tu"/>
+                            <constraint firstItem="Xt5-rW-fEu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="at9-2c-yTe"/>
                             <constraint firstAttribute="bottom" secondItem="0kg-qU-DaY" secondAttribute="bottom" id="dbE-1h-rqB"/>
                             <constraint firstItem="cNg-pz-KrX" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="mvh-GX-fsa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xt5-rW-fEu" secondAttribute="trailing" constant="25" id="pGA-v6-rg4"/>
                             <constraint firstItem="cNg-pz-KrX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wJp-7f-VxO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="livesView" destination="Xt5-rW-fEu" id="Y9b-RB-Cea"/>
                         <outlet property="movingBackgroundView" destination="0kg-qU-DaY" id="znO-Xc-cs9"/>
                         <outlet property="sceneView" destination="cs7-C3-zwK" id="Tvv-73-De1"/>
                     </connections>
@@ -61,5 +89,7 @@
     </scenes>
     <resources>
         <image name="background" width="1280" height="720"/>
+        <image name="live" width="40" height="36"/>
+        <image name="lives_background" width="200" height="60"/>
     </resources>
 </document>

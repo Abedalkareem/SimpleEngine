@@ -28,12 +28,13 @@ class VirusSpriteView: SpriteView {
 
     stopWhenCollideTypes = []
 
-    let framesArray = [#imageLiteral(resourceName: "virus"), #imageLiteral(resourceName: "virus")]
-    frames.top = framesArray
-    frames.left = framesArray
-    frames.right = framesArray
-    frames.bottom = framesArray
-    frames.idel = framesArray
+    frames.defaultDuration = 0.5
+    frames.idelDuration = 1
+    frames.top = [#imageLiteral(resourceName: "move_top_1"), #imageLiteral(resourceName: "move_top_2"), #imageLiteral(resourceName: "move_top_3")]
+    frames.left = [#imageLiteral(resourceName: "move_for_1"), #imageLiteral(resourceName: "move_for_2"), #imageLiteral(resourceName: "move_for_3")]
+    frames.right = [#imageLiteral(resourceName: "move_back_1"), #imageLiteral(resourceName: "move_back_2"), #imageLiteral(resourceName: "move_back_3")]
+    frames.bottom = [#imageLiteral(resourceName: "move_bottom_1"), #imageLiteral(resourceName: "move_bottom_2"), #imageLiteral(resourceName: "move_bottom_3")]
+    frames.idel = [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")]
 
   }
 
@@ -47,6 +48,7 @@ class VirusSpriteView: SpriteView {
   private func startFiring() {
     let sceneView = superview as! SceneView
     let spriteView = FireSpriteView()
+    spriteView.frame = CGRect(x: center.x, y: center.y, width: 20, height: 20)
     sceneView.addSubview(spriteView)
     spriteView.moveTo(x: -20, y: center.y)
   }

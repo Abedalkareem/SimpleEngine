@@ -18,7 +18,8 @@ import UIKit
 /// You can set the duration of the frames by setting the duration property.
 ///
 open class Frames {
-  open var duration = 0.3
+  open var defaultDuration = 0.3
+  open var idelDuration = 0.3
   open var top: [UIImage]?
   open var left: [UIImage]?
   open var right: [UIImage]?
@@ -32,8 +33,9 @@ open class Frames {
   ///
   /// A method that will return an array of images to animate depending on the direction you will pass.
   ///
-  open func framesFor(_ direction: Direction) -> [UIImage] {
+  open func framesFor(_ direction: Direction) -> (frames: [UIImage], duration: Double) {
     var movmentImages = [UIImage]()
+    var duration = defaultDuration
     switch direction {
     case .left:
       movmentImages = left ?? idel
@@ -45,6 +47,7 @@ open class Frames {
       movmentImages = bottom ?? idel
     case .center:
       movmentImages = idel
+      duration = idelDuration
     case .topLeft:
       movmentImages = topLeft ?? left ?? idel
     case .bottomLeft:
@@ -54,6 +57,6 @@ open class Frames {
     case .bottomRight:
       movmentImages = bottomRight ?? right ?? idel
     }
-    return movmentImages
+    return (movmentImages, duration)
   }
 }

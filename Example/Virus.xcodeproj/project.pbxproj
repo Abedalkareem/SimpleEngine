@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C64570C0241A5D7E00D6C003 /* LivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570BF241A5D7E00D6C003 /* LivesView.swift */; };
 		C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */; };
 		C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686F2417692D008F9B02 /* CollideTypes.swift */; };
 		C6FF687F2417692E008F9B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68712417692E008F9B02 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		29FA8776D268F817CEB7296F /* Pods-Virus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.release.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.release.xcconfig"; sourceTree = "<group>"; };
 		55C5C79E7178BF4EA838652A /* Pods-Virus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.debug.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.debug.xcconfig"; sourceTree = "<group>"; };
+		C64570BF241A5D7E00D6C003 /* LivesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesView.swift; sourceTree = "<group>"; };
 		C6FF68542417683C008F9B02 /* Virus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Virus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirusSpriteView.swift; sourceTree = "<group>"; };
 		C6FF686F2417692D008F9B02 /* CollideTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollideTypes.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		C6FF686B2417692D008F9B02 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C6FF689224194D96008F9B02 /* CustomView */,
 				C6FF688924189252008F9B02 /* Backgrounds */,
 				C6FF686C2417692D008F9B02 /* SpriteViews */,
 			);
@@ -134,6 +137,7 @@
 		C6FF68722417692E008F9B02 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C64570BF241A5D7E00D6C003 /* LivesView.swift */,
 				C6FF68732417692E008F9B02 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -170,6 +174,13 @@
 				C6FF688A2418929B008F9B02 /* StreamBackgroundView.swift */,
 			);
 			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		C6FF689224194D96008F9B02 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,
 				C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
+				C64570C0241A5D7E00D6C003 /* LivesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

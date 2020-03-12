@@ -24,7 +24,7 @@
 		AF1D6329F893E83C9FFB6C934E8E07B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		B13FF6AA68ECC412003B3CD6B86FB7F3 /* Pods-Virus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCC7B816F415DA0AF403E7E40E25AC1 /* Pods-Virus-dummy.m */; };
 		B77ED7B8C495633573753DD94036D538 /* Pods-Virus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C28F10EE1FD92E7DC0AA4A002963DF9E /* Pods-Virus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB635D354432204938D4579980AC130B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController.swift */; };
+		DB635D354432204938D4579980AC130B /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController+Helpers.swift */; };
 		E6DFD53D4431A78D98149ECD2FA92606 /* SimpleEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 992261BB4F5F3817745FA69BE454549C /* SimpleEngine-dummy.m */; };
 		F915DA6E1DFF8CC802A7AC837D4E022D /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B7A97540F28D41B6EB20055573483 /* SceneView.swift */; };
 /* End PBXBuildFile section */
@@ -44,34 +44,35 @@
 		0983E34985000F6FC1ED4CB6D0075BFF /* SpriteView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpriteView.swift; sourceTree = "<group>"; };
 		125ABA8641667411210C83955214C366 /* SimpleEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleEngine-prefix.pch"; sourceTree = "<group>"; };
 		217C02A835FC619F2BCA244E15E38463 /* SimpleEngine-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SimpleEngine-Info.plist"; sourceTree = "<group>"; };
-		25D4370EB278356E3A295343FFE56CEF /* SimpleEngine.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SimpleEngine.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		27AAC464D8CCEDF19FAC9D33434E66C6 /* SimpleEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimpleEngine.framework; path = SimpleEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D4370EB278356E3A295343FFE56CEF /* SimpleEngine.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SimpleEngine.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		27AAC464D8CCEDF19FAC9D33434E66C6 /* SimpleEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3CF3D53C1DC3D81A4C6C28DF1603F34E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3CF3D53C1DC3D81A4C6C28DF1603F34E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		47DF795728565AF0A58D529F4677C74B /* Pods-Virus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Virus-acknowledgements.plist"; sourceTree = "<group>"; };
-		511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		5BD142A1B220149F209D2C72352A2131 /* SimpleEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleEngine-umbrella.h"; sourceTree = "<group>"; };
 		5EB3E7B9B2E8E815BCB4497325938D91 /* BackgroundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		7556AFE27B20B44E24CFBA1248D65F44 /* Pods-Virus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Virus.release.xcconfig"; sourceTree = "<group>"; };
 		77C6410C2600B2B9E96A43A624019102 /* ObjectView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
 		799B46A2E75CDE45C812B63262065ECA /* Direction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		7CC5ADDD2F7D5FFD7AFA4895137E3103 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		7CC5ADDD2F7D5FFD7AFA4895137E3103 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		886434D1AAC355524286E3CDE087C6E6 /* SimpleEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimpleEngine.release.xcconfig; sourceTree = "<group>"; };
 		89E39677474D08E745BB4028FED737DD /* SimpleEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SimpleEngine.modulemap; sourceTree = "<group>"; };
 		8C2C64B0AD05A89E85EC2DD8ED637B1D /* NodeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 		9457FDAC63DD35FD0A718AF0B30967D2 /* AnalogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnalogView.swift; sourceTree = "<group>"; };
 		97761C83DE7F2BCFCC0172FB8989C57B /* BaseGameViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseGameViewController.swift; path = Sources/SimpleEngine/BaseGameViewController.swift; sourceTree = "<group>"; };
 		992261BB4F5F3817745FA69BE454549C /* SimpleEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleEngine-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A452F6B88A4840A8976E6DAF7B0356D8 /* MovingBackgroundView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MovingBackgroundView.swift; sourceTree = "<group>"; };
 		AA6F0DB39E3AE8CF80DADC85E859B9A5 /* Pods-Virus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Virus-Info.plist"; sourceTree = "<group>"; };
 		AD69467A6A08C2E1785E7A86D58A6BCC /* Debouncer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		AEBBE0777DCF2130A31FBC7D11C4BA29 /* Pods-Virus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Virus-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BB3253593E25DAEA548F12F22CAEF086 /* Pods-Virus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Virus.debug.xcconfig"; sourceTree = "<group>"; };
 		C28F10EE1FD92E7DC0AA4A002963DF9E /* Pods-Virus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Virus-umbrella.h"; sourceTree = "<group>"; };
+		C6716A29241A5A80006FFCB3 /* LivesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LivesView.swift; path = ../../../../Example/Virus/ViewControllers/LivesView.swift; sourceTree = "<group>"; };
 		D401EE122ABE3B17E7FD8ABB4E866235 /* Analog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Analog.swift; sourceTree = "<group>"; };
 		DC2F171760A258D355ED80505468D2E5 /* Pods-Virus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Virus.modulemap"; sourceTree = "<group>"; };
-		EA1B943F256DD5437CDD934F809B7508 /* Pods_Virus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Virus.framework; path = "Pods-Virus.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1B943F256DD5437CDD934F809B7508 /* Pods_Virus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Virus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECCC7B816F415DA0AF403E7E40E25AC1 /* Pods-Virus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Virus-dummy.m"; sourceTree = "<group>"; };
 		F3B97FC58B0F7FF9143850ED2560D88A /* Frames.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Frames.swift; sourceTree = "<group>"; };
 		F43B7A97540F28D41B6EB20055573483 /* SceneView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 			children = (
 				06EF8DCC521C987C8B6AAC272C07CFD3 /* DialogView.swift */,
 			);
-			name = DialogView;
 			path = DialogView;
 			sourceTree = "<group>";
 		};
@@ -115,7 +115,6 @@
 				9457FDAC63DD35FD0A718AF0B30967D2 /* AnalogView.swift */,
 				799B46A2E75CDE45C812B63262065ECA /* Direction.swift */,
 			);
-			name = AnalogView;
 			path = AnalogView;
 			sourceTree = "<group>";
 		};
@@ -179,6 +178,7 @@
 				1C674CA025877D7C1520B9B89185EAC4 /* AnalogView */,
 				0A76D8199F761539D53B206D47321312 /* DialogView */,
 				CD346EB5DFE8F33FD5AF19DEA8A372D3 /* Objects */,
+				C6716A28241A5A71006FFCB3 /* Others */,
 			);
 			name = Views;
 			path = Sources/SimpleEngine/Views;
@@ -187,7 +187,7 @@
 		A7EAD31D485F90A12FCC79304F228ED1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController.swift */,
+				511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController+Helpers.swift */,
 			);
 			name = Extensions;
 			path = Sources/SimpleEngine/Extensions;
@@ -210,6 +210,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C6716A28241A5A71006FFCB3 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				C6716A29241A5A80006FFCB3 /* LivesView.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		CB01704D8808BEC87858E306EEDE3D60 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +237,6 @@
 				F43B7A97540F28D41B6EB20055573483 /* SceneView.swift */,
 				D2AF7D8449A14FAFC6FEAF7F7C4337AA /* SpriteView */,
 			);
-			name = Objects;
 			path = Objects;
 			sourceTree = "<group>";
 		};
@@ -258,7 +265,6 @@
 				F3B97FC58B0F7FF9143850ED2560D88A /* Frames.swift */,
 				0983E34985000F6FC1ED4CB6D0075BFF /* SpriteView.swift */,
 			);
-			name = SpriteView;
 			path = SpriteView;
 			sourceTree = "<group>";
 		};
@@ -411,7 +417,7 @@
 				F915DA6E1DFF8CC802A7AC837D4E022D /* SceneView.swift in Sources */,
 				E6DFD53D4431A78D98149ECD2FA92606 /* SimpleEngine-dummy.m in Sources */,
 				6092EEE8F161DFE63E5389E6D85C9824 /* SpriteView.swift in Sources */,
-				DB635D354432204938D4579980AC130B /* UIViewController.swift in Sources */,
+				DB635D354432204938D4579980AC130B /* UIViewController+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
