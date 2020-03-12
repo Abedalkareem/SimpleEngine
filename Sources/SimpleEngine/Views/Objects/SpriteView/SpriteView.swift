@@ -175,6 +175,10 @@ open class SpriteView: ObjectView {
 
     frame.origin.x += (x > objectX ? (speed/2 * 0.5) : (speed/2 * -0.5))
     frame.origin.y += (y > objectY ? (speed/2 * 0.5) : (speed/2 * -0.5))
+
+    if let desireX = desireX, let desireY = desireY {
+      moveTo(x: desireX, y: desireY)
+    }
   }
   
   override open func update() {

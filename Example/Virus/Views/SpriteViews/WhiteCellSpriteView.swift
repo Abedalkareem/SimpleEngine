@@ -33,6 +33,7 @@ class WhiteCellSpriteView: SpriteView {
   }
 
   override func didRechedDesiredPoint() {
+    print("removed")
     removeFromSuperview()
   }
 

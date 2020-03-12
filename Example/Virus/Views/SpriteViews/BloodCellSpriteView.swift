@@ -33,6 +33,7 @@ class BloodCellSpriteView: SpriteView {
   }
 
   override func didRechedDesiredPoint() {
+    print("removed")
     removeFromSuperview()
   }
 
