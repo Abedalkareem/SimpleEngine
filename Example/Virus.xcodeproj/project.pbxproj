@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C64570C0241A5D7E00D6C003 /* LivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570BF241A5D7E00D6C003 /* LivesView.swift */; };
+		C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */; };
+		C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */; };
 		C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */; };
 		C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686F2417692D008F9B02 /* CollideTypes.swift */; };
 		C6FF687F2417692E008F9B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68712417692E008F9B02 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		29FA8776D268F817CEB7296F /* Pods-Virus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.release.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.release.xcconfig"; sourceTree = "<group>"; };
 		55C5C79E7178BF4EA838652A /* Pods-Virus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.debug.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.debug.xcconfig"; sourceTree = "<group>"; };
 		C64570BF241A5D7E00D6C003 /* LivesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesView.swift; sourceTree = "<group>"; };
+		C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellSpriteView.swift; sourceTree = "<group>"; };
+		C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCellSpriteView.swift; sourceTree = "<group>"; };
 		C6FF68542417683C008F9B02 /* Virus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Virus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirusSpriteView.swift; sourceTree = "<group>"; };
 		C6FF686F2417692D008F9B02 /* CollideTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollideTypes.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			children = (
 				C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */,
 				C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */,
+				C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */,
+				C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */,
 			);
 			path = SpriteViews;
 			sourceTree = "<group>";
@@ -301,8 +307,10 @@
 				C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */,
 				C6FF68802417692E008F9B02 /* ViewController.swift in Sources */,
 				C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */,
+				C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */,
 				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,
 				C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */,
+				C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
 				C64570C0241A5D7E00D6C003 /* LivesView.swift in Sources */,
 			);

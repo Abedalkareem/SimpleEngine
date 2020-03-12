@@ -48,6 +48,8 @@ open class SpriteView: ObjectView {
   ///
   open var stopWhenCollideTypes = [Int]()
 
+  open var forceUpdate = false
+
   // MARK: - Private properties
 
   private var analog: Analog? {
@@ -197,6 +199,10 @@ open class SpriteView: ObjectView {
   /// desired point.
   ///
   open func didRechedDesiredPoint() { }
+
+  open func updateFrames() {
+    changeMovment()
+  }
 
   // MARK: - Private
 
