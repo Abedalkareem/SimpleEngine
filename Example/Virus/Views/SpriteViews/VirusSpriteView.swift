@@ -16,6 +16,10 @@ class VirusSpriteView: SpriteView {
   let width = 75
   let height = 75
 
+  // MARK: - Private properties
+
+  var timer: Timer?
+
   // MARK: - Setup
 
   override func setup() {
@@ -38,10 +42,12 @@ class VirusSpriteView: SpriteView {
 
   }
 
+  // MARK: - View lifecycle
+
   override func didMoveToSuperview() {
     super.didMoveToSuperview()
-    Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
-      self.startFiring()
+    timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
+      self?.startFiring()
     }
   }
 
@@ -51,5 +57,12 @@ class VirusSpriteView: SpriteView {
     spriteView.frame = CGRect(x: center.x, y: center.y, width: 20, height: 20)
     sceneView.addSubview(spriteView)
     spriteView.moveTo(x: -20, y: center.y)
+  }
+
+  // MARK: - deinit
+
+  deinit {
+    timer?.invalidate()
+    timer = nil
   }
 }

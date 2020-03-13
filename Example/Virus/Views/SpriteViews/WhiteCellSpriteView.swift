@@ -23,17 +23,18 @@ class WhiteCellSpriteView: SpriteView {
 
     frame = CGRect(x: 0, y: 0, width: width, height: height)
 
-    type = CollideTypes.fire
+    type = CollideTypes.whiteCell
     speed = 10
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = [#imageLiteral(resourceName: "white_cell")]
+    frames.idel = [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")]
     frames.defaultDuration = 0
   }
 
+  // MARK: -
+
   override func didRechedDesiredPoint() {
-    print("removed")
     removeFromSuperview()
   }
 

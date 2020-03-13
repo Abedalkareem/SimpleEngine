@@ -53,4 +53,11 @@ open class ObjectView: UIView {
   open func update() { }
 
   open func onCollisionEnter(with object: ObjectView?) { }
+
+  // MARK: - deinit
+
+  deinit {
+    timer?.invalidate()
+    timer = nil
+  }
 }

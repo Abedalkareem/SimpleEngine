@@ -11,4 +11,6 @@ import Foundation
 enum CollideTypes {
   static let virus = 1
   static let fire = 2
+  static let blood = 3
+  static let whiteCell = 4
 }

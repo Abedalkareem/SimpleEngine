@@ -91,4 +91,10 @@ open class BaseGameViewController: UIViewController {
   /// return true if you want to still get updates aftet two objects collide.
   open func objectsDidCollide(object1: ObjectView, object2: ObjectView) -> Bool { true }
 
+  // MARK: - deinit
+
+  deinit {
+    timer?.invalidate()
+    timer = nil
+  }
 }

@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 open class LivesView: UIView {
 
+  public typealias LivesDidUpdate = (Int) -> Void
+
   // MARK: - IBInspectables
 
   ///
@@ -79,6 +81,7 @@ open class LivesView: UIView {
   open var currentLivesCount: Int = 0 {
     didSet {
       livesUpdated(oldNumber: oldValue)
+      _livesDidUpdate?(currentLivesCount)
     }
   }
 
@@ -88,6 +91,7 @@ open class LivesView: UIView {
   private var stackView: UIStackView!
 
   private var backgroundImageInsets: UIEdgeInsets = .zero
+  private var _livesDidUpdate: LivesDidUpdate?
 
   // MARK: - init
 
@@ -155,7 +159,6 @@ open class LivesView: UIView {
   private func livesUpdated(oldNumber: Int) {
     let isRemoving = oldNumber > currentLivesCount
     let number = abs(currentLivesCount - oldNumber)
-    print("\(number)")
     if isRemoving {
       (0..<number)
         .map { stackView.arrangedSubviews[$0] }
@@ -184,5 +187,12 @@ open class LivesView: UIView {
   ///
   open func remove(_ number: Int) {
     currentLivesCount -= number
+  }
+
+  ///
+  /// It will be called whenever the lives number updated.
+  ///
+  open func livesDidUpdate(_ livesDidUpdate: @escaping LivesDidUpdate) {
+    self._livesDidUpdate = livesDidUpdate
   }
 }

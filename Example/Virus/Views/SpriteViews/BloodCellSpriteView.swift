@@ -23,17 +23,18 @@ class BloodCellSpriteView: SpriteView {
 
     frame = CGRect(x: 0, y: 0, width: width, height: height)
 
-    type = CollideTypes.fire
+    type = CollideTypes.blood
     speed = 10
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = [#imageLiteral(resourceName: "blood_cell")]
+    frames.idel = [#imageLiteral(resourceName: "blood_cell"), #imageLiteral(resourceName: "blood_cell")]
     frames.defaultDuration = 0
   }
 
+  // MARK: -
+
   override func didRechedDesiredPoint() {
-    print("removed")
     removeFromSuperview()
   }
 
