@@ -1,38 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bWG-DT-GHG">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="pixel_font.ttf">
+            <string>RetroComputer</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNg-pz-KrX" customClass="BackgroundView" customModule="SimpleEngine">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="background"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kg-qU-DaY" customClass="MovingBackgroundView" customModule="SimpleEngine">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-C3-zwK" customClass="SceneView" customModule="SimpleEngine">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7V-LA-ipu" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="10"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="NzK-Fn-Tne"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-ff-4iu" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
+                                        <rect key="frame" x="657" y="0.0" width="10" height="375"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="U0W-o7-7c3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAn-4N-V50" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="365" width="667" height="10"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="QNv-4Q-58N"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-ql-Jvg" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="375"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="QEV-RO-aXU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="v7V-LA-ipu" firstAttribute="top" secondItem="cs7-C3-zwK" secondAttribute="top" id="5A0-QQ-TO7"/>
+                                    <constraint firstItem="mIX-ff-4iu" firstAttribute="top" secondItem="cs7-C3-zwK" secondAttribute="top" id="7T7-Bu-rQ1"/>
+                                    <constraint firstItem="Bbk-ql-Jvg" firstAttribute="leading" secondItem="cs7-C3-zwK" secondAttribute="leading" id="BP7-Ms-sGQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="aAn-4N-V50" secondAttribute="bottom" id="LQD-mQ-ksB"/>
+                                    <constraint firstItem="aAn-4N-V50" firstAttribute="leading" secondItem="cs7-C3-zwK" secondAttribute="leading" id="QkN-PJ-hhy"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bbk-ql-Jvg" secondAttribute="bottom" id="Ttf-11-Dg8"/>
+                                    <constraint firstItem="Bbk-ql-Jvg" firstAttribute="top" secondItem="cs7-C3-zwK" secondAttribute="top" id="XoC-y8-zdg"/>
+                                    <constraint firstAttribute="bottom" secondItem="mIX-ff-4iu" secondAttribute="bottom" id="ZeB-Pt-4Bc"/>
+                                    <constraint firstAttribute="trailing" secondItem="aAn-4N-V50" secondAttribute="trailing" id="apr-Ob-1Nn"/>
+                                    <constraint firstAttribute="trailing" secondItem="v7V-LA-ipu" secondAttribute="trailing" id="flc-kA-yCW"/>
+                                    <constraint firstItem="v7V-LA-ipu" firstAttribute="leading" secondItem="cs7-C3-zwK" secondAttribute="leading" id="kEh-35-K6M"/>
+                                    <constraint firstAttribute="trailing" secondItem="mIX-ff-4iu" secondAttribute="trailing" id="snW-8s-NiH"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt5-rW-fEu" customClass="LivesView" customModule="SimpleEngine">
-                                <rect key="frame" x="627" y="0.0" width="200" height="40"/>
+                                <rect key="frame" x="442" y="0.0" width="200" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.10000000000000001"/>
                                 <constraints>
@@ -82,14 +132,90 @@
                         <outlet property="sceneView" destination="cs7-C3-zwK" id="Tvv-73-De1"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.61607142857142" y="115.94202898550725"/>
+            <point key="canvasLocation" x="138.0809595202399" y="114.40000000000001"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="WgL-nu-qjM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egd-bG-Izb" sceneMemberID="firstResponder"/>
+                <viewController id="bWG-DT-GHG" customClass="MainViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mgr-IA-qOy">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3l-Eg-h0c" customClass="BackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwx-v3-BUU" customClass="MovingBackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Tg-R4-WUJ" customClass="SceneView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ahj-gC-CW2">
+                                <rect key="frame" x="83.5" y="34" width="500" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Hon-dp-71g"/>
+                                    <constraint firstAttribute="width" constant="500" id="pMN-0r-BMA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmx-di-2aS">
+                                <rect key="frame" x="269" y="294" width="129" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="bFo-MV-xrt"/>
+                                    <constraint firstAttribute="height" constant="46" id="nb4-Ah-UeX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="17"/>
+                                <state key="normal" title="Start" backgroundImage="button_background">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="start:" destination="bWG-DT-GHG" eventType="touchUpInside" id="clA-as-Lxe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Mwx-v3-BUU" secondAttribute="bottom" id="0FD-10-2LY"/>
+                            <constraint firstAttribute="trailing" secondItem="6Tg-R4-WUJ" secondAttribute="trailing" id="465-71-JBB"/>
+                            <constraint firstItem="D3l-Eg-h0c" firstAttribute="top" secondItem="RHA-C5-1wX" secondAttribute="top" id="6km-jt-8KP"/>
+                            <constraint firstAttribute="trailing" secondItem="D3l-Eg-h0c" secondAttribute="trailing" id="GNm-XM-b3e"/>
+                            <constraint firstItem="6Tg-R4-WUJ" firstAttribute="leading" secondItem="Mgr-IA-qOy" secondAttribute="leading" id="Huu-bc-L7C"/>
+                            <constraint firstItem="Zmx-di-2aS" firstAttribute="centerX" secondItem="Mgr-IA-qOy" secondAttribute="centerX" id="Jgk-4Y-2PN"/>
+                            <constraint firstAttribute="bottom" secondItem="6Tg-R4-WUJ" secondAttribute="bottom" id="KyU-Lv-jM1"/>
+                            <constraint firstItem="Mwx-v3-BUU" firstAttribute="top" secondItem="RHA-C5-1wX" secondAttribute="top" id="PMu-vt-pmi"/>
+                            <constraint firstItem="ahj-gC-CW2" firstAttribute="centerX" secondItem="Mgr-IA-qOy" secondAttribute="centerX" id="Qqe-tn-g2P"/>
+                            <constraint firstItem="ahj-gC-CW2" firstAttribute="top" secondItem="RHA-C5-1wX" secondAttribute="top" constant="34" id="Xgc-yQ-mC0"/>
+                            <constraint firstItem="RHA-C5-1wX" firstAttribute="bottom" secondItem="Zmx-di-2aS" secondAttribute="bottom" constant="35" id="Zj6-Dd-HBC"/>
+                            <constraint firstItem="D3l-Eg-h0c" firstAttribute="bottom" secondItem="Mgr-IA-qOy" secondAttribute="bottom" id="aT2-h1-Tcs"/>
+                            <constraint firstItem="Mwx-v3-BUU" firstAttribute="leading" secondItem="Mgr-IA-qOy" secondAttribute="leading" id="jMQ-d6-0mI"/>
+                            <constraint firstAttribute="trailing" secondItem="Mwx-v3-BUU" secondAttribute="trailing" id="lQF-09-Aly"/>
+                            <constraint firstItem="6Tg-R4-WUJ" firstAttribute="top" secondItem="RHA-C5-1wX" secondAttribute="top" id="tcr-fB-oez"/>
+                            <constraint firstItem="D3l-Eg-h0c" firstAttribute="leading" secondItem="Mgr-IA-qOy" secondAttribute="leading" id="wow-EZ-Ixj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RHA-C5-1wX"/>
+                    </view>
+                    <connections>
+                        <outlet property="movingBackgroundView" destination="Mwx-v3-BUU" id="ddP-1o-Rxc"/>
+                        <outlet property="sceneView" destination="6Tg-R4-WUJ" id="6Ed-Tm-ShV"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="138.0809595202399" y="-716"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="1280" height="720"/>
+        <image name="button_background" width="250" height="90"/>
         <image name="live" width="40" height="36"/>
         <image name="lives_background" width="200" height="60"/>
+        <image name="logo" width="760" height="185"/>
     </resources>
 </document>

@@ -30,7 +30,7 @@ class VirusSpriteView: SpriteView {
     type = CollideTypes.virus
     speed = 10
 
-    stopWhenCollideTypes = []
+    stopWhenCollideTypes = [CollideTypes.wall]
 
     frames.defaultDuration = 0.5
     frames.idelDuration = 1
@@ -46,23 +46,31 @@ class VirusSpriteView: SpriteView {
 
   override func didMoveToSuperview() {
     super.didMoveToSuperview()
+
+    stopTimer()
     timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
       self?.startFiring()
     }
   }
 
+  private func stopTimer() {
+    timer?.invalidate()
+    timer = nil
+  }
+
   private func startFiring() {
-    let sceneView = superview as! SceneView
+    guard let sceneView = superview as? SceneView else {
+      return
+    }
     let spriteView = FireSpriteView()
     spriteView.frame = CGRect(x: center.x, y: center.y, width: 20, height: 20)
     sceneView.addSubview(spriteView)
-    spriteView.moveTo(x: -20, y: center.y)
+    spriteView.moveTo(x: 20, y: center.y)
   }
 
   // MARK: - deinit
 
   deinit {
-    timer?.invalidate()
-    timer = nil
+    stopTimer()
   }
 }

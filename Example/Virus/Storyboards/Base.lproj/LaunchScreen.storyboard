@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,13 +15,35 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LfW-Fm-BJR">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moving_strings" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-qG-mgk">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LfW-Fm-BJR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="5jh-W3-nOW"/>
+                            <constraint firstAttribute="bottom" secondItem="fPZ-qG-mgk" secondAttribute="bottom" id="9Ky-aw-9VL"/>
+                            <constraint firstAttribute="trailing" secondItem="LfW-Fm-BJR" secondAttribute="trailing" id="GRa-7R-rCW"/>
+                            <constraint firstItem="fPZ-qG-mgk" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="GnV-9F-wHr"/>
+                            <constraint firstItem="fPZ-qG-mgk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="LBm-qB-0EX"/>
+                            <constraint firstAttribute="trailing" secondItem="fPZ-qG-mgk" secondAttribute="trailing" id="Ndf-5z-2fs"/>
+                            <constraint firstAttribute="bottom" secondItem="LfW-Fm-BJR" secondAttribute="bottom" id="hgc-zk-0As"/>
+                            <constraint firstItem="LfW-Fm-BJR" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="u9y-jf-FD0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.901785714285715" y="373.91304347826087"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1280" height="720"/>
+        <image name="moving_strings" width="1280" height="720"/>
+    </resources>
 </document>

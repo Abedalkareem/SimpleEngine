@@ -16,12 +16,7 @@ open class SpriteView: ObjectView {
   ///
   /// The speed of the sprite is how many pixels it will move per frame. The defualt value is `5`.
   ///
-  @IBInspectable open var speed: CGFloat = 5 {
-    didSet {
-      xSpeed = speed
-      ySpeed = speed
-    }
-  }
+  @IBInspectable open var speed: CGFloat = 5
 
   ///
   /// The first image it will show when you add the sprite to the storyboard. after that it will show the `Freams`.
@@ -59,9 +54,6 @@ open class SpriteView: ObjectView {
       }
     }
   }
-
-  private var xSpeed: CGFloat = 5
-  private var ySpeed: CGFloat = 5
 
   // The `x` and `y` that you can set to reach to some x and y in the `SceneView`.
   private var desireX: CGFloat?
@@ -163,8 +155,6 @@ open class SpriteView: ObjectView {
 
   override open func onCollisionEnter(with object: ObjectView?) {
     guard let object = object, stopWhenCollideTypes.contains(object.type) else {
-      xSpeed = speed
-      ySpeed = speed
       return
     }
 
@@ -221,8 +211,8 @@ open class SpriteView: ObjectView {
 
   private func moveXandYBy(x: CGFloat?, y: CGFloat?) {
     if let x = x, let y = y {
-      frame.origin.x += (xSpeed * x)
-      frame.origin.y += (ySpeed * y)
+      frame.origin.x += (speed * x)
+      frame.origin.y += (speed * y)
     }
   }
 

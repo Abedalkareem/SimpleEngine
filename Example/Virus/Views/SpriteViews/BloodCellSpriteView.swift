@@ -29,7 +29,6 @@ class BloodCellSpriteView: SpriteView {
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
     frames.idel = [#imageLiteral(resourceName: "blood_cell"), #imageLiteral(resourceName: "blood_cell")]
-    frames.defaultDuration = 0
   }
 
   // MARK: -

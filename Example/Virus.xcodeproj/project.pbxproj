@@ -9,10 +9,19 @@
 /* Begin PBXBuildFile section */
 		C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */; };
 		C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */; };
+		C6DC70D7241BC2D100D4AB55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */; };
+		C6DC70DB241C319600D4AB55 /* pixel_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70DA241C319600D4AB55 /* pixel_font.ttf */; };
+		C6DC70DF241CA44300D4AB55 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70DE241CA44300D4AB55 /* Music.swift */; };
+		C6DC70E2241CB0A700D4AB55 /* main_menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70E1241CB0A700D4AB55 /* main_menu.wav */; };
+		C6DC70E4241CB2F800D4AB55 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70E3241CB2F800D4AB55 /* UIStoryboard.swift */; };
+		C6DC70E7241CB39300D4AB55 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70E6241CB39300D4AB55 /* Status.swift */; };
+		C6DC70E9241CB50D00D4AB55 /* new_battle.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70E8241CB50D00D4AB55 /* new_battle.wav */; };
+		C6DC70EB241CB7A300D4AB55 /* button_clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */; };
+		C6DC70ED241D018100D4AB55 /* WallNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70EC241D018100D4AB55 /* WallNodeView.swift */; };
 		C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */; };
 		C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686F2417692D008F9B02 /* CollideTypes.swift */; };
 		C6FF687F2417692E008F9B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68712417692E008F9B02 /* Assets.xcassets */; };
-		C6FF68802417692E008F9B02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF68732417692E008F9B02 /* ViewController.swift */; };
+		C6FF68802417692E008F9B02 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF68732417692E008F9B02 /* GameViewController.swift */; };
 		C6FF68822417692E008F9B02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68772417692E008F9B02 /* LaunchScreen.storyboard */; };
 		C6FF68832417692E008F9B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68792417692E008F9B02 /* Main.storyboard */; };
 		C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF687C2417692E008F9B02 /* AppDelegate.swift */; };
@@ -26,11 +35,20 @@
 		55C5C79E7178BF4EA838652A /* Pods-Virus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.debug.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.debug.xcconfig"; sourceTree = "<group>"; };
 		C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellSpriteView.swift; sourceTree = "<group>"; };
 		C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCellSpriteView.swift; sourceTree = "<group>"; };
+		C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C6DC70DA241C319600D4AB55 /* pixel_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixel_font.ttf; sourceTree = "<group>"; };
+		C6DC70DE241CA44300D4AB55 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		C6DC70E1241CB0A700D4AB55 /* main_menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main_menu.wav; sourceTree = "<group>"; };
+		C6DC70E3241CB2F800D4AB55 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		C6DC70E6241CB39300D4AB55 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		C6DC70E8241CB50D00D4AB55 /* new_battle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_battle.wav; sourceTree = "<group>"; };
+		C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_clicked.wav; sourceTree = "<group>"; };
+		C6DC70EC241D018100D4AB55 /* WallNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallNodeView.swift; sourceTree = "<group>"; };
 		C6FF68542417683C008F9B02 /* Virus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Virus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirusSpriteView.swift; sourceTree = "<group>"; };
 		C6FF686F2417692D008F9B02 /* CollideTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollideTypes.swift; sourceTree = "<group>"; };
 		C6FF68712417692E008F9B02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C6FF68732417692E008F9B02 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C6FF68732417692E008F9B02 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C6FF68752417692E008F9B02 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6FF68782417692E008F9B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6FF687A2417692E008F9B02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +87,50 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C6DC70D5241BC2BC00D4AB55 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C6DC70D8241C314900D4AB55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6DC70E0241CB0A000D4AB55 /* music */,
+				C6DC70D9241C319600D4AB55 /* fonts */,
+				C6FF68702417692E008F9B02 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6DC70D9241C319600D4AB55 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C6DC70DA241C319600D4AB55 /* pixel_font.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		C6DC70E0241CB0A000D4AB55 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */,
+				C6DC70E8241CB50D00D4AB55 /* new_battle.wav */,
+				C6DC70E1241CB0A700D4AB55 /* main_menu.wav */,
+			);
+			path = music;
+			sourceTree = "<group>";
+		};
+		C6DC70E5241CB34400D4AB55 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				C6FF68732417692E008F9B02 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
 		C6FF684B2417683C008F9B02 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +157,7 @@
 				C6FF686B2417692D008F9B02 /* Views */,
 				C6FF68762417692E008F9B02 /* Storyboards */,
 				C6FF686E2417692D008F9B02 /* Helpers */,
-				C6FF68702417692E008F9B02 /* Assets */,
+				C6DC70D8241C314900D4AB55 /* Resources */,
 				C6FF68742417692E008F9B02 /* SupportFiles */,
 			);
 			path = Virus;
@@ -118,6 +180,7 @@
 				C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */,
 				C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */,
 				C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */,
+				C6DC70EC241D018100D4AB55 /* WallNodeView.swift */,
 			);
 			path = SpriteViews;
 			sourceTree = "<group>";
@@ -126,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				C6FF686F2417692D008F9B02 /* CollideTypes.swift */,
+				C6DC70DE241CA44300D4AB55 /* Music.swift */,
+				C6DC70E6241CB39300D4AB55 /* Status.swift */,
+				C6DC70E3241CB2F800D4AB55 /* UIStoryboard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -141,7 +207,8 @@
 		C6FF68722417692E008F9B02 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C6FF68732417692E008F9B02 /* ViewController.swift */,
+				C6DC70D5241BC2BC00D4AB55 /* Main */,
+				C6DC70E5241CB34400D4AB55 /* Game */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,8 +314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6FF68822417692E008F9B02 /* LaunchScreen.storyboard in Resources */,
+				C6DC70EB241CB7A300D4AB55 /* button_clicked.wav in Resources */,
 				C6FF687F2417692E008F9B02 /* Assets.xcassets in Resources */,
+				C6DC70DB241C319600D4AB55 /* pixel_font.ttf in Resources */,
 				C6FF68832417692E008F9B02 /* Main.storyboard in Resources */,
+				C6DC70E2241CB0A700D4AB55 /* main_menu.wav in Resources */,
+				C6DC70E9241CB50D00D4AB55 /* new_battle.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DC70E4241CB2F800D4AB55 /* UIStoryboard.swift in Sources */,
 				C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */,
-				C6FF68802417692E008F9B02 /* ViewController.swift in Sources */,
+				C6FF68802417692E008F9B02 /* GameViewController.swift in Sources */,
+				C6DC70ED241D018100D4AB55 /* WallNodeView.swift in Sources */,
 				C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */,
 				C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */,
 				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,
 				C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */,
+				C6DC70D7241BC2D100D4AB55 /* MainViewController.swift in Sources */,
+				C6DC70DF241CA44300D4AB55 /* Music.swift in Sources */,
 				C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
+				C6DC70E7241CB39300D4AB55 /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

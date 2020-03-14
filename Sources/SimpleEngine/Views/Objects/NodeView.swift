@@ -39,7 +39,10 @@ open class NodeView: ObjectView {
     setup()
   }
 
-  private func setup() {
+  ///
+  /// It can be overrided to do extra setups in the subview side.
+  ///
+  open func setup() {
     imageView = UIImageView()
     addSubview(imageView)
 

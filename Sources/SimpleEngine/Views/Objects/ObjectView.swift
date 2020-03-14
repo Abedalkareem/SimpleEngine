@@ -49,15 +49,22 @@ open class ObjectView: UIView {
     timer = Timer.scheduledTimer(timeInterval: 0.016, target: self, selector: #selector(update), userInfo: nil, repeats: true)
   }
 
+  private func stopTimer() {
+    timer?.invalidate()
+    timer = nil
+  }
+
   @objc
   open func update() { }
 
   open func onCollisionEnter(with object: ObjectView?) { }
 
-  // MARK: - deinit
+  // MARK: -
 
-  deinit {
-    timer?.invalidate()
-    timer = nil
+  open override func didMoveToSuperview() {
+    super.didMoveToSuperview()
+    if superview == nil {
+      stopTimer()
+    }
   }
 }
