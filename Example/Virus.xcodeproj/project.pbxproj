@@ -17,7 +17,6 @@
 		C6DC70E7241CB39300D4AB55 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70E6241CB39300D4AB55 /* Status.swift */; };
 		C6DC70E9241CB50D00D4AB55 /* new_battle.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70E8241CB50D00D4AB55 /* new_battle.wav */; };
 		C6DC70EB241CB7A300D4AB55 /* button_clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */; };
-		C6DC70ED241D018100D4AB55 /* WallNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70EC241D018100D4AB55 /* WallNodeView.swift */; };
 		C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */; };
 		C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686F2417692D008F9B02 /* CollideTypes.swift */; };
 		C6FF687F2417692E008F9B02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FF68712417692E008F9B02 /* Assets.xcassets */; };
@@ -43,7 +42,6 @@
 		C6DC70E6241CB39300D4AB55 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		C6DC70E8241CB50D00D4AB55 /* new_battle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_battle.wav; sourceTree = "<group>"; };
 		C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_clicked.wav; sourceTree = "<group>"; };
-		C6DC70EC241D018100D4AB55 /* WallNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallNodeView.swift; sourceTree = "<group>"; };
 		C6FF68542417683C008F9B02 /* Virus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Virus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirusSpriteView.swift; sourceTree = "<group>"; };
 		C6FF686F2417692D008F9B02 /* CollideTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollideTypes.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 				C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */,
 				C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */,
 				C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */,
-				C6DC70EC241D018100D4AB55 /* WallNodeView.swift */,
 			);
 			path = SpriteViews;
 			sourceTree = "<group>";
@@ -375,7 +372,6 @@
 				C6DC70E4241CB2F800D4AB55 /* UIStoryboard.swift in Sources */,
 				C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */,
 				C6FF68802417692E008F9B02 /* GameViewController.swift in Sources */,
-				C6DC70ED241D018100D4AB55 /* WallNodeView.swift in Sources */,
 				C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */,
 				C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */,
 				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,

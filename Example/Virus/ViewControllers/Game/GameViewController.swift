@@ -53,7 +53,9 @@ class GameViewController: BaseGameViewController {
 
   private func observeForLives() {
     livesView.livesDidUpdate { numberOfLives in
-
+      if numberOfLives == 0 {
+        
+      }
     }
   }
 
@@ -88,7 +90,9 @@ class GameViewController: BaseGameViewController {
     case (CollideTypes.whiteCell, CollideTypes.virus):
       return collideBetween(virus: object2, whiteCell: object1)
     case (CollideTypes.fire, CollideTypes.blood):
-      return collideBetween(virus: object2, whiteCell: object1)
+      return collideBetween(fire: object2, blood: object1)
+    case (CollideTypes.blood, CollideTypes.fire):
+      return collideBetween(fire: object1, blood: object2)
     default:
       break
     }
@@ -96,7 +100,11 @@ class GameViewController: BaseGameViewController {
   }
 
   private func collideBetween(virus: ObjectView, whiteCell: ObjectView) -> Bool {
-    print("Lost!")
+    livesView.remove(1)
+    return true
+  }
+
+  private func collideBetween(fire: ObjectView, blood: ObjectView) -> Bool {
     return true
   }
 

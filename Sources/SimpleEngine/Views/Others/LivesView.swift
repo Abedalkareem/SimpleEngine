@@ -186,6 +186,9 @@ open class LivesView: UIView {
   /// Add lives from the current lives.
   ///
   open func remove(_ number: Int) {
+    guard currentLivesCount != 0 else {
+      return
+    }
     currentLivesCount -= number
   }
 

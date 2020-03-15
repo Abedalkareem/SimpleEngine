@@ -12,6 +12,7 @@ import UIKit
 /// The parent class for the `NodeView` and `SpriteView`.
 /// this has the common properties and methods like the update method and the type property
 ///
+@IBDesignable
 open class ObjectView: UIView {
 
   // MARK: - IBInspectables
@@ -49,22 +50,35 @@ open class ObjectView: UIView {
     timer = Timer.scheduledTimer(timeInterval: 0.016, target: self, selector: #selector(update), userInfo: nil, repeats: true)
   }
 
-  private func stopTimer() {
-    timer?.invalidate()
-    timer = nil
-  }
-
-  @objc
-  open func update() { }
-
-  open func onCollisionEnter(with object: ObjectView?) { }
-
-  // MARK: -
+  // MARK: - View lifecycle
 
   open override func didMoveToSuperview() {
     super.didMoveToSuperview()
     if superview == nil {
       stopTimer()
     }
+  }
+
+  private func stopTimer() {
+    timer?.invalidate()
+    timer = nil
+  }
+
+  // MARK: -
+
+  @objc
+  open func update() { }
+
+  ///
+  /// A method will be called when any object collided with this object.
+  ///
+  /// - Parameter object: The object the collided.
+  ///
+  /// - Returns: Return true if the object should report the collide to the view controller.
+  /// The defualt is `true`.
+  ///
+  @discardableResult
+  open func onCollisionEnter(with object: ObjectView?) -> Bool {
+    return true
   }
 }

@@ -16,9 +16,12 @@ open class BaseGameViewController: UIViewController {
 
   // MARK: - Properties
 
+  open var analogView: AnalogView!
+
+  // MARK: - Private properties
+
   private var timer: Timer?
   private var shouldKeepUpdatingTheScene = true
-  open var analogView: AnalogView!
 
   // MARK: - ViewController lifecycle
 
@@ -71,17 +74,17 @@ open class BaseGameViewController: UIViewController {
     let subviews = sceneView.subviews.compactMap({ $0 as? ObjectView })
     for object1 in subviews {
       for object2 in subviews {
-        if object1 != object2 { 
-          if object1.frame.intersects(object2.frame) {
-            object1.onCollisionEnter(with: object2)
-            object2.onCollisionEnter(with: object1)
-            if shouldKeepUpdatingTheScene {
-              shouldKeepUpdatingTheScene = objectsDidCollide(object1: object1, object2: object2)
-            }
-          } else {
-            object1.onCollisionEnter(with: nil)
-            object2.onCollisionEnter(with: nil)
-          }
+        guard object1 != object2 else {
+          continue
+        }
+        guard object1.frame.intersects(object2.frame) else {
+          continue
+        }
+        let shouldReportCollideToViewController = shouldKeepUpdatingTheScene &&
+          object1.onCollisionEnter(with: object2) &&
+          object2.onCollisionEnter(with: object1)
+        if shouldReportCollideToViewController  {
+          shouldKeepUpdatingTheScene = objectsDidCollide(object1: object1, object2: object2)
         }
       }
     }
@@ -94,7 +97,6 @@ open class BaseGameViewController: UIViewController {
   // MARK: - deinit
 
   deinit {
-    timer?.invalidate()
-    timer = nil
+    stopTimer()
   }
 }

@@ -16,6 +16,10 @@ class BloodCellSpriteView: SpriteView {
   let width = 40
   let height = 40
 
+  // MARK: - Private properties
+
+  var notInfected = true
+
   // MARK: - Setup
 
   override func setup() {
@@ -28,7 +32,7 @@ class BloodCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = [#imageLiteral(resourceName: "blood_cell"), #imageLiteral(resourceName: "blood_cell")]
+    frames.idel = Frames(images: [#imageLiteral(resourceName: "blood_cell"), #imageLiteral(resourceName: "blood_cell")])
   }
 
   // MARK: -
@@ -37,11 +41,16 @@ class BloodCellSpriteView: SpriteView {
     removeFromSuperview()
   }
 
-  override func onCollisionEnter(with object: ObjectView?) {
+  override func onCollisionEnter(with object: ObjectView?) -> Bool {
     super.onCollisionEnter(with: object)
+    guard notInfected else {
+      return false
+    }
     if object is FireSpriteView || object is VirusSpriteView {
-      frames.idel = [#imageLiteral(resourceName: "infected_blood_cell")]
+      notInfected = false
+      frames.idel = Frames(images: [#imageLiteral(resourceName: "infected_blood_cell")])
       updateFrames()
     }
+    return true
   }
 }

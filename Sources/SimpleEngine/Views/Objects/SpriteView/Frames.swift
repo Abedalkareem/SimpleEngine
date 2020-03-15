@@ -17,46 +17,52 @@ import UIKit
 /// all the frames.
 /// You can set the duration of the frames by setting the duration property.
 ///
-open class Frames {
-  open var defaultDuration = 0.3
-  open var idelDuration = 0.3
-  open var top: [UIImage]?
-  open var left: [UIImage]?
-  open var right: [UIImage]?
-  open var bottom: [UIImage]?
-  open var idel: [UIImage]!
-  open var topLeft: [UIImage]?
-  open var bottomLeft: [UIImage]?
-  open var topRight: [UIImage]?
-  open var bottomRight: [UIImage]?
+open class FramesHolder {
+  open var top: Frames?
+  open var left: Frames?
+  open var right: Frames?
+  open var bottom: Frames?
+  open var idel: Frames!
+  open var topLeft: Frames?
+  open var bottomLeft: Frames?
+  open var topRight: Frames?
+  open var bottomRight: Frames?
 
   ///
   /// A method that will return an array of images to animate depending on the direction you will pass.
   ///
-  open func framesFor(_ direction: Direction) -> (frames: [UIImage], duration: Double) {
-    var movmentImages = [UIImage]()
-    var duration = defaultDuration
+  open func `for`(_ direction: Direction) -> Frames {
+    var frame: Frames!
     switch direction {
     case .left:
-      movmentImages = left ?? idel
+      frame = left ?? idel
     case .right:
-      movmentImages = right ?? idel
+      frame = right ?? idel
     case .top:
-      movmentImages = top ?? idel
+      frame = top ?? idel
     case .bottom:
-      movmentImages = bottom ?? idel
+      frame = bottom ?? idel
     case .center:
-      movmentImages = idel
-      duration = idelDuration
+      frame = idel
     case .topLeft:
-      movmentImages = topLeft ?? left ?? idel
+      frame = topLeft ?? left ?? idel
     case .bottomLeft:
-      movmentImages = bottomLeft ?? left ?? idel
+      frame = bottomLeft ?? left ?? idel
     case .topRight:
-      movmentImages = topRight ?? right ?? idel
+      frame = topRight ?? right ?? idel
     case .bottomRight:
-      movmentImages = bottomRight ?? right ?? idel
+      frame = bottomRight ?? right ?? idel
     }
-    return (movmentImages, duration)
+    return frame
+  }
+}
+
+open class Frames {
+  open var images: [UIImage]?
+  open var duration = 0.3
+
+  public init(images: [UIImage]?, duration: Double = 0.3) {
+    self.images = images
+    self.duration = duration
   }
 }

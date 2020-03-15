@@ -28,17 +28,18 @@ class VirusSpriteView: SpriteView {
     frame = CGRect(x: 0, y: 0, width: width, height: height)
 
     type = CollideTypes.virus
+    shouldHitTheEdges = true
     speed = 10
 
-    stopWhenCollideTypes = [CollideTypes.wall]
+    stopWhenCollideTypes = []
 
-    frames.defaultDuration = 0.5
-    frames.idelDuration = 1
-    frames.top = [#imageLiteral(resourceName: "move_top_1"), #imageLiteral(resourceName: "move_top_2"), #imageLiteral(resourceName: "move_top_3")]
-    frames.left = [#imageLiteral(resourceName: "move_for_1"), #imageLiteral(resourceName: "move_for_2"), #imageLiteral(resourceName: "move_for_3")]
-    frames.right = [#imageLiteral(resourceName: "move_back_1"), #imageLiteral(resourceName: "move_back_2"), #imageLiteral(resourceName: "move_back_3")]
-    frames.bottom = [#imageLiteral(resourceName: "move_bottom_1"), #imageLiteral(resourceName: "move_bottom_2"), #imageLiteral(resourceName: "move_bottom_3")]
-    frames.idel = [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")]
+    let defaultDuration = 0.5
+    let idelDuration = 1.0
+    frames.top = Frames(images: [#imageLiteral(resourceName: "move_top_1"), #imageLiteral(resourceName: "move_top_2"), #imageLiteral(resourceName: "move_top_3")], duration: defaultDuration)
+    frames.left =  Frames(images: [#imageLiteral(resourceName: "move_for_1"), #imageLiteral(resourceName: "move_for_2"), #imageLiteral(resourceName: "move_for_3")], duration: defaultDuration)
+    frames.right =  Frames(images: [#imageLiteral(resourceName: "move_back_1"), #imageLiteral(resourceName: "move_back_2"), #imageLiteral(resourceName: "move_back_3")], duration: defaultDuration)
+    frames.bottom =  Frames(images: [#imageLiteral(resourceName: "move_bottom_1"), #imageLiteral(resourceName: "move_bottom_2"), #imageLiteral(resourceName: "move_bottom_3")], duration: defaultDuration)
+    frames.idel =  Frames(images: [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")], duration: idelDuration)
 
   }
 

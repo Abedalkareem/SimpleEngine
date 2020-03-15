@@ -35,51 +35,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-C3-zwK" customClass="SceneView" customModule="SimpleEngine">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7V-LA-ipu" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="10"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="NzK-Fn-Tne"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-ff-4iu" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
-                                        <rect key="frame" x="657" y="0.0" width="10" height="375"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="10" id="U0W-o7-7c3"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAn-4N-V50" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="365" width="667" height="10"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="QNv-4Q-58N"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbk-ql-Jvg" customClass="WallNodeView" customModule="Virus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="10" height="375"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="10" id="QEV-RO-aXU"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="v7V-LA-ipu" firstAttribute="top" secondItem="cs7-C3-zwK" secondAttribute="top" id="5A0-QQ-TO7"/>
-                                    <constraint firstItem="mIX-ff-4iu" firstAttribute="top" secondItem="cs7-C3-zwK" secondAttribute="top" id="7T7-Bu-rQ1"/>
-                                    <constraint firstItem="Bbk-ql-Jvg" firstAttribute="leading" secondItem="cs7-C3-zwK" secondAttribute="leading" id="BP7-Ms-sGQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="aAn-4N-V50" secondAttribute="bottom" id="LQD-mQ-ksB"/>
-                                    <constraint firstItem="aAn-4N-V50" firstAttribute="leading" secondItem="cs7-C3-zwK" secondAttribute="leading" id="QkN-PJ-hhy"/>
-                                    <constraint firstAttribute="bottom" secondItem="Bbk-ql-Jvg" secondAttribute="bottom" id="Ttf-11-Dg8"/>
-                                    <constraint firstItem="Bbk-ql-Jvg" firstAttribute="top" secondItem="cs7-C3-zwK" secondAttribute="top" id="XoC-y8-zdg"/>
-                                    <constraint firstAttribute="bottom" secondItem="mIX-ff-4iu" secondAttribute="bottom" id="ZeB-Pt-4Bc"/>
-                                    <constraint firstAttribute="trailing" secondItem="aAn-4N-V50" secondAttribute="trailing" id="apr-Ob-1Nn"/>
-                                    <constraint firstAttribute="trailing" secondItem="v7V-LA-ipu" secondAttribute="trailing" id="flc-kA-yCW"/>
-                                    <constraint firstItem="v7V-LA-ipu" firstAttribute="leading" secondItem="cs7-C3-zwK" secondAttribute="leading" id="kEh-35-K6M"/>
-                                    <constraint firstAttribute="trailing" secondItem="mIX-ff-4iu" secondAttribute="trailing" id="snW-8s-NiH"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt5-rW-fEu" customClass="LivesView" customModule="SimpleEngine">
                                 <rect key="frame" x="442" y="0.0" width="200" height="40"/>
@@ -167,10 +123,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmx-di-2aS">
-                                <rect key="frame" x="269" y="294" width="129" height="46"/>
+                                <rect key="frame" x="208.5" y="270" width="250" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="bFo-MV-xrt"/>
-                                    <constraint firstAttribute="height" constant="46" id="nb4-Ah-UeX"/>
+                                    <constraint firstAttribute="height" constant="70" id="nb4-Ah-UeX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="17"/>
                                 <state key="normal" title="Start" backgroundImage="button_background">

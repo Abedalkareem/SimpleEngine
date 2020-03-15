@@ -34,7 +34,7 @@ open class SpriteView: ObjectView {
   /// You can set the images (frames) that will show when the user move to right, left,
   /// top, bottom, topLeft, bottomLeft, topRight, bottomRight or idel.
   ///
-  open var frames = Frames()
+  open var frames = FramesHolder()
 
   ///
   /// The ` SpriteView` will stop when it collide with one of this types.
@@ -43,7 +43,10 @@ open class SpriteView: ObjectView {
   ///
   open var stopWhenCollideTypes = [Int]()
 
-  open var forceUpdate = false
+  ///
+  /// If the value is true, the object will not pass through out the screen edges.
+  ///
+  open var shouldHitTheEdges = false
 
   // MARK: - Private properties
 
@@ -153,9 +156,20 @@ open class SpriteView: ObjectView {
     }
   }
 
-  override open func onCollisionEnter(with object: ObjectView?) {
+  ///
+  /// A method will be called when any object collided with this object.
+  /// `super.onCollisionEnter(with object:)` must always be called when
+  /// you override this method.
+  ///
+  /// - Parameter object: The object the collided.
+  ///
+  /// - Returns: Return true if the object should report the collide to the view controller.
+  /// The defualt is `true`.
+  ///
+  @discardableResult
+  override open func onCollisionEnter(with object: ObjectView?) -> Bool {
     guard let object = object, stopWhenCollideTypes.contains(object.type) else {
-      return
+      return true
     }
 
     let x = frame.origin.x
@@ -163,12 +177,13 @@ open class SpriteView: ObjectView {
     let objectX = object.frame.origin.x
     let objectY = object.frame.origin.y
 
-    frame.origin.x += (x > objectX ? (speed/2 * 0.5) : (speed/2 * -0.5))
-    frame.origin.y += (y > objectY ? (speed/2 * 0.5) : (speed/2 * -0.5))
+    frame.origin.x += (x > objectX ? (speed * 0.5) : (speed * -0.5))
+    frame.origin.y += (y > objectY ? (speed * 0.5) : (speed * -0.5))
 
     if let desireX = desireX, let desireY = desireY {
       moveTo(x: desireX, y: desireY)
     }
+    return true
   }
   
   override open func update() {
@@ -194,6 +209,9 @@ open class SpriteView: ObjectView {
   ///
   open func didRechedDesiredPoint() { }
 
+  ///
+  /// Use it to update the `SpriteView` in case you changed any of the `Frames`.
+  ///
   open func updateFrames() {
     changeMovment()
   }
@@ -204,15 +222,48 @@ open class SpriteView: ObjectView {
     guard let direction = analog?.direction else {
       return // in case the the direction did not change go back.
     }
-    imageView.animationImages = frames.framesFor(direction).frames
-    imageView.animationDuration = frames.framesFor(direction).duration
+    let frames = self.frames.for(direction)
+    imageView.animationImages = frames.images
+    imageView.animationDuration = frames.duration
     imageView.startAnimating()
   }
 
   private func moveXandYBy(x: CGFloat?, y: CGFloat?) {
     if let x = x, let y = y {
-      frame.origin.x += (speed * x)
-      frame.origin.y += (speed * y)
+      guard let superview = superview else {
+        return
+      }
+      
+      let newX = frame.origin.x + (speed * x)
+      let newY = frame.origin.y + (speed * y)
+
+      guard shouldHitTheEdges else {
+        frame.origin.x = newX
+        frame.origin.y = newY
+        return
+      }
+
+      let rightEdge = superview.frame.width - frame.width
+      let leftEdge = CGFloat(0)
+
+      if newX < leftEdge {
+        frame.origin.x = leftEdge
+      } else if newX > rightEdge {
+        frame.origin.x = rightEdge
+      } else {
+        frame.origin.x = newX
+      }
+
+      let bottomEdge = superview.frame.height - frame.height
+      let topEdge = CGFloat(0)
+
+      if newY < topEdge {
+        frame.origin.y = topEdge
+      } else if newY > bottomEdge {
+        frame.origin.y = bottomEdge
+      } else {
+        frame.origin.y = newY
+      }
     }
   }
 

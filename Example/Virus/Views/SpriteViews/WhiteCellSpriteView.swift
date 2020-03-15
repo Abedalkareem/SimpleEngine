@@ -16,6 +16,10 @@ class WhiteCellSpriteView: SpriteView {
   let width = 40
   let height = 40
 
+  // MARK: - Private properties
+
+  private var didColideWithVirus = false
+
   // MARK: - Setup
 
   override func setup() {
@@ -28,8 +32,7 @@ class WhiteCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")]
-    frames.defaultDuration = 0
+    frames.idel = Frames(images: [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")])
   }
 
   // MARK: -
@@ -38,10 +41,19 @@ class WhiteCellSpriteView: SpriteView {
     removeFromSuperview()
   }
 
-  override func onCollisionEnter(with object: ObjectView?) {
+  override func onCollisionEnter(with object: ObjectView?) -> Bool {
     super.onCollisionEnter(with: object)
-    if object is FireSpriteView {
-      removeFromSuperview()
+    guard !didColideWithVirus else {
+      return false
     }
+    switch object {
+    case object as FireSpriteView:
+      removeFromSuperview()
+    case object as VirusSpriteView:
+      didColideWithVirus = true
+    default:
+      break
+    }
+    return true
   }
 }
