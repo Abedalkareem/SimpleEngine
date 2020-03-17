@@ -64,6 +64,8 @@ open class SpriteView: ObjectView {
 
   private var imageView: UIImageView!
 
+  private var stopOtherAnimations = false
+
   // MARK: - init
 
   public override init(frame: CGRect) {
@@ -216,16 +218,48 @@ open class SpriteView: ObjectView {
     changeMovment()
   }
 
+  /// Animate frames for the sprite.
+  /// - Parameters:
+  ///   - frames: The frames to animate.
+  ///   - repeatCount: How many time should the frames repeated.
+  ///   The default is `0`.
+  ///   - stopOtherAnimations: Should stop all the other animations
+  ///   like the animation for moving or idel. The default is `false`.
+  ///   - didFinish: a closure to be called when the animation finishs.
+  ///
+  open func startAnimationWith(frames: Frames,
+                               repeatCount: Int = 0,
+                               stopOtherAnimations: Bool = false,
+                               didFinish: (() -> Void)? = nil) {
+    self.stopOtherAnimations = stopOtherAnimations
+
+    imageView.image = UIImage.animatedImage(with: frames.images ?? [],
+                                            duration: frames.duration)
+    imageView.animationRepeatCount = repeatCount
+    imageView.startAnimating()
+
+    let totalAnimationTime = Double(repeatCount) * frames.duration
+    guard totalAnimationTime != 0 else {
+      return
+    }
+    let oneFrameDuration = frames.duration / Double(frames.images?.count ?? 0)
+    DispatchQueue.main.asyncAfter(deadline: .now() + totalAnimationTime - oneFrameDuration) {
+      didFinish?()
+      self.imageView.image = frames.images?.last
+      self.stopOtherAnimations = false
+      self.changeMovment()
+    }
+  }
+
   // MARK: - Private
 
   private func changeMovment() {
-    guard let direction = analog?.direction else {
+    guard let direction = analog?.direction,
+      !stopOtherAnimations else {
       return // in case the the direction did not change go back.
     }
     let frames = self.frames.for(direction)
-    imageView.animationImages = frames.images
-    imageView.animationDuration = frames.duration
-    imageView.startAnimating()
+    startAnimationWith(frames: frames)
   }
 
   private func moveXandYBy(x: CGFloat?, y: CGFloat?) {

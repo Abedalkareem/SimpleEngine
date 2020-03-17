@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="pixel_font.ttf">
+            <string>RetroComputer</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="XMu-Tb-Bxr">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="4uz-Ne-10e" customClass="GameViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dr4-q2-8Yn">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L76-vc-2CS" customClass="BackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JM1-xx-ZLf" customClass="MovingBackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUs-Nw-iSb" customClass="SceneView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6e1-Br-UEe" customClass="LivesView" customModule="SimpleEngine">
+                                <rect key="frame" x="442" y="0.0" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.10000000000000001"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="55F-ce-bxB"/>
+                                    <constraint firstAttribute="width" priority="400" constant="100" id="vgJ-Pm-gcS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="lives_background"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="liveImage" value="live"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="L76-vc-2CS" firstAttribute="leading" secondItem="Dr4-q2-8Yn" secondAttribute="leading" id="28L-0Q-RUR"/>
+                            <constraint firstItem="CUs-Nw-iSb" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="2Gf-mF-ySt"/>
+                            <constraint firstAttribute="trailing" secondItem="CUs-Nw-iSb" secondAttribute="trailing" id="4yD-f5-9Lo"/>
+                            <constraint firstAttribute="trailing" secondItem="L76-vc-2CS" secondAttribute="trailing" id="5Mq-TR-NCH"/>
+                            <constraint firstItem="JM1-xx-ZLf" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="ITt-63-OZ5"/>
+                            <constraint firstItem="L76-vc-2CS" firstAttribute="bottom" secondItem="Dr4-q2-8Yn" secondAttribute="bottom" id="Ja7-9S-sNt"/>
+                            <constraint firstItem="CUs-Nw-iSb" firstAttribute="leading" secondItem="Dr4-q2-8Yn" secondAttribute="leading" id="SaK-II-PUV"/>
+                            <constraint firstItem="nzS-wa-nxI" firstAttribute="trailing" secondItem="6e1-Br-UEe" secondAttribute="trailing" constant="25" id="So3-rw-bE8"/>
+                            <constraint firstAttribute="bottom" secondItem="JM1-xx-ZLf" secondAttribute="bottom" id="Tjl-gI-okr"/>
+                            <constraint firstAttribute="bottom" secondItem="CUs-Nw-iSb" secondAttribute="bottom" id="YyM-3B-xwo"/>
+                            <constraint firstAttribute="trailing" secondItem="JM1-xx-ZLf" secondAttribute="trailing" id="jE4-QQ-bN2"/>
+                            <constraint firstItem="JM1-xx-ZLf" firstAttribute="leading" secondItem="Dr4-q2-8Yn" secondAttribute="leading" id="kDy-bJ-Ro5"/>
+                            <constraint firstItem="L76-vc-2CS" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="mAi-i4-ZiH"/>
+                            <constraint firstItem="6e1-Br-UEe" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="nWG-Vb-8ZE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nzS-wa-nxI"/>
+                    </view>
+                    <connections>
+                        <outlet property="livesView" destination="6e1-Br-UEe" id="k28-c9-6EU"/>
+                        <outlet property="movingBackgroundView" destination="JM1-xx-ZLf" id="5yY-SW-aXv"/>
+                        <outlet property="sceneView" destination="CUs-Nw-iSb" id="C2d-GW-VYF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNo-c0-4V2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.0809595202399" y="114.40000000000001"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="d9c-5A-pkM">
+            <objects>
+                <viewController storyboardIdentifier="GameOverViewController" id="7qW-5g-hVv" customClass="GameOverViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4qS-v0-zYX">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtB-lW-eeS" customClass="BackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="background"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LY-Tw-czy" customClass="MovingBackgroundView" customModule="SimpleEngine">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-jh-ltq">
+                                <rect key="frame" x="206" y="16" width="255" height="58.5"/>
+                                <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="50"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-Ro-Nng">
+                                <rect key="frame" x="143" y="171" width="500" height="180"/>
+                                <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="25"/>
+                                <state key="normal" title="Try again" backgroundImage="button_background">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgain:" destination="7qW-5g-hVv" eventType="touchUpInside" id="fjM-Dq-fz1"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2C-SK-kSX" customClass="ManSpriteView" customModule="Virus" customModuleProvider="target">
+                                <rect key="frame" x="16" y="215" width="160" height="160"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="QcI-Na-wuw"/>
+                                    <constraint firstAttribute="height" constant="160" id="v9Y-hA-rik"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="initialImage" value="man_1"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble" translatesAutoresizingMaskIntoConstraints="NO" id="2Wh-XD-IYj">
+                                <rect key="frame" x="148" y="110" width="202" height="144"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ih-cY-Wnc">
+                                <rect key="frame" x="152" y="110" width="190" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="jsc-qU-Ihm"/>
+                                    <constraint firstAttribute="height" constant="140" id="lyq-YY-SmS"/>
+                                </constraints>
+                                <string key="text">Hahahaha...
+We are human we kill things.. nothing can kill us!</string>
+                                <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Ih-cY-Wnc" firstAttribute="top" secondItem="2Wh-XD-IYj" secondAttribute="top" id="2yH-9e-gft"/>
+                            <constraint firstItem="2Ih-cY-Wnc" firstAttribute="leading" secondItem="2Wh-XD-IYj" secondAttribute="leading" constant="4" id="72d-6K-E6d"/>
+                            <constraint firstItem="EtB-lW-eeS" firstAttribute="top" secondItem="4qS-v0-zYX" secondAttribute="top" id="Edj-Uf-IRs"/>
+                            <constraint firstItem="ADr-jh-ltq" firstAttribute="centerX" secondItem="4qS-v0-zYX" secondAttribute="centerX" id="Ley-Wp-H3s"/>
+                            <constraint firstAttribute="bottom" secondItem="s2C-SK-kSX" secondAttribute="bottom" id="Mui-L6-8Ih"/>
+                            <constraint firstItem="EtB-lW-eeS" firstAttribute="leading" secondItem="4qS-v0-zYX" secondAttribute="leading" id="NN3-bo-Ucl"/>
+                            <constraint firstItem="s2C-SK-kSX" firstAttribute="leading" secondItem="fWT-Cz-Zdz" secondAttribute="leading" constant="16" id="Nxq-du-Uta"/>
+                            <constraint firstItem="2Ih-cY-Wnc" firstAttribute="trailing" secondItem="2Wh-XD-IYj" secondAttribute="trailing" constant="-8" id="PGB-6E-ZoG"/>
+                            <constraint firstItem="0LY-Tw-czy" firstAttribute="leading" secondItem="4qS-v0-zYX" secondAttribute="leading" id="Q9S-Eg-E1M"/>
+                            <constraint firstItem="ADr-jh-ltq" firstAttribute="top" secondItem="fWT-Cz-Zdz" secondAttribute="top" constant="16" id="UX3-Zo-RaG"/>
+                            <constraint firstItem="EtB-lW-eeS" firstAttribute="trailing" secondItem="4qS-v0-zYX" secondAttribute="trailing" id="WAT-QQ-uUj"/>
+                            <constraint firstItem="2Wh-XD-IYj" firstAttribute="leading" secondItem="s2C-SK-kSX" secondAttribute="trailing" constant="-28" id="YJ6-gx-oW0"/>
+                            <constraint firstItem="0LY-Tw-czy" firstAttribute="trailing" secondItem="4qS-v0-zYX" secondAttribute="trailing" id="ZZM-m2-xU6"/>
+                            <constraint firstItem="0LY-Tw-czy" firstAttribute="bottom" secondItem="4qS-v0-zYX" secondAttribute="bottom" id="aNy-NL-FVW"/>
+                            <constraint firstItem="0LY-Tw-czy" firstAttribute="top" secondItem="4qS-v0-zYX" secondAttribute="top" id="bmt-da-nti"/>
+                            <constraint firstItem="fWT-Cz-Zdz" firstAttribute="bottom" secondItem="SfD-Ro-Nng" secondAttribute="bottom" constant="24" id="es1-Cz-ObW"/>
+                            <constraint firstItem="EtB-lW-eeS" firstAttribute="bottom" secondItem="4qS-v0-zYX" secondAttribute="bottom" id="eub-7G-Lec"/>
+                            <constraint firstItem="2Ih-cY-Wnc" firstAttribute="bottom" secondItem="2Wh-XD-IYj" secondAttribute="bottom" constant="-4" id="h6R-Cb-wXm"/>
+                            <constraint firstItem="s2C-SK-kSX" firstAttribute="top" secondItem="2Wh-XD-IYj" secondAttribute="bottom" constant="-39" id="p6g-uK-3mj"/>
+                            <constraint firstItem="fWT-Cz-Zdz" firstAttribute="trailing" secondItem="SfD-Ro-Nng" secondAttribute="trailing" constant="24" id="pS8-VA-g0J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fWT-Cz-Zdz"/>
+                    </view>
+                    <connections>
+                        <outlet property="movingBackgroundView" destination="0LY-Tw-czy" id="FPP-c8-H9K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kma-Rt-UUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.18140929535232" y="888.79999999999995"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1280" height="720"/>
+        <image name="bubble" width="256" height="180"/>
+        <image name="button_background" width="250" height="90"/>
+        <image name="live" width="40" height="36"/>
+        <image name="lives_background" width="200" height="60"/>
+        <image name="man_1" width="196" height="216"/>
+    </resources>
+</document>

@@ -21,24 +21,5 @@ class Status {
       UserDefaults.standard.set(newValue, forKey: "currentLevel")
     }
   }
-
-  ///
-  /// Return current level view controller.
-  ///
-  static func currentLevelViewController() -> UIViewController {
-    let type: UIViewController.Type?
-    let storyboard: Storyboard!
-    
-    switch currentLevel {
-    case 0:
-      type = GameViewController.self
-      storyboard = .main
-    default:
-      type = GameViewController.self
-      storyboard = .main
-    }
-    
-    return UIStoryboard.create(storyboard: storyboard, controller: type!)
-  }
   
 }

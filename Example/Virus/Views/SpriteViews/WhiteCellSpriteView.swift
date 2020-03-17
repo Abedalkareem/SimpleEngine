@@ -18,7 +18,7 @@ class WhiteCellSpriteView: SpriteView {
 
   // MARK: - Private properties
 
-  private var didColideWithVirus = false
+  private var didColide = false
 
   // MARK: - Setup
 
@@ -43,17 +43,28 @@ class WhiteCellSpriteView: SpriteView {
 
   override func onCollisionEnter(with object: ObjectView?) -> Bool {
     super.onCollisionEnter(with: object)
-    guard !didColideWithVirus else {
+    guard !didColide else {
       return false
     }
     switch object {
     case object as FireSpriteView:
-      removeFromSuperview()
+      destroy()
     case object as VirusSpriteView:
-      didColideWithVirus = true
+      destroy()
     default:
       break
     }
     return true
+  }
+
+  private func destroy() {
+    didColide = true
+    let frames = Frames(images: [#imageLiteral(resourceName: "destroy_1"), #imageLiteral(resourceName: "destroy_2"), #imageLiteral(resourceName: "destroy_3"), #imageLiteral(resourceName: "destroy_4")],
+                        duration: 0.2)
+    startAnimationWith(frames: frames,
+                       repeatCount: 1,
+                       stopOtherAnimations: true) {
+                        self.removeFromSuperview()
+    }
   }
 }

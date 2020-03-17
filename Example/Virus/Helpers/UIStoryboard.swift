@@ -33,6 +33,5 @@ extension UIStoryboard {
 ///
 enum Storyboard: String {
   case main = "Main"
-  case house = "House"
-  case forest = "Forest"
+  case game = "Game"
 }

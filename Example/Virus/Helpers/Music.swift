@@ -19,7 +19,7 @@ enum Music: String, MusicType {
     case .gameBackground:
       type = .wav
     case .gameOver:
-      type = .wav
+      type = .mp3
     case .bodyScreen:
       type = .mp3
     case .buttonClicked:

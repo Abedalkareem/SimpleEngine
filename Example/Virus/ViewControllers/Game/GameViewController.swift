@@ -52,9 +52,9 @@ class GameViewController: BaseGameViewController {
   // MARK: -
 
   private func observeForLives() {
-    livesView.livesDidUpdate { numberOfLives in
+    livesView.livesDidUpdate { [weak self] numberOfLives in
       if numberOfLives == 0 {
-        
+        self?.changeViewController(GameOverViewController.instance())
       }
     }
   }
@@ -138,6 +138,12 @@ class GameViewController: BaseGameViewController {
     bloodCellSprite.moveTo(x: view.bounds.width, y: randomY)
   }
 
+  // MARK: - ViewController instance
+
+  static func instance() -> GameViewController {
+    return UIStoryboard.create(storyboard: .game, controller: GameViewController.self)
+  }
+  
   // MARK: - deinit
 
   deinit {

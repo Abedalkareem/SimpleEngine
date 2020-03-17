@@ -75,7 +75,14 @@ class MainViewController: BaseGameViewController {
 
   @IBAction func start(_ sender: Any) {
     MusicPlayer.shared.playMusic(music: Music.buttonClicked)
-    changeViewController(Status.currentLevelViewController())
+    let viewController = GameViewController.instance()
+    changeViewController(viewController)
+  }
+
+  // MARK: - ViewController instance
+
+  static func instance() -> MainViewController {
+    return UIStoryboard.create(storyboard: .main, controller: MainViewController.self)
   }
 
 }
