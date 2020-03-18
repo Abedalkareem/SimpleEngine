@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Virus
+
+  Created by abedalkareem omreyh on 18/03/2020.
+  Copyright © 2020 abedalkareem. All rights reserved.
+*/
+
+"attack" = "Attack!";
+"start_again" = "Start Again";
+
+"mission_1_title" = "First mission!";
+"mission_2_title" = "Second mission!";
+"mission_3_title" = "Third mission!";
+"mission_4_title" = "Forth mission!";
+"mission_5_title" = "Fifth mission!";
+"mission_6_title" = "Sixth mission!";
+"mission_7_title" = "Seventh mission!";
+"mission_8_title" = "Final mission!";
+"mission_9_title" = "Good job!!";
+"mission_1_description" = "We are at a critical point in history.. human is making war destroying our planet so we need to stop them before it’s to late. Your first mission is to enter this human body!";
+"mission_2_description" = "Your second mission is very important, we need to attack the brain, the thing human use to think and plan all this bad things… be careful.";
+"mission_3_description" = "The Third mission is to destroy lungs, it’s the thing human use to breathe if you destroy it you will weaken him and he will not be able to breathe.";
+"mission_4_description" = "Attack the Liver.";
+"mission_5_description" = "Attack intestines.";
+"mission_6_description" = "Attack The !@#$%$#@! it’s the thing human use to reproduction, destroy it and half of our problem solved even if he survived this attack.";
+"mission_7_description" = "Attack The stomach";
+"mission_8_description" = "Attack The Heart and end this!, try to make it hard!";
+"mission_9_description" = "The world now can leave in piece. Now we can build our new world! Thank you!";

@@ -233,9 +233,8 @@ open class SpriteView: ObjectView {
                                didFinish: (() -> Void)? = nil) {
     self.stopOtherAnimations = stopOtherAnimations
 
-    imageView.image = UIImage.animatedImage(with: frames.images ?? [],
-                                            duration: frames.duration)
-    imageView.animationRepeatCount = repeatCount
+    imageView.animationImages = frames.images
+    imageView.animationDuration = frames.duration
     imageView.startAnimating()
 
     let totalAnimationTime = Double(repeatCount) * frames.duration
@@ -245,6 +244,7 @@ open class SpriteView: ObjectView {
     let oneFrameDuration = frames.duration / Double(frames.images?.count ?? 0)
     DispatchQueue.main.asyncAfter(deadline: .now() + totalAnimationTime - oneFrameDuration) {
       didFinish?()
+      self.imageView.stopAnimating()
       self.imageView.image = frames.images?.last
       self.stopOtherAnimations = false
       self.changeMovment()

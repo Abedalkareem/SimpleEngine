@@ -67,6 +67,9 @@ class VirusSpriteView: SpriteView {
     spriteView.frame = CGRect(x: center.x, y: center.y, width: 20, height: 20)
     sceneView.addSubview(spriteView)
     spriteView.moveTo(x: 20, y: center.y)
+    DispatchQueue.global().async {
+      SimpleMusicPlayer.shared.playMusic(music: Music.fire)
+    }
   }
 
   // MARK: - deinit

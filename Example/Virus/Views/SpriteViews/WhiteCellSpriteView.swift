@@ -66,5 +66,9 @@ class WhiteCellSpriteView: SpriteView {
                        stopOtherAnimations: true) {
                         self.removeFromSuperview()
     }
+
+    DispatchQueue.global().async {
+      SimpleMusicPlayer.shared.playMusic(music: Music.liveDestroyed)
+    }
   }
 }

@@ -24,7 +24,7 @@
 		B13FF6AA68ECC412003B3CD6B86FB7F3 /* Pods-Virus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCC7B816F415DA0AF403E7E40E25AC1 /* Pods-Virus-dummy.m */; };
 		B77ED7B8C495633573753DD94036D538 /* Pods-Virus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C28F10EE1FD92E7DC0AA4A002963DF9E /* Pods-Virus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C64570C7241BC13800D6C003 /* LivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C5241BC0EB00D6C003 /* LivesView.swift */; };
-		C6DC70DD241CA3D200D4AB55 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70DC241CA3D200D4AB55 /* MusicPlayer.swift */; };
+		C6DC70DD241CA3D200D4AB55 /* SimpleMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70DC241CA3D200D4AB55 /* SimpleMusicPlayer.swift */; };
 		C6DC70EF241E80E200D4AB55 /* Frames.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70EE241E80E200D4AB55 /* Frames.swift */; };
 		DB635D354432204938D4579980AC130B /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511166AF4ACA5A740784CDAE7B29E5E3 /* UIViewController+Helpers.swift */; };
 		E6DFD53D4431A78D98149ECD2FA92606 /* SimpleEngine-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 992261BB4F5F3817745FA69BE454549C /* SimpleEngine-dummy.m */; };
@@ -72,7 +72,7 @@
 		BB3253593E25DAEA548F12F22CAEF086 /* Pods-Virus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Virus.debug.xcconfig"; sourceTree = "<group>"; };
 		C28F10EE1FD92E7DC0AA4A002963DF9E /* Pods-Virus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Virus-umbrella.h"; sourceTree = "<group>"; };
 		C64570C5241BC0EB00D6C003 /* LivesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivesView.swift; sourceTree = "<group>"; };
-		C6DC70DC241CA3D200D4AB55 /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		C6DC70DC241CA3D200D4AB55 /* SimpleMusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMusicPlayer.swift; sourceTree = "<group>"; };
 		C6DC70EE241E80E200D4AB55 /* Frames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frames.swift; sourceTree = "<group>"; };
 		D401EE122ABE3B17E7FD8ABB4E866235 /* Analog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Analog.swift; sourceTree = "<group>"; };
 		DC2F171760A258D355ED80505468D2E5 /* Pods-Virus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Virus.modulemap"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		CB01704D8808BEC87858E306EEDE3D60 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C6DC70DC241CA3D200D4AB55 /* MusicPlayer.swift */,
+				C6DC70DC241CA3D200D4AB55 /* SimpleMusicPlayer.swift */,
 				AD69467A6A08C2E1785E7A86D58A6BCC /* Debouncer.swift */,
 			);
 			name = Helpers;
@@ -415,7 +415,7 @@
 				C6DC70EF241E80E200D4AB55 /* Frames.swift in Sources */,
 				833416410ABD7545704AFF992A030E48 /* DialogView.swift in Sources */,
 				1278EFECF24EBFAB8F0D9F3C3BA9270B /* Direction.swift in Sources */,
-				C6DC70DD241CA3D200D4AB55 /* MusicPlayer.swift in Sources */,
+				C6DC70DD241CA3D200D4AB55 /* SimpleMusicPlayer.swift in Sources */,
 				C64570C7241BC13800D6C003 /* LivesView.swift in Sources */,
 				7F90703A4F0F0C9448A22C3A4D73D8A1 /* MovingBackgroundView.swift in Sources */,
 				2631EB4AB355E3EFABC5267A3B4B2F94 /* NodeView.swift in Sources */,

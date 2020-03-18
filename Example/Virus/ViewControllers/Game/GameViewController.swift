@@ -24,6 +24,12 @@ class GameViewController: BaseGameViewController {
   private var bloodTimer: Timer?
   private var whiteTimer: Timer?
 
+  private var goalNumber = 0.0
+  private var currentNumber = 0.0
+  private var infectionGoal: Double {
+    Double(Status.currentLevel) * 0.1
+  }
+
   // MARK: - ViewController lifecycle
   
   override func viewDidLoad() {
@@ -35,9 +41,11 @@ class GameViewController: BaseGameViewController {
 
     observeForLives()
 
-    livesView.livesCount = 4
-
     playBackgroundMusic()
+
+    livesView.livesCount = 4
+    goalNumber = infectionGoal * 50
+    currentNumber = 0
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +54,7 @@ class GameViewController: BaseGameViewController {
   }
 
   private func playBackgroundMusic() {
-    MusicPlayer.shared.playBackgroundMusicWith(music: Music.gameBackground)
+    SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.gameBackground)
   }
 
   // MARK: -
@@ -54,7 +62,7 @@ class GameViewController: BaseGameViewController {
   private func observeForLives() {
     livesView.livesDidUpdate { [weak self] numberOfLives in
       if numberOfLives == 0 {
-        self?.changeViewController(GameOverViewController.instance())
+        self?.showGameOverController()
       }
     }
   }
@@ -90,9 +98,9 @@ class GameViewController: BaseGameViewController {
     case (CollideTypes.whiteCell, CollideTypes.virus):
       return collideBetween(virus: object2, whiteCell: object1)
     case (CollideTypes.fire, CollideTypes.blood):
-      return collideBetween(fire: object2, blood: object1)
-    case (CollideTypes.blood, CollideTypes.fire):
       return collideBetween(fire: object1, blood: object2)
+    case (CollideTypes.blood, CollideTypes.fire):
+      return collideBetween(fire: object2, blood: object1)
     default:
       break
     }
@@ -105,6 +113,12 @@ class GameViewController: BaseGameViewController {
   }
 
   private func collideBetween(fire: ObjectView, blood: ObjectView) -> Bool {
+    currentNumber += 1
+    if currentNumber == goalNumber {
+      Status.currentLevel += 1
+      showLevelsController()
+      return false
+    }
     return true
   }
 
@@ -136,6 +150,18 @@ class GameViewController: BaseGameViewController {
     bloodCellSprite.frame.origin = CGPoint(x: -width, y: randomY)
     sceneView.addSubview(bloodCellSprite)
     bloodCellSprite.moveTo(x: view.bounds.width, y: randomY)
+  }
+
+  // MARK: -
+
+  private func showLevelsController() {
+    let viewController = LevelsViewController.instance()
+    changeViewController(viewController)
+  }
+
+  private func showGameOverController() {
+    let viewController = GameOverViewController.instance()
+    changeViewController(viewController)
   }
 
   // MARK: - ViewController instance

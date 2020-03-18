@@ -32,7 +32,7 @@ class BloodCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = Frames(images: [#imageLiteral(resourceName: "blood_cell"), #imageLiteral(resourceName: "blood_cell")])
+    frames.idel = Frames(images: [#imageLiteral(resourceName: "blood_cell")])
   }
 
   // MARK: -
@@ -47,10 +47,19 @@ class BloodCellSpriteView: SpriteView {
       return false
     }
     if object is FireSpriteView || object is VirusSpriteView {
-      notInfected = false
-      frames.idel = Frames(images: [#imageLiteral(resourceName: "infected_blood_cell")])
-      updateFrames()
+      infect()
     }
     return true
+  }
+
+  private func infect() {
+    notInfected = false
+    let frames = Frames(images: [#imageLiteral(resourceName: "infected_1"), #imageLiteral(resourceName: "infected_2"), #imageLiteral(resourceName: "infected_3"), #imageLiteral(resourceName: "infected_4"), #imageLiteral(resourceName: "infected_5"), #imageLiteral(resourceName: "infected_6")], duration: 0.4)
+    startAnimationWith(frames: frames,
+                       repeatCount: 1,
+                       stopOtherAnimations: false) {
+      self.frames.idel = Frames(images: [#imageLiteral(resourceName: "infected_6")])
+      self.updateFrames()
+    }
   }
 }

@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     AnalogView.Settings.analogSize = 100
     AnalogView.Settings.margen = 25
 
+    SimpleMusicPlayer.shared.backgroundAudioPlayerVolume = 0.8
+
     return true
   }
 

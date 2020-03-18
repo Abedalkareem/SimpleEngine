@@ -27,10 +27,12 @@ enum Music: String, MusicType {
     case .fire:
       type = .wav
     case .win:
-      type = .wav
+      type = .mp3
     case .liveDestroyed:
       type = .wav
     case .finalFight:
+      type = .mp3
+    case .virusVoice:
       type = .mp3
     }
     return type.rawValue
@@ -39,12 +41,13 @@ enum Music: String, MusicType {
   case mainMenu = "main_menu"
   case gameBackground = "new_battle"
   case gameOver = "game_over"
-  case bodyScreen = "body_screen"
+  case bodyScreen = "levels"
   case fire = "fire"
   case buttonClicked = "button_clicked"
-  case win
-  case liveDestroyed = "live_destroyed"
+  case win = "victory"
+  case liveDestroyed = "explosion"
   case finalFight = "final_fight"
+  case virusVoice = "virus_voice"
 }
 
 enum Type: String {

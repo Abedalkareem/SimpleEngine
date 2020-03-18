@@ -1,6 +1,20 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 20,
+          "height" : 20
+        },
+        "cap-insets" : {
+          "bottom" : 20,
+          "top" : 20,
+          "right" : 20,
+          "left" : 20
+        }
+      },
       "idiom" : "universal",
       "filename" : "button_background.png",
       "scale" : "1x"

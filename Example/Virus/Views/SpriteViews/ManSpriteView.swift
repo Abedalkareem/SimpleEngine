@@ -17,7 +17,7 @@ class ManSpriteView: SpriteView {
   override func setup() {
     super.setup()
     #if !TARGET_INTERFACE_BUILDER
-    startAnimationWith(frames: Frames(images: [#imageLiteral(resourceName: "man_2"), #imageLiteral(resourceName: "man_1")], duration: 0.2), repeatCount: 10)
+    startAnimationWith(frames: Frames(images: [#imageLiteral(resourceName: "man_2"), #imageLiteral(resourceName: "man_1")], duration: 0.2))
     #endif
   }
 

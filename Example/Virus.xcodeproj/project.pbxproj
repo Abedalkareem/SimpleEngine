@@ -12,6 +12,17 @@
 		C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */; };
 		C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */; };
 		C6B5232C241FF65C00061421 /* ManSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232B241FF65C00061421 /* ManSpriteView.swift */; };
+		C6B523302421579C00061421 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232F2421579B00061421 /* LevelsViewController.swift */; };
+		C6B523322421EE4D00061421 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B523312421EE4C00061421 /* GameKitHelper.swift */; };
+		C6B52334242215E500061421 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B52333242215E500061421 /* GameKit.framework */; };
+		C6B523382422196500061421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6B5233A2422196500061421 /* Localizable.strings */; };
+		C6B5233C24221B9000061421 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5233B24221B9000061421 /* String+Helpers.swift */; };
+		C6B5233E2422218800061421 /* levels.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C6B5233D2422218800061421 /* levels.mp3 */; };
+		C6B523402422223100061421 /* victory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C6B5233F2422223100061421 /* victory.mp3 */; };
+		C6B523442422282800061421 /* fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6B523432422282700061421 /* fire.wav */; };
+		C6B523462422290D00061421 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6B523452422290D00061421 /* explosion.wav */; };
+		C6B5234824222C0900061421 /* virus_voice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C6B5234724222C0900061421 /* virus_voice.mp3 */; };
+		C6B5234A2422301700061421 /* TalkingVirusSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B523492422301700061421 /* TalkingVirusSpriteView.swift */; };
 		C6DC70D7241BC2D100D4AB55 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */; };
 		C6DC70DB241C319600D4AB55 /* pixel_font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70DA241C319600D4AB55 /* pixel_font.ttf */; };
 		C6DC70DF241CA44300D4AB55 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70DE241CA44300D4AB55 /* Music.swift */; };
@@ -41,6 +52,17 @@
 		C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellSpriteView.swift; sourceTree = "<group>"; };
 		C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCellSpriteView.swift; sourceTree = "<group>"; };
 		C6B5232B241FF65C00061421 /* ManSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManSpriteView.swift; sourceTree = "<group>"; };
+		C6B5232F2421579B00061421 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
+		C6B523312421EE4C00061421 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
+		C6B52333242215E500061421 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		C6B523392422196500061421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C6B5233B24221B9000061421 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		C6B5233D2422218800061421 /* levels.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levels.mp3; sourceTree = "<group>"; };
+		C6B5233F2422223100061421 /* victory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = victory.mp3; sourceTree = "<group>"; };
+		C6B523432422282700061421 /* fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fire.wav; sourceTree = "<group>"; };
+		C6B523452422290D00061421 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		C6B5234724222C0900061421 /* virus_voice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = virus_voice.mp3; sourceTree = "<group>"; };
+		C6B523492422301700061421 /* TalkingVirusSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkingVirusSpriteView.swift; sourceTree = "<group>"; };
 		C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C6DC70DA241C319600D4AB55 /* pixel_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixel_font.ttf; sourceTree = "<group>"; };
 		C6DC70DE241CA44300D4AB55 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -70,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B8D002087A963564ABE0AB /* Pods_Virus.framework in Frameworks */,
+				C6B52334242215E500061421 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +102,7 @@
 		32933C867A6F05E99E39480B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6B52333242215E500061421 /* GameKit.framework */,
 				E5931627F095129915EA8B5A /* Pods_Virus.framework */,
 			);
 			name = Frameworks;
@@ -93,10 +117,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C6B523352422194900061421 /* strings */ = {
+			isa = PBXGroup;
+			children = (
+				C6B5233A2422196500061421 /* Localizable.strings */,
+			);
+			path = strings;
+			sourceTree = "<group>";
+		};
 		C6DC70D5241BC2BC00D4AB55 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */,
+				C6B5232F2421579B00061421 /* LevelsViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -104,6 +137,7 @@
 		C6DC70D8241C314900D4AB55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C6B523352422194900061421 /* strings */,
 				C6DC70E0241CB0A000D4AB55 /* music */,
 				C6DC70D9241C319600D4AB55 /* fonts */,
 				C6FF68702417692E008F9B02 /* Assets */,
@@ -122,7 +156,12 @@
 		C6DC70E0241CB0A000D4AB55 /* music */ = {
 			isa = PBXGroup;
 			children = (
+				C6B5233D2422218800061421 /* levels.mp3 */,
 				C62FE400241F4C270071B7A8 /* game_over.mp3 */,
+				C6B5234724222C0900061421 /* virus_voice.mp3 */,
+				C6B523452422290D00061421 /* explosion.wav */,
+				C6B5233F2422223100061421 /* victory.mp3 */,
+				C6B523432422282700061421 /* fire.wav */,
 				C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */,
 				C6DC70E8241CB50D00D4AB55 /* new_battle.wav */,
 				C6DC70E1241CB0A700D4AB55 /* main_menu.wav */,
@@ -189,6 +228,7 @@
 				C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */,
 				C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */,
 				C6B5232B241FF65C00061421 /* ManSpriteView.swift */,
+				C6B523492422301700061421 /* TalkingVirusSpriteView.swift */,
 			);
 			path = SpriteViews;
 			sourceTree = "<group>";
@@ -198,8 +238,10 @@
 			children = (
 				C6FF686F2417692D008F9B02 /* CollideTypes.swift */,
 				C6DC70DE241CA44300D4AB55 /* Music.swift */,
+				C6B523312421EE4C00061421 /* GameKitHelper.swift */,
 				C6DC70E6241CB39300D4AB55 /* Status.swift */,
 				C6DC70E3241CB2F800D4AB55 /* UIStoryboard.swift */,
+				C6B5233B24221B9000061421 /* String+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -322,14 +364,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B5234824222C0900061421 /* virus_voice.mp3 in Resources */,
+				C6B523442422282800061421 /* fire.wav in Resources */,
 				C6DC70F1241F306900D4AB55 /* Game.storyboard in Resources */,
+				C6B523462422290D00061421 /* explosion.wav in Resources */,
 				C6FF68822417692E008F9B02 /* LaunchScreen.storyboard in Resources */,
 				C6DC70EB241CB7A300D4AB55 /* button_clicked.wav in Resources */,
 				C6FF687F2417692E008F9B02 /* Assets.xcassets in Resources */,
 				C6DC70DB241C319600D4AB55 /* pixel_font.ttf in Resources */,
+				C6B523402422223100061421 /* victory.mp3 in Resources */,
+				C6B523382422196500061421 /* Localizable.strings in Resources */,
 				C62FE401241F4C270071B7A8 /* game_over.mp3 in Resources */,
 				C6FF68832417692E008F9B02 /* Main.storyboard in Resources */,
 				C6DC70E2241CB0A700D4AB55 /* main_menu.wav in Resources */,
+				C6B5233E2422218800061421 /* levels.mp3 in Resources */,
 				C6DC70E9241CB50D00D4AB55 /* new_battle.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,17 +431,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B523322421EE4D00061421 /* GameKitHelper.swift in Sources */,
 				C6DC70E4241CB2F800D4AB55 /* UIStoryboard.swift in Sources */,
 				C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */,
 				C6FF68802417692E008F9B02 /* GameViewController.swift in Sources */,
+				C6B5233C24221B9000061421 /* String+Helpers.swift in Sources */,
 				C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */,
 				C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */,
 				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,
+				C6B523302421579C00061421 /* LevelsViewController.swift in Sources */,
 				C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */,
 				C6DC70D7241BC2D100D4AB55 /* MainViewController.swift in Sources */,
 				C6B5232C241FF65C00061421 /* ManSpriteView.swift in Sources */,
 				C6DC70DF241CA44300D4AB55 /* Music.swift in Sources */,
 				C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */,
+				C6B5234A2422301700061421 /* TalkingVirusSpriteView.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
 				C6DC70E7241CB39300D4AB55 /* Status.swift in Sources */,
 				C62FE3FF241F38B40071B7A8 /* GameOverViewController.swift in Sources */,
@@ -403,6 +455,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C6B5233A2422196500061421 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6B523392422196500061421 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C6FF68772417692E008F9B02 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

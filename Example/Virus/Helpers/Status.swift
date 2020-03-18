@@ -21,5 +21,8 @@ class Status {
       UserDefaults.standard.set(newValue, forKey: "currentLevel")
     }
   }
-  
+
+  static var isGameEnd: Bool {
+    currentLevel == 8
+  }
 }

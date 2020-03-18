@@ -26,6 +26,7 @@ class MainViewController: BaseGameViewController {
 
     setupViews()
     playBackgroundMusic()
+    authenticateUser()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -43,8 +44,16 @@ class MainViewController: BaseGameViewController {
     analogView.isHidden = true
   }
 
+  func authenticateUser() {
+    GameKitHelper.shared.authenticateUser { (vc) in
+      if let vc = vc {
+        self.present(vc, animated: true, completion: nil)
+      }
+    }
+  }
+
   private func playBackgroundMusic() {
-    MusicPlayer.shared.playBackgroundMusicWith(music: Music.mainMenu)
+    SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.mainMenu)
   }
 
   // MARK: -
@@ -74,9 +83,19 @@ class MainViewController: BaseGameViewController {
   // MARK: - Properties
 
   @IBAction func start(_ sender: Any) {
-    MusicPlayer.shared.playMusic(music: Music.buttonClicked)
-    let viewController = GameViewController.instance()
+    SimpleMusicPlayer.shared.playMusic(music: Music.buttonClicked)
+    let viewController = LevelsViewController.instance()
     changeViewController(viewController)
+  }
+
+  @IBAction func topPlayers(_ sender: Any) {
+    let vc = GameKitHelper.shared.getGameCenterControllerWith(viewState: .leaderboards)
+    present(vc, animated: true, completion: nil)
+  }
+
+  @IBAction func achievements(_ sender: Any) {
+    let vc = GameKitHelper.shared.getGameCenterControllerWith(viewState: .achievements)
+    present(vc, animated: true, completion: nil)
   }
 
   // MARK: - ViewController instance

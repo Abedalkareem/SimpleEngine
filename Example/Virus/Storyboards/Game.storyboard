@@ -117,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-Ro-Nng">
-                                <rect key="frame" x="143" y="171" width="500" height="180"/>
+                                <rect key="frame" x="523" y="231" width="120" height="120"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="25"/>
                                 <state key="normal" title="Try again" backgroundImage="button_background">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -190,7 +190,7 @@ We are human we kill things.. nothing can kill us!</string>
     <resources>
         <image name="background" width="1280" height="720"/>
         <image name="bubble" width="256" height="180"/>
-        <image name="button_background" width="250" height="90"/>
+        <image name="button_background" width="60" height="60"/>
         <image name="live" width="40" height="36"/>
         <image name="lives_background" width="200" height="60"/>
         <image name="man_1" width="196" height="216"/>
