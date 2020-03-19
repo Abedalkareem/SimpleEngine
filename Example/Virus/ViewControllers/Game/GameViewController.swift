@@ -15,7 +15,7 @@ class GameViewController: BaseGameViewController {
 
   @IBOutlet private weak var movingBackgroundView: MovingBackgroundView!
   @IBOutlet private weak var livesView: LivesView!
-
+  @IBOutlet private weak var progressView: ProgressView!
 
   // MARK: - Private properties
 
@@ -26,7 +26,9 @@ class GameViewController: BaseGameViewController {
 
   private var goalNumber = 0
   private var currentNumber = 0.0
-  private var infectionGoal: Double {
+  private var bloodTimerInterval = 0.0
+  private var whiteTimerInterval = 0.0
+  private var gameDifficulty: Double {
     Double(Status.currentLevel + 1) * 0.1
   }
 
@@ -34,6 +36,8 @@ class GameViewController: BaseGameViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    setGamDifficulty()
 
     addVirus()
     startBloodTimer()
@@ -44,8 +48,6 @@ class GameViewController: BaseGameViewController {
     playBackgroundMusic()
 
     livesView.livesCount = 4
-    goalNumber = Int(infectionGoal * 50)
-    currentNumber = 0
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +57,13 @@ class GameViewController: BaseGameViewController {
 
   private func playBackgroundMusic() {
     SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.gameBackground)
+  }
+
+  private func setGamDifficulty() {
+    goalNumber = Int(gameDifficulty * 50)
+    bloodTimerInterval = (0.5 + gameDifficulty) * 2
+    whiteTimerInterval = (1 - gameDifficulty) * 1.5
+    currentNumber = 0
   }
 
   // MARK: -
@@ -68,7 +77,8 @@ class GameViewController: BaseGameViewController {
   }
 
   private func startBloodTimer() {
-    bloodTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+    bloodTimer = Timer.scheduledTimer(withTimeInterval: bloodTimerInterval,
+                                      repeats: true) { [weak self] _ in
       self?.addBloodCells()
     }
   }
@@ -79,7 +89,8 @@ class GameViewController: BaseGameViewController {
   }
 
   private func startWhiteTimer() {
-    whiteTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] _ in
+    whiteTimer = Timer.scheduledTimer(withTimeInterval: whiteTimerInterval,
+                                      repeats: true) { [weak self] _ in
       self?.addWhiteCells()
     }
   }
@@ -114,8 +125,9 @@ class GameViewController: BaseGameViewController {
 
   private func collideBetween(fire: ObjectView, blood: ObjectView) -> Bool {
     currentNumber += 1
+    progressView.update(CGFloat(currentNumber / Double(goalNumber)))
     GameKitHelper.shared.report(score: Int64(currentNumber))
-    if currentNumber == goalNumber {
+    if Int(currentNumber) == goalNumber {
       Status.currentLevel += 1
       showLevelsController()
       return false

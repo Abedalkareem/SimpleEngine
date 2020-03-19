@@ -16,6 +16,7 @@
         <!--Game View Controller-->
         <scene sceneID="XMu-Tb-Bxr">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNo-c0-4V2" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="GameViewController" id="4uz-Ne-10e" customClass="GameViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dr4-q2-8Yn">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
@@ -61,6 +62,19 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="liveImage" value="live"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vux-ro-ypA" customClass="ProgressView" customModule="Virus" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="200" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="V1w-mT-wQF"/>
+                                    <constraint firstAttribute="height" constant="40" id="pnw-gd-lIq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="backgroundImage" value="progress_background"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="progressImage" value="progress_infected_blood"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="progressBackgroundImage" value="progress_blood"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -68,6 +82,8 @@
                             <constraint firstItem="CUs-Nw-iSb" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="2Gf-mF-ySt"/>
                             <constraint firstAttribute="trailing" secondItem="CUs-Nw-iSb" secondAttribute="trailing" id="4yD-f5-9Lo"/>
                             <constraint firstAttribute="trailing" secondItem="L76-vc-2CS" secondAttribute="trailing" id="5Mq-TR-NCH"/>
+                            <constraint firstItem="vux-ro-ypA" firstAttribute="leading" secondItem="nzS-wa-nxI" secondAttribute="leading" constant="16" id="9wd-Mp-vAK"/>
+                            <constraint firstItem="vux-ro-ypA" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" constant="16" id="CZ8-FA-LOc"/>
                             <constraint firstItem="JM1-xx-ZLf" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="ITt-63-OZ5"/>
                             <constraint firstItem="L76-vc-2CS" firstAttribute="bottom" secondItem="Dr4-q2-8Yn" secondAttribute="bottom" id="Ja7-9S-sNt"/>
                             <constraint firstItem="CUs-Nw-iSb" firstAttribute="leading" secondItem="Dr4-q2-8Yn" secondAttribute="leading" id="SaK-II-PUV"/>
@@ -84,10 +100,10 @@
                     <connections>
                         <outlet property="livesView" destination="6e1-Br-UEe" id="k28-c9-6EU"/>
                         <outlet property="movingBackgroundView" destination="JM1-xx-ZLf" id="5yY-SW-aXv"/>
+                        <outlet property="progressView" destination="vux-ro-ypA" id="AgQ-oj-kD7"/>
                         <outlet property="sceneView" destination="CUs-Nw-iSb" id="C2d-GW-VYF"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNo-c0-4V2" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.0809595202399" y="114.40000000000001"/>
         </scene>
@@ -209,5 +225,8 @@ We are human we kill things.. nothing can kill us!</string>
         <image name="live" width="40" height="36"/>
         <image name="lives_background" width="200" height="60"/>
         <image name="man_1" width="196" height="216"/>
+        <image name="progress_background" width="250" height="46"/>
+        <image name="progress_blood" width="232" height="14"/>
+        <image name="progress_infected_blood" width="232" height="14"/>
     </resources>
 </document>
