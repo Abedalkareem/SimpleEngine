@@ -16,6 +16,7 @@
         <!--Main View Controller-->
         <scene sceneID="WgL-nu-qjM">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egd-bG-Izb" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MainViewController" id="bWG-DT-GHG" customClass="MainViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mgr-IA-qOy">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
@@ -118,7 +119,6 @@
                         <outlet property="sceneView" destination="6Tg-R4-WUJ" id="6Ed-Tm-ShV"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Egd-bG-Izb" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.0809595202399" y="-716"/>
         </scene>
@@ -167,13 +167,13 @@
                                     <constraint firstAttribute="width" constant="250" id="NK8-de-Wl4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-U2-VjV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-U2-VjV">
                                 <rect key="frame" x="298" y="141" width="246" height="23.5"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cre-Wx-gnt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="755" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cre-Wx-gnt">
                                 <rect key="frame" x="298" y="102" width="246" height="31"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

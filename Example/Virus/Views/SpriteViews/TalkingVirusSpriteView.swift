@@ -17,7 +17,7 @@ class TalkingVirusSpriteView: SpriteView {
   override func setup() {
     super.setup()
     #if !TARGET_INTERFACE_BUILDER
-    startAnimationWith(frames: Frames(images: [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")], duration: 0.2))
+    startAnimationWith(frames: Frames(images: [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")], duration: 1))
     #endif
   }
 

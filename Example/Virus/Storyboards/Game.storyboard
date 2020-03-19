@@ -110,6 +110,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-rG-WjE">
+                                <rect key="frame" x="522" y="91" width="121" height="120"/>
+                                <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Home" backgroundImage="button_background">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="home:" destination="7qW-5g-hVv" eventType="touchUpInside" id="Eyk-l3-fVA"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-jh-ltq">
                                 <rect key="frame" x="206" y="16" width="255" height="58.5"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="50"/>
@@ -117,8 +128,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-Ro-Nng">
-                                <rect key="frame" x="523" y="231" width="120" height="120"/>
+                                <rect key="frame" x="522" y="231" width="121" height="120"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Try again" backgroundImage="button_background">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -149,13 +161,14 @@
                                 <string key="text">Hahahaha...
 We are human we kill things.. nothing can kill us!</string>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2Ih-cY-Wnc" firstAttribute="top" secondItem="2Wh-XD-IYj" secondAttribute="top" id="2yH-9e-gft"/>
+                            <constraint firstItem="SfD-Ro-Nng" firstAttribute="top" secondItem="PSx-rG-WjE" secondAttribute="bottom" constant="20" id="53s-ju-TQi"/>
                             <constraint firstItem="2Ih-cY-Wnc" firstAttribute="leading" secondItem="2Wh-XD-IYj" secondAttribute="leading" constant="4" id="72d-6K-E6d"/>
                             <constraint firstItem="EtB-lW-eeS" firstAttribute="top" secondItem="4qS-v0-zYX" secondAttribute="top" id="Edj-Uf-IRs"/>
                             <constraint firstItem="ADr-jh-ltq" firstAttribute="centerX" secondItem="4qS-v0-zYX" secondAttribute="centerX" id="Ley-Wp-H3s"/>
@@ -164,11 +177,13 @@ We are human we kill things.. nothing can kill us!</string>
                             <constraint firstItem="s2C-SK-kSX" firstAttribute="leading" secondItem="fWT-Cz-Zdz" secondAttribute="leading" constant="16" id="Nxq-du-Uta"/>
                             <constraint firstItem="2Ih-cY-Wnc" firstAttribute="trailing" secondItem="2Wh-XD-IYj" secondAttribute="trailing" constant="-8" id="PGB-6E-ZoG"/>
                             <constraint firstItem="0LY-Tw-czy" firstAttribute="leading" secondItem="4qS-v0-zYX" secondAttribute="leading" id="Q9S-Eg-E1M"/>
+                            <constraint firstItem="PSx-rG-WjE" firstAttribute="width" secondItem="SfD-Ro-Nng" secondAttribute="width" id="SCq-gm-6Pd"/>
                             <constraint firstItem="ADr-jh-ltq" firstAttribute="top" secondItem="fWT-Cz-Zdz" secondAttribute="top" constant="16" id="UX3-Zo-RaG"/>
                             <constraint firstItem="EtB-lW-eeS" firstAttribute="trailing" secondItem="4qS-v0-zYX" secondAttribute="trailing" id="WAT-QQ-uUj"/>
                             <constraint firstItem="2Wh-XD-IYj" firstAttribute="leading" secondItem="s2C-SK-kSX" secondAttribute="trailing" constant="-28" id="YJ6-gx-oW0"/>
                             <constraint firstItem="0LY-Tw-czy" firstAttribute="trailing" secondItem="4qS-v0-zYX" secondAttribute="trailing" id="ZZM-m2-xU6"/>
                             <constraint firstItem="0LY-Tw-czy" firstAttribute="bottom" secondItem="4qS-v0-zYX" secondAttribute="bottom" id="aNy-NL-FVW"/>
+                            <constraint firstItem="PSx-rG-WjE" firstAttribute="centerX" secondItem="SfD-Ro-Nng" secondAttribute="centerX" id="aYO-bd-K09"/>
                             <constraint firstItem="0LY-Tw-czy" firstAttribute="top" secondItem="4qS-v0-zYX" secondAttribute="top" id="bmt-da-nti"/>
                             <constraint firstItem="fWT-Cz-Zdz" firstAttribute="bottom" secondItem="SfD-Ro-Nng" secondAttribute="bottom" constant="24" id="es1-Cz-ObW"/>
                             <constraint firstItem="EtB-lW-eeS" firstAttribute="bottom" secondItem="4qS-v0-zYX" secondAttribute="bottom" id="eub-7G-Lec"/>

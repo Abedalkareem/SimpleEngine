@@ -26,6 +26,7 @@ class LevelsViewController: BaseGameViewController {
 
     setupViews()
     playBackgroundMusic()
+    reportAchievement()
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -50,9 +51,38 @@ class LevelsViewController: BaseGameViewController {
     SimpleMusicPlayer.shared.playMusic(music: Music.virusVoice)
   }
 
+  private func reportAchievement() {
+    var achievement: Achievement = .achievement1
+    switch Status.currentLevel {
+    case 1:
+      achievement = .achievement2
+    case 2:
+      achievement = .achievement3
+    case 3:
+      achievement = .achievement4
+    case 4:
+      achievement = .achievement5
+    case 5:
+      achievement = .achievement6
+    case 6:
+      achievement = .achievement7
+    case 7:
+      achievement = .achievement8
+    case 8:
+      achievement = .achievement9
+    default:
+      break
+    }
+    if Status.isGameEnd {
+      GameKitHelper.shared.report(achievement: .achievement10)
+    }
+    GameKitHelper.shared.report(achievement: achievement)
+  }
+
   // MARK: - IBActions
 
   @IBAction private func attack(_ sender: Any) {
+    GameKitHelper.shared.report(achievement: .achievement1)
     SimpleMusicPlayer.shared.playMusic(music: Music.buttonClicked)
     if Status.isGameEnd {
       Status.currentLevel = 0

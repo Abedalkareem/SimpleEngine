@@ -41,6 +41,11 @@ class GameOverViewController: UIViewController {
     changeViewController(GameViewController.instance())
   }
 
+  @IBAction func home(_ sender: Any) {
+    SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.buttonClicked)
+    changeViewController(MainViewController.instance())
+  }
+
   // MARK: - ViewController instance
 
   static func instance() -> GameOverViewController {

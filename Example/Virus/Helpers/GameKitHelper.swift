@@ -38,7 +38,7 @@ class GameKitHelper: NSObject {
     }
   }
 
-  func report(achievement: Achievement, percentComplete: Double) {
+  func report(achievement: Achievement, percentComplete: Double = 100) {
     let achievement = GKAchievement(identifier: achievement.identifier)
     achievement.percentComplete = percentComplete
     achievement.showsCompletionBanner = true

@@ -24,10 +24,10 @@ class GameViewController: BaseGameViewController {
   private var bloodTimer: Timer?
   private var whiteTimer: Timer?
 
-  private var goalNumber = 0.0
+  private var goalNumber = 0
   private var currentNumber = 0.0
   private var infectionGoal: Double {
-    Double(Status.currentLevel) * 0.1
+    Double(Status.currentLevel + 1) * 0.1
   }
 
   // MARK: - ViewController lifecycle
@@ -44,7 +44,7 @@ class GameViewController: BaseGameViewController {
     playBackgroundMusic()
 
     livesView.livesCount = 4
-    goalNumber = infectionGoal * 50
+    goalNumber = Int(infectionGoal * 50)
     currentNumber = 0
   }
 
@@ -114,6 +114,7 @@ class GameViewController: BaseGameViewController {
 
   private func collideBetween(fire: ObjectView, blood: ObjectView) -> Bool {
     currentNumber += 1
+    GameKitHelper.shared.report(score: Int64(currentNumber))
     if currentNumber == goalNumber {
       Status.currentLevel += 1
       showLevelsController()
