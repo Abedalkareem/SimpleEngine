@@ -27,6 +27,8 @@ class MainViewController: BaseGameViewController {
     setupViews()
     playBackgroundMusic()
     authenticateUser()
+
+    AdmobRewardedHelper.shared.load()
   }
   
   override func viewDidAppear(_ animated: Bool) {

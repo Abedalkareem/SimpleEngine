@@ -15,6 +15,14 @@ import UIKit
 @IBDesignable
 open class SceneView: UIView {
 
+  // MARK: - Properties
+
+  open var paused: Bool = false {
+    didSet {
+      pauseObjects(paused: paused)
+    }
+  }
+
   // MARK: - init
 
   public override init(frame: CGRect) {
@@ -29,6 +37,12 @@ open class SceneView: UIView {
 
   private func setup() {
     backgroundColor = .clear
+  }
+
+  private func pauseObjects(paused: Bool) {
+    subviews
+      .compactMap({ $0 as? ObjectView })
+      .forEach({ $0.paused = paused })
   }
 
 }

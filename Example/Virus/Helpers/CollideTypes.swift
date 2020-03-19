@@ -1,6 +1,6 @@
 //
 //  CollideTypes.swift
-//  Example
+//  Virus
 //
 //  Created by abedalkareem omreyh on 09/03/2020.
 //  Copyright © 2020 abedalkareem. All rights reserved.

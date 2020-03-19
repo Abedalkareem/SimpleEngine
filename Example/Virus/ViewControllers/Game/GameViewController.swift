@@ -48,6 +48,14 @@ class GameViewController: BaseGameViewController {
     playBackgroundMusic()
 
     livesView.livesCount = 4
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+      self.sceneView.paused = true
+    }
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+      self.sceneView.paused = false
+    }
   }
 
   override func viewDidAppear(_ animated: Bool) {

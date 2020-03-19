@@ -48,6 +48,10 @@ class VirusSpriteView: SpriteView {
   override func didMoveToSuperview() {
     super.didMoveToSuperview()
 
+    startTimer()
+  }
+
+  private func startTimer() {
     stopTimer()
     timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
       self?.startFiring()
@@ -70,6 +74,16 @@ class VirusSpriteView: SpriteView {
     DispatchQueue.global().async {
       SimpleMusicPlayer.shared.playMusic(music: Music.fire)
     }
+  }
+
+  // MARK: -
+
+  override func didPaused() {
+    stopTimer()
+  }
+
+  override func didResumed() {
+    startTimer()
   }
 
   // MARK: - deinit

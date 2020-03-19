@@ -46,7 +46,7 @@ class BloodCellSpriteView: SpriteView {
     guard notInfected else {
       return false
     }
-    if object is FireSpriteView || object is VirusSpriteView {
+    if object is FireSpriteView {
       infect()
     }
     return true

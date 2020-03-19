@@ -30,6 +30,18 @@ open class ObjectView: UIView {
   ///
   open var id: String = { return UUID().uuidString }()
 
+  open var paused: Bool = false {
+    didSet {
+      if paused {
+        stopTimer()
+        didPaused()
+      } else {
+        startTimer()
+        didResumed()
+      }
+    }
+  }
+
   // MARK: - Private properties
 
   private var timer: Timer?
@@ -47,7 +59,7 @@ open class ObjectView: UIView {
   }
 
   private func setup() {
-    timer = Timer.scheduledTimer(timeInterval: 0.016, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+    startTimer()
   }
 
   // MARK: - View lifecycle
@@ -57,6 +69,10 @@ open class ObjectView: UIView {
     if superview == nil {
       stopTimer()
     }
+  }
+
+  private func startTimer() {
+    timer = Timer.scheduledTimer(timeInterval: 0.016, target: self, selector: #selector(update), userInfo: nil, repeats: true)
   }
 
   private func stopTimer() {
@@ -81,4 +97,8 @@ open class ObjectView: UIView {
   open func onCollisionEnter(with object: ObjectView?) -> Bool {
     return true
   }
+
+  open func didPaused() {}
+
+  open func didResumed() {}
 }

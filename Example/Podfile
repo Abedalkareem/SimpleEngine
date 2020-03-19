@@ -7,5 +7,6 @@ target 'Virus' do
 
   # Pods for Virus
   pod 'SimpleEngine', :path => '../'
+  pod 'Google-Mobile-Ads-SDK'
 
 end
