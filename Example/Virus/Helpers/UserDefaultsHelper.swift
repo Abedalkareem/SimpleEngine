@@ -10,25 +10,13 @@ import UIKit
 
 class UserDefaultsHelper {
 
+  // TODO: To support sound control in future
   class var isSoundOff: Bool {
     get {
       return UserDefaults.standard.bool(forKey: "sound")
     }
     set {
       UserDefaults.standard.setValue(newValue, forKey: "sound")
-    }
-  }
-
-  class var lives: Int {
-    get {
-      return UserDefaults.standard.integer(forKey: "lives")
-    }
-    set {
-      if newValue < 0 {
-        assertionFailure()
-        return
-      }
-      UserDefaults.standard.set(newValue, forKey: "lives")
     }
   }
 

@@ -47,7 +47,7 @@ class GameOverViewController: UIViewController {
   }
 
   @IBAction private func share(_ sender: UIButton) {
-    guard let url = URL(string: "https://apps.apple.com/gm/app/id1503292940") else {
+    guard let url = URL(string: Constants.links.appLink) else {
       return
     }
     GameKitHelper.shared.report(achievement: .achievement11)

@@ -20,10 +20,14 @@ class GameViewController: BaseGameViewController {
   // MARK: - Private properties
 
   private var virusSprite: VirusSpriteView!
+  private var dialogView: DialogView?
 
   private var bloodTimer: Timer?
   private var whiteTimer: Timer?
+  private var livesNotification: NSObjectProtocol?
+  private var adDismissedNotification: NSObjectProtocol?
 
+  private let numberOfLives = 4
   private var goalNumber = 0
   private var currentNumber = 0.0
   private var bloodTimerInterval = 0.0
@@ -40,12 +44,15 @@ class GameViewController: BaseGameViewController {
     setGameDifficulty()
 
     addVirus()
+    startBloodTimer()
+    startWhiteTimer()
 
     observeForLives()
+    addNotificationCenterObservers()
 
     playBackgroundMusic()
 
-    livesView.livesCount = 4
+    livesView.livesCount = numberOfLives
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -64,17 +71,75 @@ class GameViewController: BaseGameViewController {
     currentNumber = 0
   }
 
-  // MARK: -
+  // MARK: - Observers
 
   private func observeForLives() {
     livesView.livesDidUpdate { [weak self] numberOfLives in
+      guard let self = self else { return }
       if numberOfLives == 0 {
-        self?.paused = true
-        DialogView.show()
-//        self?.showGameOverController()
+        self.showGetMoreLivesDialog()
+        self.paused = true
+      }
+    }
+
+  }
+
+  private func addNotificationCenterObservers() {
+    livesNotification = NotificationCenter.default.addObserver(forName: .livesChanged, object: nil, queue: .main) { [weak self] _ in
+      guard let numberOfLives = self?.numberOfLives else {
+        return
+      }
+      self?.livesView.add(numberOfLives)
+    }
+
+    adDismissedNotification = NotificationCenter.default.addObserver(forName: .adDismissed, object: nil, queue: .main) { [weak self] _ in
+      self?.showGameOverController()
+    }
+  }
+
+  // MARK: - Dialogs
+
+  private func showGetMoreLivesDialog() {
+    guard dialogView == nil else {
+      return
+    }
+    dialogView = DialogView.show(in: view,
+                                 text: "more_lives".localize,
+                                 firstButton: "watch".localize,
+                                 secondButton: "no".localize) { [unowned self] action in
+      if action == .second {
+        self.showGameOverController()
+      } else {
+        if AdmobRewardedHelper.shared.show(in: self) {
+          self.dialogView?.dismiss()
+          self.dialogView = nil
+          self.showPauseDialog()
+        }
       }
     }
   }
+
+  private func showPauseDialog() {
+    guard dialogView == nil else {
+      return
+    }
+
+    dialogView = DialogView.show(in: view,
+                                 text: "paused".localize,
+                                 firstButton: "resume".localize,
+                                 secondButton: "end".localize,
+                                 cancelWhenFirstButtonClick: true)
+    { [unowned self] action in
+      self.dialogView = nil
+      if action == .second {
+        self.showGameOverController()
+      } else {
+        self.paused = false
+      }
+    }
+  }
+
+  // MARK: - Timers
 
   private func startBloodTimer() {
     bloodTimer = Timer.scheduledTimer(withTimeInterval: bloodTimerInterval,
@@ -169,7 +234,7 @@ class GameViewController: BaseGameViewController {
     bloodCellSprite.moveTo(x: view.bounds.width, y: randomY)
   }
 
-  // MARK: -
+  // MARK: - Show ViewControllers
 
   private func showLevelsController() {
     let viewController = LevelsViewController.instance()
@@ -181,9 +246,10 @@ class GameViewController: BaseGameViewController {
     changeViewController(viewController)
   }
 
-  // MARK: - Pause
+  // MARK: - Pause and Resume callbacks
 
   override func didPause() {
+    showPauseDialog()
     stopBloodTimer()
     stopWhiteTimer()
   }
@@ -197,6 +263,17 @@ class GameViewController: BaseGameViewController {
 
   static func instance() -> GameViewController {
     return UIStoryboard.create(storyboard: .game, controller: GameViewController.self)
+  }
+
+  // MARK: - deinit
+
+  deinit {
+    if let livesNotification = livesNotification {
+      NotificationCenter.default.removeObserver(livesNotification)
+    }
+    if let adDismissedNotification = adDismissedNotification {
+      NotificationCenter.default.removeObserver(adDismissedNotification)
+    }
   }
 }
 

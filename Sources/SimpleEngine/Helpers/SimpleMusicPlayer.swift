@@ -45,7 +45,7 @@ open class SimpleMusicPlayer: NSObject {
   ///
   /// A audio to play one time.
   ///
-  private var subAudioPlayer = [(name: String, player: AVAudioPlayer)]()
+  private var subAudioPlayers = [(name: String, player: AVAudioPlayer)]()
 
   private var cachedMusic = [String: AVAudioPlayer]()
 
@@ -94,16 +94,16 @@ open class SimpleMusicPlayer: NSObject {
       if shouldBeCached {
         cachedMusic[music.rawValue] = subAudioPlayer
       }
-      self.subAudioPlayer.append((music.rawValue, subAudioPlayer))
+      self.subAudioPlayers.append((music.rawValue, subAudioPlayer))
     } catch {
       print(error.localizedDescription)
     }
   }
 
   open func stopMusic<M: MusicType>(music: M) {
-    let audio = subAudioPlayer.first(where: {$0.name == music.rawValue})
+    let audio = subAudioPlayers.first(where: {$0.name == music.rawValue})
     audio?.player.stop()
-    subAudioPlayer.removeAll(where: { $0.name == music.rawValue })
+    subAudioPlayers.removeAll(where: { $0.name == music.rawValue })
   }
 }
 
@@ -113,6 +113,9 @@ public protocol MusicType: RawRepresentable where RawValue == String {
 
 extension SimpleMusicPlayer: AVAudioPlayerDelegate {
   public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-    self.subAudioPlayer.removeAll(where: { $0.player == player })
+    guard let index = subAudioPlayers.firstIndex(where: { $0.player == player }) else {
+      return
+    }
+    subAudioPlayers.remove(at: index)
   }
 }

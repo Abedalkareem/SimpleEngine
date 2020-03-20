@@ -84,18 +84,18 @@ class MainViewController: BaseGameViewController {
 
   // MARK: - Properties
 
-  @IBAction func start(_ sender: Any) {
+  @IBAction private func start(_ sender: Any) {
     SimpleMusicPlayer.shared.playMusic(music: Music.buttonClicked)
     let viewController = LevelsViewController.instance()
     changeViewController(viewController)
   }
 
-  @IBAction func topPlayers(_ sender: Any) {
+  @IBAction private func topPlayers(_ sender: Any) {
     let vc = GameKitHelper.shared.getGameCenterControllerWith(viewState: .leaderboards)
     present(vc, animated: true, completion: nil)
   }
 
-  @IBAction func achievements(_ sender: Any) {
+  @IBAction private func achievements(_ sender: Any) {
     let vc = GameKitHelper.shared.getGameCenterControllerWith(viewState: .achievements)
     present(vc, animated: true, completion: nil)
   }

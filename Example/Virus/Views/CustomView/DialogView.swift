@@ -10,13 +10,48 @@ import UIKit
 
 class DialogView: UIView {
 
+  typealias ActionPressed = (Action) -> Void
+
   // MARK: - Properties
 
-  var blurEffectView: UIVisualEffectView!
-  var containerView: UIView!
-  var label: UILabel!
-  var backgroundImageView: UIImageView!
   var overlayWindow: UIWindow!
+  var cancelWhenFirstButtonClick = false
+
+  ///
+  /// Dialog text.
+  ///
+  var text: String = "" {
+    didSet {
+      label.text = text
+    }
+  }
+  ///
+  /// First button title text.
+  ///
+  var firstButtonText: String = "" {
+     didSet {
+      firstButton.setTitle(firstButtonText, for: .normal)
+     }
+   }
+  ///
+  /// Second button title text.
+  ///
+  var secondButtonText: String = "" {
+     didSet {
+       secondButton.setTitle(secondButtonText, for: .normal)
+     }
+   }
+
+  // MARK: - Private properties
+
+  private var blurEffectView: UIVisualEffectView!
+  private var containerView: UIView!
+  private var label: UILabel!
+  private var firstButton: UIButton!
+  private var secondButton: UIButton!
+  private var backgroundImageView: UIImageView!
+
+  private var _actionPressed: ActionPressed?
 
   // MARK: - init
 
@@ -37,6 +72,7 @@ class DialogView: UIView {
     addContainer()
     addBackgroundImage()
     addLabel()
+    addButtons()
 
     makeConstraints()
   }
@@ -63,8 +99,27 @@ class DialogView: UIView {
 
   private func addLabel() {
     label = UILabel()
-    label.text = "more_lives".localize
+    label.text = text
+    label.font = UIFont(name: Constants.strings.fontName, size: 17)
+    label.numberOfLines = 0
+    label.textAlignment = .center
     containerView.addSubview(label)
+  }
+
+  private func addButtons() {
+    firstButton = UIButton()
+    firstButton.setTitle(firstButtonText, for: .normal)
+    firstButton.titleLabel?.font = UIFont(name: Constants.strings.fontName, size: 17)
+    firstButton.setTitleColor(.black, for: .normal)
+    firstButton.addTarget(self, action: #selector(first), for: .touchUpInside)
+    containerView.addSubview(firstButton)
+
+    secondButton = UIButton()
+    secondButton.setTitle(secondButtonText, for: .normal)
+    secondButton.titleLabel?.font = UIFont(name: Constants.strings.fontName, size: 17)
+    secondButton.setTitleColor(.black, for: .normal)
+    secondButton.addTarget(self, action: #selector(second), for: .touchUpInside)
+    containerView.addSubview(secondButton)
   }
 
   private func makeConstraints() {
@@ -96,7 +151,21 @@ class DialogView: UIView {
     NSLayoutConstraint.activate([
       label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
       label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
     ])
+
+    firstButton.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      firstButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+      firstButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+    ])
+
+    secondButton.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      secondButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+      secondButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+    ])
+    
   }
 
   // MARK: - View lifecycle
@@ -110,6 +179,31 @@ class DialogView: UIView {
   @objc
   private func hide() {
     dismiss()
+  }
+
+  @objc
+  private func second() {
+    dismiss { _ in
+      self._actionPressed?(.second)
+    }
+  }
+
+  @objc
+  private func first() {
+    guard cancelWhenFirstButtonClick else {
+      _actionPressed?(.first)
+      return
+    }
+
+    dismiss { _ in
+      self._actionPressed?(.first)
+    }
+  }
+
+  // MARK: -
+
+  func actionPressed(actionPressed: @escaping ActionPressed) {
+    self._actionPressed = actionPressed
   }
 
   func dismiss(completion: ((Bool) -> Void)? = nil) {
@@ -132,22 +226,30 @@ class DialogView: UIView {
 
   // MARK: - Show
 
-  class func show() {
-    let bounds = UIScreen.main.bounds
-    let window = UIWindow()
-    window.backgroundColor = .clear
-    window.makeKeyAndVisible()
-    window.frame = bounds
-    let view = DialogView()
-    view.overlayWindow = window
-    view.frame = window.bounds
-    view.animate(isShowing: true)
-    window.addSubview(view)
+  @discardableResult
+  class func show(in view: UIView,
+                  text: String,
+                  firstButton: String,
+                  secondButton: String,
+                  cancelWhenFirstButtonClick: Bool = false,
+                  actionPressed: @escaping ActionPressed) -> DialogView {
+    let dialogView = DialogView()
+    dialogView.frame = view.bounds
+    dialogView.text = text
+    dialogView.firstButtonText = firstButton
+    dialogView.secondButtonText = secondButton
+    dialogView.cancelWhenFirstButtonClick = cancelWhenFirstButtonClick
+    dialogView.animate(isShowing: true)
+    dialogView.actionPressed(actionPressed: actionPressed)
+    view.addSubview(dialogView)
+    return dialogView
   }
 
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super.touchesBegan(touches, with: event)
-    endEditing(true)
+  // MARK: - Enum
+
+  enum Action {
+    case first
+    case second
   }
 }
 

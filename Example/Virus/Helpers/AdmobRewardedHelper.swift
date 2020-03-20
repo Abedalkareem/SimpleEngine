@@ -16,7 +16,7 @@ class AdmobRewardedHelper: NSObject, GADRewardedAdDelegate {
   var rewardedAd: GADRewardedAd?
 
   func load() {
-    rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-3940256099942544/1712485313")
+    rewardedAd = GADRewardedAd(adUnitID: Constants.strings.adID)
     rewardedAd?.load(GADRequest()) { error in
       if let error = error {
         print(error.localizedDescription)
@@ -24,6 +24,7 @@ class AdmobRewardedHelper: NSObject, GADRewardedAdDelegate {
     }
   }
 
+  @discardableResult
   func show(in viewController: UIViewController) -> Bool {
     guard rewardedAd?.isReady == true else {
       return false
@@ -42,12 +43,12 @@ class AdmobRewardedHelper: NSObject, GADRewardedAdDelegate {
 
   func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
     print("Rewarded ad dismissed.")
+    NotificationCenter.default.post(name: .adDismissed, object: nil, userInfo: nil)
     load()
   }
 
   func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
     print("Reward received with currency: \(reward.type), amount \(reward.amount).")
-    UserDefaultsHelper.lives += 1
     NotificationCenter.default.post(name: .livesChanged, object: nil, userInfo: nil)
     load()
   }
@@ -55,4 +56,5 @@ class AdmobRewardedHelper: NSObject, GADRewardedAdDelegate {
 
 extension NSNotification.Name {
   static let livesChanged = NSNotification.Name("livesChanged")
+  static let adDismissed = NSNotification.Name("adDismissed")
 }

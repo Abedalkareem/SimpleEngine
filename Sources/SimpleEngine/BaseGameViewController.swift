@@ -16,8 +16,20 @@ open class BaseGameViewController: UIViewController {
 
   // MARK: - Properties
 
+  ///
+  /// Analog to be attached to one `SpriteView` to control it.
+  ///
   open var analogView: AnalogView!
 
+  ///
+  /// A property to pause or resume the game.
+  /// If you set it to true the game will pause but, still you need to
+  /// handle some code by your own, like if you have a timer you need to
+  /// stop it and resume it again. to do that you can override the
+  /// `didPause` and `didResume` and inside the did pause you can stop any timer
+  /// and in did resume you can start it again.
+  /// The default value is `false`.
+  ///
   open var paused: Bool = false {
     didSet {
       if paused {
@@ -39,44 +51,77 @@ open class BaseGameViewController: UIViewController {
     super.viewDidLoad()
 
     addAnalogView()
+    start()
   }
 
   open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     addObservers()
-    resume()
   }
 
   override open func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     removeObservers()
-    pause()
+    paused = true
   }
 
-  // Resume the game.
-  @objc
-  private func resume() {
+  ///
+  /// Start the game. resume `sceneView`, set `shouldKeepUpdatingTheScene` to `true`
+  /// and start the timer.
+  ///
+  private func start() {
     sceneView.paused = false
     shouldKeepUpdatingTheScene = true
     startTimer()
+  }
+
+  ///
+  /// Resume the game. it's same as `start` but, it's also calling `didResume`
+  /// so you can be notified.
+  @objc
+  private func resume() {
+    start()
     didResume()
   }
 
-  // Pause the game.
+  ///
+  /// Stop the game. pause `sceneView` , set `shouldKeepUpdatingTheScene` to `false`
+  /// and stop the timer.
+  ///
   @objc
-  private func pause() {
+  private func stop() {
     sceneView.paused = true
     shouldKeepUpdatingTheScene = false
     stopTimer()
+  }
+
+  ///
+  /// Pause the game. it's same as `stop` but, it's also calling `didPause`
+  /// so you can be notified.
+  ///
+  @objc
+  private func pause() {
+    stop()
     didPause()
   }
 
   private func addAnalogView() {
+    analogView = AnalogView()
+    view.addSubview(analogView)
+
+    makeAnalogViewConstraints()
+  }
+
+  private func makeAnalogViewConstraints() {
     let analogSize = AnalogView.Settings.analogSize
     let margen = AnalogView.Settings.margen
-    let y = view.bounds.height - (analogSize + margen)
-    analogView = AnalogView(frame: CGRect(x: margen, y: y, width: analogSize, height: analogSize))
-    view.addSubview(analogView)
+    analogView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      analogView.widthAnchor.constraint(equalToConstant: analogSize),
+      analogView.heightAnchor.constraint(equalToConstant: analogSize),
+      analogView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: margen),
+      analogView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -margen)
+    ])
   }
 
   // MARK: - Observers
@@ -84,12 +129,12 @@ open class BaseGameViewController: UIViewController {
   private func addObservers() {
     NotificationCenter.default
       .addObserver(self,
-                   selector: #selector(resume),
+                   selector: #selector(didBecomeActive),
                    name: UIApplication.didBecomeActiveNotification,
                    object: nil)
     NotificationCenter.default
       .addObserver(self,
-                   selector: #selector(pause),
+                   selector: #selector(willResignActive),
                    name: UIApplication.willResignActiveNotification,
                    object: nil)
   }
@@ -106,6 +151,14 @@ open class BaseGameViewController: UIViewController {
                       object: nil)
   }
 
+  @objc
+  private func didBecomeActive() { }
+
+  @objc
+  private func willResignActive() {
+    paused = true
+  }
+
   // MARK: - Timer
 
   private func startTimer() {
@@ -119,13 +172,21 @@ open class BaseGameViewController: UIViewController {
 
   // MARK: - Public methods
 
+  ///
   /// override to make changes or move objects.
+  /// if you override it you need to call `super.update` at
+  /// some point.
+  ///
   @objc
   open func update() {
     checkIfObjectsCollided()
   }
 
+  ///
   /// check if any two objects collided.
+  /// if you override it you need to call `super.checkIfObjectsCollided` at
+  /// some point.
+  ///
   open func checkIfObjectsCollided() {
     let subviews = sceneView.subviews.compactMap({ $0 as? ObjectView })
     for object1 in subviews {
@@ -162,9 +223,4 @@ open class BaseGameViewController: UIViewController {
   ///
   open func didResume() {}
 
-  // MARK: - deinit
-
-  deinit {
-    stopTimer()
-  }
 }

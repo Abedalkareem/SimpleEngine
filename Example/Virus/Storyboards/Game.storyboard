@@ -171,7 +171,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2C-SK-kSX" customClass="ManSpriteView" customModule="Virus" customModuleProvider="target">
                                 <rect key="frame" x="16" y="215" width="160" height="160"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="QcI-Na-wuw"/>
                                     <constraint firstAttribute="height" constant="160" id="v9Y-hA-rik"/>

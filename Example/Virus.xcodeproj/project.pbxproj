@@ -14,6 +14,7 @@
 		C6940E3A24232436006260B3 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6940E3924232435006260B3 /* ProgressView.swift */; };
 		C6A869C72423BF9400BA6B49 /* WhiteFireSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A869C62423BF9400BA6B49 /* WhiteFireSpriteView.swift */; };
 		C6A869C92423EE6C00BA6B49 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A869C82423EE6C00BA6B49 /* DialogView.swift */; };
+		C6A869CC2424663500BA6B49 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A869CB2424663500BA6B49 /* Constants.swift */; };
 		C6B5232C241FF65C00061421 /* ManSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232B241FF65C00061421 /* ManSpriteView.swift */; };
 		C6B523302421579C00061421 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232F2421579B00061421 /* LevelsViewController.swift */; };
 		C6B523322421EE4D00061421 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B523312421EE4C00061421 /* GameKitHelper.swift */; };
@@ -60,6 +61,7 @@
 		C6940E3924232435006260B3 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		C6A869C62423BF9400BA6B49 /* WhiteFireSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFireSpriteView.swift; sourceTree = "<group>"; };
 		C6A869C82423EE6C00BA6B49 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
+		C6A869CB2424663500BA6B49 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C6B5232B241FF65C00061421 /* ManSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManSpriteView.swift; sourceTree = "<group>"; };
 		C6B5232F2421579B00061421 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		C6B523312421EE4C00061421 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
@@ -127,6 +129,15 @@
 				29FA8776D268F817CEB7296F /* Pods-Virus.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C6A869CA2424661700BA6B49 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C6FF686F2417692D008F9B02 /* CollideTypes.swift */,
+				C6A869CB2424663500BA6B49 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		C6B523352422194900061421 /* strings */ = {
@@ -258,8 +269,8 @@
 		C6FF686E2417692D008F9B02 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C6A869CA2424661700BA6B49 /* Constants */,
 				C6E93FEF2423465500971D1B /* Extensions */,
-				C6FF686F2417692D008F9B02 /* CollideTypes.swift */,
 				C6DC70DE241CA44300D4AB55 /* Music.swift */,
 				C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */,
 				C6E93FE92423417900971D1B /* ShareHelper.swift */,
@@ -457,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A869CC2424663500BA6B49 /* Constants.swift in Sources */,
 				C6B523322421EE4D00061421 /* GameKitHelper.swift in Sources */,
 				C6DC70E4241CB2F800D4AB55 /* UIStoryboard.swift in Sources */,
 				C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */,
