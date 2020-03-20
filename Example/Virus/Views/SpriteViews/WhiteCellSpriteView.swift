@@ -19,6 +19,17 @@ class WhiteCellSpriteView: SpriteView {
   // MARK: - Private properties
 
   private var didColide = false
+  private var timer: Timer?
+  private var virusPoint: CGPoint!
+
+  init(virusPoint: CGPoint) {
+    super.init(frame: .zero)
+    self.virusPoint = virusPoint
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
 
   // MARK: - Setup
 
@@ -35,10 +46,51 @@ class WhiteCellSpriteView: SpriteView {
     frames.idel = Frames(images: [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")])
   }
 
+  // MARK: - View lifecycle
+
+  override func didMoveToSuperview() {
+    super.didMoveToSuperview()
+
+    startTimer()
+  }
+
+  private func startTimer() {
+    stopTimer()
+    timer = Timer.scheduledTimer(withTimeInterval: 1.2, repeats: true) { [weak self] _ in
+      self?.startFiring()
+    }
+  }
+
+  private func stopTimer() {
+    timer?.invalidate()
+    timer = nil
+  }
+
+  private func startFiring() {
+    guard let sceneView = superview as? SceneView else {
+      return
+    }
+    let spriteView = WhiteFireSpriteView()
+    spriteView.frame = CGRect(x: center.x, y: center.y, width: 20, height: 20)
+    sceneView.addSubview(spriteView)
+    spriteView.moveTo(x: virusPoint.x, y: virusPoint.y)
+    DispatchQueue.global().async {
+      SimpleMusicPlayer.shared.playMusic(music: Music.fire)
+    }
+  }
+
   // MARK: -
 
   override func didRechedDesiredPoint() {
     removeFromSuperview()
+  }
+
+  override func didPause() {
+    stopTimer()
+  }
+
+  override func didResume() {
+    startTimer()
   }
 
   override func onCollisionEnter(with object: ObjectView?) -> Bool {
@@ -70,5 +122,11 @@ class WhiteCellSpriteView: SpriteView {
     DispatchQueue.global().async {
       SimpleMusicPlayer.shared.playMusic(music: Music.liveDestroyed)
     }
+  }
+
+  // MARK: - deinit
+
+  deinit {
+    stopTimer()
   }
 }

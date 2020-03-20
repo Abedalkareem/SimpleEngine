@@ -50,6 +50,41 @@ public class MovingBackgroundView: UIView {
       addSubview(secondView)
     }
 
+    playAnimation()
+    addObservers()
+  }
+
+  // MARK: - View lifecycle
+
+  public override func didMoveToSuperview() {
+    super.didMoveToSuperview()
+
+    if superview == nil {
+      removeObservers()
+    }
+  }
+
+  // MARK: - Observers
+
+  private func addObservers() {
+    NotificationCenter.default
+      .addObserver(self,
+                   selector: #selector(playAnimation),
+                   name: UIApplication.didBecomeActiveNotification,
+                   object: nil)
+  }
+
+  private func removeObservers() {
+    NotificationCenter.default
+      .removeObserver(self,
+                      name: UIApplication.didBecomeActiveNotification,
+                      object: nil)
+  }
+
+  // MARK: - Animations
+
+  @objc
+  private func playAnimation() {
     animate()
     animateSecondView()
   }

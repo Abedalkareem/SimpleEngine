@@ -16,7 +16,6 @@
         <!--Game View Controller-->
         <scene sceneID="XMu-Tb-Bxr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNo-c0-4V2" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="GameViewController" id="4uz-Ne-10e" customClass="GameViewController" customModule="Virus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dr4-q2-8Yn">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
@@ -38,7 +37,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6e1-Br-UEe" customClass="LivesView" customModule="SimpleEngine">
-                                <rect key="frame" x="442" y="0.0" width="200" height="40"/>
+                                <rect key="frame" x="542" y="0.0" width="100" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.10000000000000001"/>
                                 <constraints>
@@ -104,6 +103,7 @@
                         <outlet property="sceneView" destination="CUs-Nw-iSb" id="C2d-GW-VYF"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNo-c0-4V2" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.0809595202399" y="114.40000000000001"/>
         </scene>
@@ -135,6 +135,21 @@
                                 </state>
                                 <connections>
                                     <action selector="home:" destination="7qW-5g-hVv" eventType="touchUpInside" id="Eyk-l3-fVA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zA1-Um-AXI">
+                                <rect key="frame" x="591" y="16" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Tq7-sB-Y2E"/>
+                                    <constraint firstAttribute="width" constant="60" id="kg5-09-Dtp"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                                <inset key="imageEdgeInsets" minX="18" minY="18" maxX="12" maxY="14"/>
+                                <state key="normal" image="share" backgroundImage="button_background">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="7qW-5g-hVv" eventType="touchUpInside" id="YJV-SE-RSn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-jh-ltq">
@@ -187,6 +202,7 @@ We are human we kill things.. nothing can kill us!</string>
                             <constraint firstItem="SfD-Ro-Nng" firstAttribute="top" secondItem="PSx-rG-WjE" secondAttribute="bottom" constant="20" id="53s-ju-TQi"/>
                             <constraint firstItem="2Ih-cY-Wnc" firstAttribute="leading" secondItem="2Wh-XD-IYj" secondAttribute="leading" constant="4" id="72d-6K-E6d"/>
                             <constraint firstItem="EtB-lW-eeS" firstAttribute="top" secondItem="4qS-v0-zYX" secondAttribute="top" id="Edj-Uf-IRs"/>
+                            <constraint firstItem="fWT-Cz-Zdz" firstAttribute="trailing" secondItem="zA1-Um-AXI" secondAttribute="trailing" constant="16" id="GUt-B1-2F7"/>
                             <constraint firstItem="ADr-jh-ltq" firstAttribute="centerX" secondItem="4qS-v0-zYX" secondAttribute="centerX" id="Ley-Wp-H3s"/>
                             <constraint firstAttribute="bottom" secondItem="s2C-SK-kSX" secondAttribute="bottom" id="Mui-L6-8Ih"/>
                             <constraint firstItem="EtB-lW-eeS" firstAttribute="leading" secondItem="4qS-v0-zYX" secondAttribute="leading" id="NN3-bo-Ucl"/>
@@ -196,6 +212,7 @@ We are human we kill things.. nothing can kill us!</string>
                             <constraint firstItem="PSx-rG-WjE" firstAttribute="width" secondItem="SfD-Ro-Nng" secondAttribute="width" id="SCq-gm-6Pd"/>
                             <constraint firstItem="ADr-jh-ltq" firstAttribute="top" secondItem="fWT-Cz-Zdz" secondAttribute="top" constant="16" id="UX3-Zo-RaG"/>
                             <constraint firstItem="EtB-lW-eeS" firstAttribute="trailing" secondItem="4qS-v0-zYX" secondAttribute="trailing" id="WAT-QQ-uUj"/>
+                            <constraint firstItem="zA1-Um-AXI" firstAttribute="top" secondItem="fWT-Cz-Zdz" secondAttribute="top" constant="16" id="XMa-Eb-Fqz"/>
                             <constraint firstItem="2Wh-XD-IYj" firstAttribute="leading" secondItem="s2C-SK-kSX" secondAttribute="trailing" constant="-28" id="YJ6-gx-oW0"/>
                             <constraint firstItem="0LY-Tw-czy" firstAttribute="trailing" secondItem="4qS-v0-zYX" secondAttribute="trailing" id="ZZM-m2-xU6"/>
                             <constraint firstItem="0LY-Tw-czy" firstAttribute="bottom" secondItem="4qS-v0-zYX" secondAttribute="bottom" id="aNy-NL-FVW"/>
@@ -228,5 +245,6 @@ We are human we kill things.. nothing can kill us!</string>
         <image name="progress_background" width="250" height="46"/>
         <image name="progress_blood" width="232" height="14"/>
         <image name="progress_infected_blood" width="232" height="14"/>
+        <image name="share" width="160" height="132"/>
     </resources>
 </document>

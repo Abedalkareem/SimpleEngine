@@ -18,7 +18,7 @@ class VirusSpriteView: SpriteView {
 
   // MARK: - Private properties
 
-  var timer: Timer?
+  private var timer: Timer?
 
   // MARK: - Setup
 
@@ -78,11 +78,11 @@ class VirusSpriteView: SpriteView {
 
   // MARK: -
 
-  override func didPaused() {
+  override func didPause() {
     stopTimer()
   }
 
-  override func didResumed() {
+  override func didResume() {
     startTimer()
   }
 

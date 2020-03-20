@@ -36,14 +36,25 @@ class GameOverViewController: UIViewController {
 
   // MARK: - IBActions
 
-  @IBAction func tryAgain(_ sender: Any) {
+  @IBAction private func tryAgain(_ sender: Any) {
     SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.buttonClicked)
     changeViewController(GameViewController.instance())
   }
 
-  @IBAction func home(_ sender: Any) {
+  @IBAction private func home(_ sender: Any) {
     SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.buttonClicked)
     changeViewController(MainViewController.instance())
+  }
+
+  @IBAction private func share(_ sender: UIButton) {
+    guard let url = URL(string: "https://apps.apple.com/gm/app/id1503292940") else {
+      return
+    }
+    GameKitHelper.shared.report(achievement: .achievement11)
+    let viewController = ShareHelper.share(url: url,
+                                           string: "help_string".localize,
+                                           sourceView: sender)
+    present(viewController, animated: true, completion: nil)
   }
 
   // MARK: - ViewController instance

@@ -34,10 +34,10 @@ open class ObjectView: UIView {
     didSet {
       if paused {
         stopTimer()
-        didPaused()
+        didPause()
       } else {
         startTimer()
-        didResumed()
+        didResume()
       }
     }
   }
@@ -72,6 +72,7 @@ open class ObjectView: UIView {
   }
 
   private func startTimer() {
+    stopTimer()
     timer = Timer.scheduledTimer(timeInterval: 0.016, target: self, selector: #selector(update), userInfo: nil, repeats: true)
   }
 
@@ -98,7 +99,13 @@ open class ObjectView: UIView {
     return true
   }
 
-  open func didPaused() {}
+  ///
+  /// Override to get an update when the game paused to do any pause logic.
+  ///
+  open func didPause() {}
 
-  open func didResumed() {}
+  ///
+  /// Override to get an update when the game resumed to do any resume logic.
+  ///
+  open func didResume() {}
 }

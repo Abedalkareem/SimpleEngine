@@ -12,6 +12,8 @@
 		C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */; };
 		C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */; };
 		C6940E3A24232436006260B3 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6940E3924232435006260B3 /* ProgressView.swift */; };
+		C6A869C72423BF9400BA6B49 /* WhiteFireSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A869C62423BF9400BA6B49 /* WhiteFireSpriteView.swift */; };
+		C6A869C92423EE6C00BA6B49 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A869C82423EE6C00BA6B49 /* DialogView.swift */; };
 		C6B5232C241FF65C00061421 /* ManSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232B241FF65C00061421 /* ManSpriteView.swift */; };
 		C6B523302421579C00061421 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232F2421579B00061421 /* LevelsViewController.swift */; };
 		C6B523322421EE4D00061421 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B523312421EE4C00061421 /* GameKitHelper.swift */; };
@@ -56,6 +58,8 @@
 		C64570C1241A731E00D6C003 /* BloodCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCellSpriteView.swift; sourceTree = "<group>"; };
 		C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteCellSpriteView.swift; sourceTree = "<group>"; };
 		C6940E3924232435006260B3 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		C6A869C62423BF9400BA6B49 /* WhiteFireSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFireSpriteView.swift; sourceTree = "<group>"; };
+		C6A869C82423EE6C00BA6B49 /* DialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogView.swift; sourceTree = "<group>"; };
 		C6B5232B241FF65C00061421 /* ManSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManSpriteView.swift; sourceTree = "<group>"; };
 		C6B5232F2421579B00061421 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		C6B523312421EE4C00061421 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				C64570C3241A79CD00D6C003 /* WhiteCellSpriteView.swift */,
 				C6B5232B241FF65C00061421 /* ManSpriteView.swift */,
 				C6B523492422301700061421 /* TalkingVirusSpriteView.swift */,
+				C6A869C62423BF9400BA6B49 /* WhiteFireSpriteView.swift */,
 			);
 			path = SpriteViews;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				C6940E3924232435006260B3 /* ProgressView.swift */,
+				C6A869C82423EE6C00BA6B49 /* DialogView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -458,6 +464,7 @@
 				C6FF68802417692E008F9B02 /* GameViewController.swift in Sources */,
 				C6B5233C24221B9000061421 /* String+Helpers.swift in Sources */,
 				C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */,
+				C6A869C72423BF9400BA6B49 /* WhiteFireSpriteView.swift in Sources */,
 				C64570C4241A79CD00D6C003 /* WhiteCellSpriteView.swift in Sources */,
 				C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */,
 				C6B523302421579C00061421 /* LevelsViewController.swift in Sources */,
@@ -472,6 +479,7 @@
 				C6E93FEE2423465200971D1B /* UserDefaultsHelper.swift in Sources */,
 				C6940E3A24232436006260B3 /* ProgressView.swift in Sources */,
 				C6DC70E7241CB39300D4AB55 /* Status.swift in Sources */,
+				C6A869C92423EE6C00BA6B49 /* DialogView.swift in Sources */,
 				C62FE3FF241F38B40071B7A8 /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

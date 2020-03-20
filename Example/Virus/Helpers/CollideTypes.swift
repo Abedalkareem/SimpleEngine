@@ -13,4 +13,5 @@ enum CollideTypes {
   static let fire = 2
   static let blood = 3
   static let whiteCell = 4
+  static let whiteFire = 5
 }

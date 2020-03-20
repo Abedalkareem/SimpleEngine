@@ -37,25 +37,15 @@ class GameViewController: BaseGameViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    setGamDifficulty()
+    setGameDifficulty()
 
     addVirus()
-    startBloodTimer()
-    startWhiteTimer()
 
     observeForLives()
 
     playBackgroundMusic()
 
     livesView.livesCount = 4
-
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-      self.sceneView.paused = true
-    }
-
-    DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
-      self.sceneView.paused = false
-    }
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +57,7 @@ class GameViewController: BaseGameViewController {
     SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.gameBackground)
   }
 
-  private func setGamDifficulty() {
+  private func setGameDifficulty() {
     goalNumber = Int(gameDifficulty * 50)
     bloodTimerInterval = (0.5 + gameDifficulty) * 2
     whiteTimerInterval = (1 - gameDifficulty) * 1.5
@@ -79,7 +69,9 @@ class GameViewController: BaseGameViewController {
   private func observeForLives() {
     livesView.livesDidUpdate { [weak self] numberOfLives in
       if numberOfLives == 0 {
-        self?.showGameOverController()
+        self?.paused = true
+        DialogView.show()
+//        self?.showGameOverController()
       }
     }
   }
@@ -87,7 +79,7 @@ class GameViewController: BaseGameViewController {
   private func startBloodTimer() {
     bloodTimer = Timer.scheduledTimer(withTimeInterval: bloodTimerInterval,
                                       repeats: true) { [weak self] _ in
-      self?.addBloodCells()
+                                        self?.addBloodCells()
     }
   }
 
@@ -99,7 +91,7 @@ class GameViewController: BaseGameViewController {
   private func startWhiteTimer() {
     whiteTimer = Timer.scheduledTimer(withTimeInterval: whiteTimerInterval,
                                       repeats: true) { [weak self] _ in
-      self?.addWhiteCells()
+                                        self?.addWhiteCells()
     }
   }
 
@@ -120,6 +112,10 @@ class GameViewController: BaseGameViewController {
       return collideBetween(fire: object1, blood: object2)
     case (CollideTypes.blood, CollideTypes.fire):
       return collideBetween(fire: object2, blood: object1)
+    case (CollideTypes.whiteFire, CollideTypes.virus):
+      return collideBetween(virus: object2, whiteCell: object1)
+    case (CollideTypes.virus, CollideTypes.whiteFire):
+      return collideBetween(virus: object1, whiteCell: object2)
     default:
       break
     }
@@ -165,7 +161,7 @@ class GameViewController: BaseGameViewController {
   }
 
   private func addWhiteCells() {
-    let bloodCellSprite = WhiteCellSpriteView()
+    let bloodCellSprite = WhiteCellSpriteView(virusPoint: virusSprite.center)
     let width = CGFloat(bloodCellSprite.width)
     let randomY = CGFloat.random(in: width...(view.bounds.height-width))
     bloodCellSprite.frame.origin = CGPoint(x: -width, y: randomY)
@@ -185,17 +181,22 @@ class GameViewController: BaseGameViewController {
     changeViewController(viewController)
   }
 
+  // MARK: - Pause
+
+  override func didPause() {
+    stopBloodTimer()
+    stopWhiteTimer()
+  }
+
+  override func didResume() {
+    startBloodTimer()
+    startWhiteTimer()
+  }
+
   // MARK: - ViewController instance
 
   static func instance() -> GameViewController {
     return UIStoryboard.create(storyboard: .game, controller: GameViewController.self)
-  }
-  
-  // MARK: - deinit
-
-  deinit {
-    stopBloodTimer()
-    stopWhiteTimer()
   }
 }
 

@@ -27,3 +27,9 @@
 "mission_7_description" = "Attack The stomach";
 "mission_8_description" = "Attack The Heart and end this!, try to make it hard!";
 "mission_9_description" = "The world now can leave in piece. Now we can build our new world! Thank you!";
+
+"help_string" = "Help me destroying the viruses!";
+
+"more_lives" = "Watch video to get extra live!";
+"watch" = "Watch";
+"no" = "No";
