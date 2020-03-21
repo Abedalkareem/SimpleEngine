@@ -13,6 +13,58 @@ The main goal of this project is to use the storyboard and UIKit components to b
 You can check <a href="https://github.com/Abedalkareem/Zaina-iOS">Zaina</a> game to have the full source code
 </p>
 
+## How to use
+
+### Game view controller
+First step is to inherit the `BaseGameViewController` it will notify you when:
+1- Two objects collide.
+```
+override func objectsDidCollide(object1: ObjectView, object2: ObjectView) -> Bool {
+  switch (object1.type, object2.type) {
+  case (CollideTypes.virus, CollideTypes.whiteCell):
+    return collideBetween(virus: object1, whiteCell: object2)
+  case (CollideTypes.whiteCell, CollideTypes.virus):
+     return collideBetween(virus: object2, whiteCell: object1)
+   default:
+     break
+   }
+   return true
+}
+```
+
+2- The game pause or resume.
+```
+override func didPause() {
+  showPauseDialog()
+  stopBloodTimer()
+  stopWhiteTimer()
+}
+
+override func didResume() {
+  startBloodTimer()
+  startWhiteTimer()
+}
+```
+
+Also, it will allow you to pause resume the game using `paused` property.
+
+```
+paused = true // to pause the game.
+paused = false // to resume the game.
+```
+
+### Scene view
+
+It's where your `SpriteView`s and `NodeView`s  should be added. In the `BaseGameViewController` you will find an `IBOutlet`
+with a type of `SceneView` you need to connect this `IBOutlet` to your Storyboard `SceneView`.
+
+### Sprite view
+
+### Node view
+
+### FramesHolder and Frames
+
+### 
 
 ## License
 
