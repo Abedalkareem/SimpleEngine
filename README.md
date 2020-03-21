@@ -13,7 +13,7 @@ The main goal of this project is to use the storyboard and UIKit components to b
 You can check <a href="https://github.com/Abedalkareem/Zaina-iOS">Zaina</a> game to have the full source code
 </p>
 
-*You can check at the end of the read me for the games i have done using `SimpleEngine`.*  
+*Check at the end of the read me for the games i have done using `SimpleEngine`.*  
   
 ## How to use
 
