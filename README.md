@@ -13,6 +13,8 @@ The main goal of this project is to use the storyboard and UIKit components to b
 You can check <a href="https://github.com/Abedalkareem/Zaina-iOS">Zaina</a> game to have the full source code
 </p>
 
+*You can check at the end of the read me for the games i have done using `SimpleEngine`.*  
+  
 ## How to use
 
 ### Game view controller
@@ -203,6 +205,14 @@ enum Type: String {
 SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.gameBackground) // background music
 SimpleMusicPlayer.shared.playMusic(music: Music.fire) // effect sound.
 ```
+
+## More games:
+<a href="https://github.com/Abedalkareem/Zaina-iOS">1- Zaina</a>  
+<a href="https://github.com/Abedalkareem/SimpleEngine/tree/master/Example">2- Virus - The game</a>
+
+## Tutorials
+
+To be done.
   
 ## License
 
