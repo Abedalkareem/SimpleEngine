@@ -2,7 +2,7 @@
     <img src="cover.png" alt="Simple Engine" />
 </p>
 
-A simple 2D UIKit game engine to make a simple beautiful iOS Games!
+A simple 2D UIKit game engine to make a simple beautiful iOS/tvOS Games!
 
 ## It's Just a UIKit!
 
