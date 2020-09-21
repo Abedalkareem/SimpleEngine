@@ -10,7 +10,7 @@ import Foundation
 
 enum Constants {
   enum strings {
-    static let adID = "ca-app-pub-3940256099942544/1712485313"
+    static let adID = ""
     static let fontName = "RetroComputer"
   }
 
