@@ -10,3 +10,12 @@ target 'Virus' do
   pod 'Google-Mobile-Ads-SDK'
 
 end
+
+target 'VirusTV' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Virus
+  pod 'SimpleEngine', :path => '../'
+
+end

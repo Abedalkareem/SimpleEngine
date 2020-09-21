@@ -22,6 +22,7 @@ typedef void (^GADInstreamAdLoadCompletionHandler)(GADInstreamAd *_Nullable inst
                                                    NSError *_Nullable error);
 
 /// An instream ad.
+GAD_DEPRECATED_ATTRIBUTE
 @interface GADInstreamAd : NSObject
 
 /// Loads an instream ad with the provided ad unit ID. Instream ads only support

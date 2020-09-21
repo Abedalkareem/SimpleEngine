@@ -7,11 +7,21 @@
 		<key>Virus.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
+		</dict>
+		<key>VirusTV.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C6F55F3E25165EA8000B39AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C6FF68532417683C008F9B02</key>
 		<dict>
 			<key>primary</key>

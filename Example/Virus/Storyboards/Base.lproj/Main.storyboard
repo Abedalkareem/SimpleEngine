@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bWG-DT-GHG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bWG-DT-GHG">
     <device id="retina5_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -36,12 +37,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJA-Cl-adi">
-                                        <rect key="frame" x="155" y="313" width="132" height="66"/>
+                                        <rect key="frame" x="157" y="313" width="130" height="66"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="URK-ql-fpu"/>
+                                            <constraint firstAttribute="width" constant="130" id="URK-ql-fpu"/>
                                             <constraint firstAttribute="height" constant="66" id="cM7-Vk-TZb"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="43" minY="13" maxX="43" maxY="13"/>
+                                        <inset key="imageEdgeInsets" minX="44" minY="13" maxX="44" maxY="13"/>
                                         <state key="normal" image="leader" backgroundImage="button_background">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -73,7 +74,7 @@
                                     <constraint firstAttribute="width" constant="500" id="pMN-0r-BMA"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmx-di-2aS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmx-di-2aS" customClass="AppButton" customModule="Virus" customModuleProvider="target">
                                 <rect key="frame" x="303" y="313" width="130" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="nb4-Ah-UeX"/>
@@ -88,7 +89,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RHA-C5-1wX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Mwx-v3-BUU" secondAttribute="bottom" id="0FD-10-2LY"/>
                             <constraint firstAttribute="trailing" secondItem="6Tg-R4-WUJ" secondAttribute="trailing" id="465-71-JBB"/>
@@ -111,10 +113,10 @@
                             <constraint firstItem="6Tg-R4-WUJ" firstAttribute="top" secondItem="RHA-C5-1wX" secondAttribute="top" id="tcr-fB-oez"/>
                             <constraint firstItem="D3l-Eg-h0c" firstAttribute="leading" secondItem="Mgr-IA-qOy" secondAttribute="leading" id="wow-EZ-Ixj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="RHA-C5-1wX"/>
                     </view>
                     <connections>
                         <outlet property="movingBackgroundView" destination="Mwx-v3-BUU" id="ddP-1o-Rxc"/>
+                        <outlet property="playButton" destination="Zmx-di-2aS" id="P9b-YA-A3Y"/>
                         <outlet property="sceneView" destination="6Tg-R4-WUJ" id="6Ed-Tm-ShV"/>
                     </connections>
                 </viewController>
@@ -146,7 +148,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJj-wq-CrN" customClass="TalkingVirusSpriteView" customModule="Virus" customModuleProvider="target">
                                         <rect key="frame" x="425" y="16" width="160" height="70"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="KH9-Md-wiO"/>
                                             <constraint firstAttribute="width" constant="160" id="PKf-Yx-Xeg"/>
@@ -179,7 +181,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klz-89-EaH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klz-89-EaH">
                                 <rect key="frame" x="16" y="16" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="BIY-4x-AZZ"/>
@@ -194,7 +196,7 @@
                                     <action selector="back:" destination="srI-nn-FIr" eventType="touchUpInside" id="A5n-ZH-diG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-NN-G6k">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-NN-G6k">
                                 <rect key="frame" x="430" y="348" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8U1-Vx-i4U"/>
@@ -210,7 +212,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sQP-jn-Tld"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zfi-bM-Fyo" firstAttribute="leading" secondItem="2YL-ge-TEB" secondAttribute="leading" id="42W-XL-BA5"/>
                             <constraint firstAttribute="trailing" secondItem="Zfi-bM-Fyo" secondAttribute="trailing" id="9MZ-Yk-1XW"/>
@@ -240,7 +243,6 @@
                             <constraint firstItem="sQP-jn-Tld" firstAttribute="trailing" secondItem="5oh-U2-VjV" secondAttribute="trailing" priority="800" constant="24" id="wOs-pn-m3Q"/>
                             <constraint firstItem="sQP-jn-Tld" firstAttribute="bottom" secondItem="KWv-NN-G6k" secondAttribute="bottom" constant="16" id="zje-UW-6Bt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sQP-jn-Tld"/>
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="KWv-NN-G6k" id="xJY-Q4-1d7"/>
@@ -257,13 +259,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="achiv" width="172" height="176"/>
+        <image name="achiv" width="200" height="204"/>
         <image name="background" width="1280" height="720"/>
         <image name="button_background" width="60" height="60"/>
-        <image name="leader" width="132" height="108"/>
+        <image name="leader" width="200" height="204"/>
         <image name="level_1" width="372" height="700"/>
         <image name="logo" width="760" height="185"/>
         <image name="play" width="44" height="76"/>
         <image name="virus" width="116" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

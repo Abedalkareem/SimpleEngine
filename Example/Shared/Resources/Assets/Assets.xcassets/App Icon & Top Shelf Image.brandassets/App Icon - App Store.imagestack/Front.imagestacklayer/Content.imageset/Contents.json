@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "thried_layer.png",
+      "idiom" : "tv"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

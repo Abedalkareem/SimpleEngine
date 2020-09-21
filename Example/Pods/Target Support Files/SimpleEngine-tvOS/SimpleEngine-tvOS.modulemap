@@ -1,0 +1,6 @@
+framework module SimpleEngine {
+  umbrella header "SimpleEngine-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

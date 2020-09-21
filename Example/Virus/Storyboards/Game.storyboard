@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -75,7 +76,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nzS-wa-nxI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="L76-vc-2CS" firstAttribute="leading" secondItem="Dr4-q2-8Yn" secondAttribute="leading" id="28L-0Q-RUR"/>
                             <constraint firstItem="CUs-Nw-iSb" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="2Gf-mF-ySt"/>
@@ -94,7 +96,6 @@
                             <constraint firstItem="L76-vc-2CS" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="mAi-i4-ZiH"/>
                             <constraint firstItem="6e1-Br-UEe" firstAttribute="top" secondItem="nzS-wa-nxI" secondAttribute="top" id="nWG-Vb-8ZE"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="nzS-wa-nxI"/>
                     </view>
                     <connections>
                         <outlet property="livesView" destination="6e1-Br-UEe" id="k28-c9-6EU"/>
@@ -126,8 +127,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-rG-WjE">
-                                <rect key="frame" x="522" y="91" width="121" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-rG-WjE">
+                                <rect key="frame" x="445" y="211" width="198" height="60"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Home" backgroundImage="button_background">
@@ -153,13 +154,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-jh-ltq">
-                                <rect key="frame" x="206" y="16" width="255" height="58.5"/>
+                                <rect key="frame" x="156" y="16" width="355" height="65"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="50"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-Ro-Nng">
-                                <rect key="frame" x="522" y="231" width="121" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfD-Ro-Nng">
+                                <rect key="frame" x="445" y="291" width="198" height="60"/>
                                 <fontDescription key="fontDescription" name="RetroComputer" family="Retro Computer" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Try again" backgroundImage="button_background">
@@ -196,6 +197,7 @@ We are human we kill things.. nothing can kill us!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fWT-Cz-Zdz"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2Ih-cY-Wnc" firstAttribute="top" secondItem="2Wh-XD-IYj" secondAttribute="top" id="2yH-9e-gft"/>
@@ -224,7 +226,6 @@ We are human we kill things.. nothing can kill us!</string>
                             <constraint firstItem="s2C-SK-kSX" firstAttribute="top" secondItem="2Wh-XD-IYj" secondAttribute="bottom" constant="-39" id="p6g-uK-3mj"/>
                             <constraint firstItem="fWT-Cz-Zdz" firstAttribute="trailing" secondItem="SfD-Ro-Nng" secondAttribute="trailing" constant="24" id="pS8-VA-g0J"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fWT-Cz-Zdz"/>
                     </view>
                     <connections>
                         <outlet property="movingBackgroundView" destination="0LY-Tw-czy" id="FPP-c8-H9K"/>
@@ -246,5 +247,8 @@ We are human we kill things.. nothing can kill us!</string>
         <image name="progress_blood" width="232" height="14"/>
         <image name="progress_infected_blood" width="232" height="14"/>
         <image name="share" width="160" height="132"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
