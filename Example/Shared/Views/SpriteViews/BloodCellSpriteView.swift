@@ -6,7 +6,7 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import SimpleEngine
 
 class BloodCellSpriteView: SpriteView {

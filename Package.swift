@@ -17,7 +17,8 @@ let package = Package(
   targets: [
     .target(
       name: "SimpleEngine",
-      dependencies: []),
+      dependencies: [],
+      path: "SimpleEngine/SimpleEngine"),
     .testTarget(
       name: "SimpleEngineTests",
       dependencies: ["SimpleEngine"]),

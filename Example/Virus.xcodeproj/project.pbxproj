@@ -23,7 +23,6 @@
 		C6B5232C241FF65C00061421 /* ManSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232B241FF65C00061421 /* ManSpriteView.swift */; };
 		C6B523302421579C00061421 /* LevelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5232F2421579B00061421 /* LevelsViewController.swift */; };
 		C6B523322421EE4D00061421 /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B523312421EE4C00061421 /* GameKitHelper.swift */; };
-		C6B52334242215E500061421 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B52333242215E500061421 /* GameKit.framework */; };
 		C6B523382422196500061421 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6B5233A2422196500061421 /* Localizable.strings */; };
 		C6B5233C24221B9000061421 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5233B24221B9000061421 /* String+Helpers.swift */; };
 		C6B5233E2422218800061421 /* levels.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C6B5233D2422218800061421 /* levels.mp3 */; };
@@ -41,11 +40,9 @@
 		C6DC70E9241CB50D00D4AB55 /* new_battle.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70E8241CB50D00D4AB55 /* new_battle.wav */; };
 		C6DC70EB241CB7A300D4AB55 /* button_clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */; };
 		C6DCD0FE25187DC000AA4DFB /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FE92423417900971D1B /* ShareHelper.swift */; };
-		C6DCD11E25188C2100AA4DFB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DCD11D25188C2100AA4DFB /* GameKit.framework */; };
 		C6E28B7A2517BE6D005642A6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28B792517BE6D005642A6 /* Helpers.swift */; };
 		C6E28B7D2517BED2005642A6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28B792517BE6D005642A6 /* Helpers.swift */; };
 		C6E93FEA2423417900971D1B /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FE92423417900971D1B /* ShareHelper.swift */; };
-		C6E93FEC2423418800971D1B /* AdmobRewardedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FEB2423418800971D1B /* AdmobRewardedHelper.swift */; };
 		C6E93FEE2423465200971D1B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */; };
 		C6F55F4225165EA8000B39AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F55F4125165EA8000B39AA /* AppDelegate.swift */; };
 		C6F55F4C25165EAA000B39AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F55F4A25165EAA000B39AA /* LaunchScreen.storyboard */; };
@@ -86,6 +83,10 @@
 		C6F55FCC2516635D000B39AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70D6241BC2D100D4AB55 /* MainViewController.swift */; };
 		C6F55FD8251664CE000B39AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F55FD7251664CE000B39AA /* Main.storyboard */; };
 		C6F55FDC25166701000B39AA /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F55FDB25166701000B39AA /* Game.storyboard */; };
+		C6FF065C28D0163500FE013E /* SimpleEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FF065B28D0163500FE013E /* SimpleEngine.framework */; };
+		C6FF065D28D0163500FE013E /* SimpleEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6FF065B28D0163500FE013E /* SimpleEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C6FF066028D0163900FE013E /* SimpleEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FF065F28D0163900FE013E /* SimpleEngine.framework */; };
+		C6FF066128D0163900FE013E /* SimpleEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6FF065F28D0163900FE013E /* SimpleEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */; };
 		C6FF687E2417692E008F9B02 /* CollideTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686F2417692D008F9B02 /* CollideTypes.swift */; };
 		C6FF68802417692E008F9B02 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF68732417692E008F9B02 /* GameViewController.swift */; };
@@ -94,15 +95,34 @@
 		C6FF68842417692E008F9B02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF687C2417692E008F9B02 /* AppDelegate.swift */; };
 		C6FF688B2418929B008F9B02 /* StreamBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF688A2418929B008F9B02 /* StreamBackgroundView.swift */; };
 		C6FF688D2418DF3B008F9B02 /* FireSpriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */; };
-		E71A6C84C885540190515E75 /* Pods_VirusTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D693C6CE55E364D4F942BD32 /* Pods_VirusTV.framework */; };
-		F1B8D002087A963564ABE0AB /* Pods_Virus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5931627F095129915EA8B5A /* Pods_Virus.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C6FF065E28D0163500FE013E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C6FF065D28D0163500FE013E /* SimpleEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6FF066228D0163900FE013E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C6FF066128D0163900FE013E /* SimpleEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1B195E397A4F0179D2F1B09D /* Pods-VirusTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirusTV.release.xcconfig"; path = "Target Support Files/Pods-VirusTV/Pods-VirusTV.release.xcconfig"; sourceTree = "<group>"; };
-		29FA8776D268F817CEB7296F /* Pods-Virus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.release.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.release.xcconfig"; sourceTree = "<group>"; };
-		55C5C79E7178BF4EA838652A /* Pods-Virus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virus.debug.xcconfig"; path = "Target Support Files/Pods-Virus/Pods-Virus.debug.xcconfig"; sourceTree = "<group>"; };
-		65A3CD284601E0C567DE8239 /* Pods-VirusTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirusTV.debug.xcconfig"; path = "Target Support Files/Pods-VirusTV/Pods-VirusTV.debug.xcconfig"; sourceTree = "<group>"; };
 		C61EF5A22517605B008E86AD /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		C61EF5A92517617A008E86AD /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		C62FE3FE241F38B40071B7A8 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +136,6 @@
 		C6B5232B241FF65C00061421 /* ManSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManSpriteView.swift; sourceTree = "<group>"; };
 		C6B5232F2421579B00061421 /* LevelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewController.swift; sourceTree = "<group>"; };
 		C6B523312421EE4C00061421 /* GameKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameKitHelper.swift; sourceTree = "<group>"; };
-		C6B52333242215E500061421 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		C6B523392422196500061421 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6B5233B24221B9000061421 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		C6B5233D2422218800061421 /* levels.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = levels.mp3; sourceTree = "<group>"; };
@@ -134,10 +153,8 @@
 		C6DC70E8241CB50D00D4AB55 /* new_battle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = new_battle.wav; sourceTree = "<group>"; };
 		C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_clicked.wav; sourceTree = "<group>"; };
 		C6DC70F0241F306900D4AB55 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
-		C6DCD11D25188C2100AA4DFB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS14.0.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		C6E28B792517BE6D005642A6 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C6E93FE92423417900971D1B /* ShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareHelper.swift; sourceTree = "<group>"; };
-		C6E93FEB2423418800971D1B /* AdmobRewardedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobRewardedHelper.swift; sourceTree = "<group>"; };
 		C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		C6F55F3F25165EA8000B39AA /* VirusTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirusTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F55F4125165EA8000B39AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +162,8 @@
 		C6F55F4D25165EAA000B39AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6F55FD7251664CE000B39AA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C6F55FDB25166701000B39AA /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
+		C6FF065B28D0163500FE013E /* SimpleEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimpleEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6FF065F28D0163900FE013E /* SimpleEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimpleEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF68542417683C008F9B02 /* Virus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Virus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FF686D2417692D008F9B02 /* VirusSpriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirusSpriteView.swift; sourceTree = "<group>"; };
 		C6FF686F2417692D008F9B02 /* CollideTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollideTypes.swift; sourceTree = "<group>"; };
@@ -156,8 +175,6 @@
 		C6FF687C2417692E008F9B02 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6FF688A2418929B008F9B02 /* StreamBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamBackgroundView.swift; sourceTree = "<group>"; };
 		C6FF688C2418DF3B008F9B02 /* FireSpriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireSpriteView.swift; sourceTree = "<group>"; };
-		D693C6CE55E364D4F942BD32 /* Pods_VirusTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirusTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5931627F095129915EA8B5A /* Pods_Virus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Virus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71A6C84C885540190515E75 /* Pods_VirusTV.framework in Frameworks */,
-				C6DCD11E25188C2100AA4DFB /* GameKit.framework in Frameworks */,
+				C6FF066028D0163900FE013E /* SimpleEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,36 +190,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B8D002087A963564ABE0AB /* Pods_Virus.framework in Frameworks */,
-				C6B52334242215E500061421 /* GameKit.framework in Frameworks */,
+				C6FF065C28D0163500FE013E /* SimpleEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32933C867A6F05E99E39480B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C6DCD11D25188C2100AA4DFB /* GameKit.framework */,
-				C6B52333242215E500061421 /* GameKit.framework */,
-				E5931627F095129915EA8B5A /* Pods_Virus.framework */,
-				D693C6CE55E364D4F942BD32 /* Pods_VirusTV.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		54EE287519BDA70BEAA330CC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				55C5C79E7178BF4EA838652A /* Pods-Virus.debug.xcconfig */,
-				29FA8776D268F817CEB7296F /* Pods-Virus.release.xcconfig */,
-				65A3CD284601E0C567DE8239 /* Pods-VirusTV.debug.xcconfig */,
-				1B195E397A4F0179D2F1B09D /* Pods-VirusTV.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		C6A869CA2424661700BA6B49 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,14 +278,6 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		C6DCD0F925187D7E00AA4DFB /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C6E93FEB2423418800971D1B /* AdmobRewardedHelper.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		C6DCD10125187DEB00AA4DFB /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +316,15 @@
 			path = VirusTV;
 			sourceTree = "<group>";
 		};
+		C6FF065A28D0163500FE013E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6FF065F28D0163900FE013E /* SimpleEngine.framework */,
+				C6FF065B28D0163500FE013E /* SimpleEngine.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C6FF684B2417683C008F9B02 = {
 			isa = PBXGroup;
 			children = (
@@ -338,8 +332,7 @@
 				C6FF68562417683C008F9B02 /* Virus */,
 				C6F55F4025165EA8000B39AA /* VirusTV */,
 				C6FF68552417683C008F9B02 /* Products */,
-				54EE287519BDA70BEAA330CC /* Pods */,
-				32933C867A6F05E99E39480B /* Frameworks */,
+				C6FF065A28D0163500FE013E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,7 +350,6 @@
 			children = (
 				C6FF687B2417692E008F9B02 /* AppDelegate */,
 				C6FF68762417692E008F9B02 /* Storyboards */,
-				C6DCD0F925187D7E00AA4DFB /* Helpers */,
 				C6FF68742417692E008F9B02 /* SupportFiles */,
 			);
 			path = Virus;
@@ -475,6 +467,7 @@
 				C6F55F3C25165EA8000B39AA /* Frameworks */,
 				C6F55F3D25165EA8000B39AA /* Resources */,
 				7EBD64B6F4702B0B0E042C5B /* [CP] Embed Pods Frameworks */,
+				C6FF066228D0163900FE013E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -489,11 +482,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6FF68682417683F008F9B02 /* Build configuration list for PBXNativeTarget "Virus" */;
 			buildPhases = (
-				262765FA92E1E7A2B93E88BD /* [CP] Check Pods Manifest.lock */,
 				C6FF68502417683C008F9B02 /* Sources */,
 				C6FF68512417683C008F9B02 /* Frameworks */,
 				C6FF68522417683C008F9B02 /* Resources */,
-				625F09A7F8578A55842E5E13 /* [CP] Embed Pods Frameworks */,
+				C6FF065E28D0163500FE013E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -593,45 +585,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		262765FA92E1E7A2B93E88BD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Virus-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		625F09A7F8578A55842E5E13 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Virus/Pods-Virus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Virus/Pods-Virus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Virus/Pods-Virus-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7EBD64B6F4702B0B0E042C5B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -731,7 +684,6 @@
 				C6B5232C241FF65C00061421 /* ManSpriteView.swift in Sources */,
 				C6DC70DF241CA44300D4AB55 /* Music.swift in Sources */,
 				C64570C2241A731E00D6C003 /* BloodCellSpriteView.swift in Sources */,
-				C6E93FEC2423418800971D1B /* AdmobRewardedHelper.swift in Sources */,
 				C6B5234A2422301700061421 /* TalkingVirusSpriteView.swift in Sources */,
 				C61EF5AA2517617A008E86AD /* UIView+Animation.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
@@ -783,7 +735,6 @@
 /* Begin XCBuildConfiguration section */
 		C6F55F4E25165EAA000B39AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65A3CD284601E0C567DE8239 /* Pods-VirusTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -802,13 +753,12 @@
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
 			};
 			name = Debug;
 		};
 		C6F55F4F25165EAA000B39AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B195E397A4F0179D2F1B09D /* Pods-VirusTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -827,7 +777,7 @@
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
 			};
 			name = Release;
 		};
@@ -882,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -937,7 +887,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -949,14 +899,13 @@
 		};
 		C6FF68692417683F008F9B02 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55C5C79E7178BF4EA838652A /* Pods-Virus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = H3MRF55H66;
 				INFOPLIST_FILE = "$(SRCROOT)/Virus/SupportFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -971,14 +920,13 @@
 		};
 		C6FF686A2417683F008F9B02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29FA8776D268F817CEB7296F /* Pods-Virus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = H3MRF55H66;
 				INFOPLIST_FILE = "$(SRCROOT)/Virus/SupportFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

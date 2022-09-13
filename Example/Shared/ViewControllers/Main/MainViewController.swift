@@ -33,10 +33,6 @@ class MainViewController: BaseGameViewController {
     setupViews()
     playBackgroundMusic()
     authenticateUser()
-
-    #if os(iOS)
-    AdmobRewardedHelper.shared.load()
-    #endif
   }
   
   override func viewDidAppear(_ animated: Bool) {

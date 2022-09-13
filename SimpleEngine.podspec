@@ -31,7 +31,7 @@ A simple 2D game engine to make a simple beautiful iOS Games!
   s.ios.deployment_target = '9.3'
   s.tvos.deployment_target = '9.3'
 
-  s.source_files = 'Sources/SimpleEngine/**/*'
+  s.source_files = 'SimpleEngine/SimpleEngine/**/*'
   
   # s.resource_bundles = {
   #   'BlinkingLabel' => ['BlinkingLabel/Assets/*.png']

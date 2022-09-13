@@ -122,13 +122,9 @@ class GameViewController: BaseGameViewController {
       if action == .second {
         self.showGameOverController()
       } else {
-        #if os(iOS)
-        if AdmobRewardedHelper.shared.show(in: self) {
-          self.dialogView?.dismiss()
-          self.dialogView = nil
-          self.showPauseDialog()
-        }
-        #endif
+        self.dialogView?.dismiss()
+        self.dialogView = nil
+        self.showPauseDialog()
       }
     }
   }
@@ -295,3 +291,7 @@ class GameViewController: BaseGameViewController {
   //  }
 }
 
+extension NSNotification.Name {
+  static let livesChanged = NSNotification.Name("livesChanged")
+  static let adDismissed = NSNotification.Name("adDismissed")
+}
