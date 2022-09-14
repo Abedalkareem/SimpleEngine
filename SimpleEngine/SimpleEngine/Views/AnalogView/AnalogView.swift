@@ -6,8 +6,8 @@
 //  Copyright © 2019 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import GameController
+import UIKit
 
 /// An Analog controller to control the `Sprite` movement.
 @IBDesignable
@@ -45,7 +45,7 @@ open class AnalogView: UIView {
 
   // MARK: - init
 
-  public override init(frame: CGRect) {
+  override public init(frame: CGRect) {
     super.init(frame: frame)
     setupViews()
   }
@@ -153,8 +153,8 @@ open class AnalogView: UIView {
     // going left in case of x and top in case of y,
     // while the value in positive means that the user move to
     // right in case of y or bottom in case of x.
-    x = x - 0.5
-    y = y - 0.5
+    x -= 0.5
+    y -= 0.5
 
     analog = Analog(direction: direction, x: x, y: y)
 
@@ -170,20 +170,20 @@ open class AnalogView: UIView {
   /// ```
   ///
   func attach(controller: GCController?) {
-        
+
     let valueChangedHandler: GCControllerDirectionPadValueChangedHandler = { _, x, y in
       var x: CGFloat = CGFloat(x) * 0.5 + 0.5
       var y: CGFloat = CGFloat(-y) * 0.5 + 0.5
       let direction = Direction(x: x, y: y)
-      x = x - 0.5
-      y = y - 0.5
+      x -= 0.5
+      y -= 0.5
       self.analog = Analog(direction: direction, x: x, y: y)
     }
 
     controller?.extendedGamepad?.leftThumbstick.valueChangedHandler = valueChangedHandler
     controller?.extendedGamepad?.dpad.valueChangedHandler = valueChangedHandler
   }
-  
+
   open func analogDidMove(analogMoved: @escaping AnalogMoved) {
     self.analogMoved = analogMoved
   }

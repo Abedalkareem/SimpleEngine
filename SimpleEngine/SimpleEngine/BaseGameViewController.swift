@@ -6,18 +6,18 @@
 //  Copyright © 2019 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import GameController
+import UIKit
 
 open class BaseGameViewController: UIViewController {
 
   // MARK: - IBOutlet
 
+  // swiftlint:disable private_outlet
   @IBOutlet open weak var sceneView: SceneView!
 
   // MARK: - Properties
 
-  
   ///
   /// If you want to use a controller then you can set the controller
   /// you want to this property.
@@ -30,11 +30,11 @@ open class BaseGameViewController: UIViewController {
       analogView.attach(controller: controller)
     }
   }
-  
+
   ///
   /// Analog to be attached to one `SpriteView` to control it.
   ///
-  open var analogView: AnalogView!
+  open lazy var analogView = AnalogView()
 
   ///
   /// A property to pause or resume the game.
@@ -64,13 +64,13 @@ open class BaseGameViewController: UIViewController {
 
   override open func viewDidLoad() {
     super.viewDidLoad()
-    
+
     addAnalogView()
     start()
     setDefaultController()
   }
 
-  open override func viewDidAppear(_ animated: Bool) {
+  override open func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     addObservers()
   }
@@ -84,7 +84,7 @@ open class BaseGameViewController: UIViewController {
   private func setDefaultController() {
     controller = GCController.controllers().first
   }
-  
+
   ///
   /// Start the game. resume `sceneView`, set `shouldKeepUpdatingTheScene` to `true`
   /// and start the timer.
@@ -126,7 +126,6 @@ open class BaseGameViewController: UIViewController {
   }
 
   private func addAnalogView() {
-    analogView = AnalogView()
     view.addSubview(analogView)
 
     makeAnalogViewConstraints()
@@ -182,7 +181,11 @@ open class BaseGameViewController: UIViewController {
   // MARK: - Timer
 
   private func startTimer() {
-    timer = Timer.scheduledTimer(timeInterval: 0.016, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+    timer = Timer.scheduledTimer(timeInterval: 0.016,
+                                 target: self,
+                                 selector: #selector(update),
+                                 userInfo: nil,
+                                 repeats: true)
   }
 
   private func stopTimer() {
@@ -208,7 +211,7 @@ open class BaseGameViewController: UIViewController {
   /// some point.
   ///
   open func checkIfObjectsCollided() {
-    let subviews = sceneView.subviews.compactMap({ $0 as? ObjectView })
+    let subviews = sceneView.subviews.compactMap { $0 as? ObjectView }
     for object1 in subviews {
       for object2 in subviews {
         guard object1 != object2 else {
@@ -220,7 +223,7 @@ open class BaseGameViewController: UIViewController {
         let shouldReportCollideToViewController = shouldKeepUpdatingTheScene &&
           object1.onCollisionEnter(with: object2) &&
           object2.onCollisionEnter(with: object1)
-        if shouldReportCollideToViewController  {
+        if shouldReportCollideToViewController {
           shouldKeepUpdatingTheScene = objectsDidCollide(object1: object1, object2: object2)
         }
       }

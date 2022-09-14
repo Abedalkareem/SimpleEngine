@@ -26,17 +26,18 @@ extension UIViewController {
       window.rootViewController = viewController
       return
     }
-    
+
     let view = UIView(frame: window.bounds)
     view.backgroundColor = .black
     window.addSubview(view)
     view.alpha = 0
-    UIView.animate(withDuration: 0.5, animations: {
+    UIView.animate(withDuration: 0.5,
+                   animations: {
       view.alpha = 1
-    }) { _ in
+    }, completion: { _ in
       window.rootViewController = viewController
       view.removeFromSuperview()
-    }
+    })
   }
 
 }

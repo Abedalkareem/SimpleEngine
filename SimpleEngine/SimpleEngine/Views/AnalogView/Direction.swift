@@ -7,7 +7,6 @@
 //
 import UIKit
 
-
 /// direction value is from 0 to 1 as the `Direction` enum.
 ///
 /// the value from 0 to 0.5 in case of x mean the direction is `left`.

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -462,11 +462,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6F55F5025165EAA000B39AA /* Build configuration list for PBXNativeTarget "VirusTV" */;
 			buildPhases = (
-				E5D163408594DC3166361035 /* [CP] Check Pods Manifest.lock */,
+				C6FF069128D018CB00FE013E /* Swiftlint */,
 				C6F55F3B25165EA8000B39AA /* Sources */,
 				C6F55F3C25165EA8000B39AA /* Frameworks */,
 				C6F55F3D25165EA8000B39AA /* Resources */,
-				7EBD64B6F4702B0B0E042C5B /* [CP] Embed Pods Frameworks */,
 				C6FF066228D0163900FE013E /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -482,6 +481,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6FF68682417683F008F9B02 /* Build configuration list for PBXNativeTarget "Virus" */;
 			buildPhases = (
+				C6FF069028D018A400FE013E /* Swiftlint */,
 				C6FF68502417683C008F9B02 /* Sources */,
 				C6FF68512417683C008F9B02 /* Frameworks */,
 				C6FF68522417683C008F9B02 /* Resources */,
@@ -585,24 +585,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7EBD64B6F4702B0B0E042C5B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VirusTV/Pods-VirusTV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VirusTV/Pods-VirusTV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VirusTV/Pods-VirusTV-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5D163408594DC3166361035 /* [CP] Check Pods Manifest.lock */ = {
+		C6FF069028D018A400FE013E /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -610,19 +593,33 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VirusTV-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C6FF069128D018CB00FE013E /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
