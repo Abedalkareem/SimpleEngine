@@ -26,7 +26,7 @@ open class ProgressView: UIView {
   ///
   /// An image to show for the progress.
   ///
-  @IBInspectable open var progressImage: UIImage = UIImage()  {
+  @IBInspectable open var progressImage: UIImage = UIImage() {
     didSet {
       updateProgressImages()
     }
@@ -35,7 +35,7 @@ open class ProgressView: UIView {
   ///
   /// An image to show as a background for the progress.
   ///
-  @IBInspectable open var progressBackgroundImage: UIImage = UIImage()  {
+  @IBInspectable open var progressBackgroundImage: UIImage = UIImage() {
     didSet {
       updateProgressImages()
     }
@@ -70,8 +70,8 @@ open class ProgressView: UIView {
     setup()
   }
 
-  required public init(coder: NSCoder) {
-    super.init(coder: coder)!
+  public required init?(coder: NSCoder) {
+    super.init(coder: coder)
     setup()
   }
 
@@ -106,7 +106,6 @@ open class ProgressView: UIView {
       progressBackgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: spacing)
     ])
 
-
     progressImageView.translatesAutoresizingMaskIntoConstraints = false
     progressWidthAnchor = progressImageView.widthAnchor.constraint(equalToConstant: 0)
     NSLayoutConstraint.activate([
@@ -140,7 +139,7 @@ open class ProgressView: UIView {
 
   // MARK: - View lifecycle
 
-  open override func layoutSubviews() {
+  override open func layoutSubviews() {
     super.layoutSubviews()
     updateBackgroundImage()
   }

@@ -74,7 +74,7 @@ class DialogView: UIView {
     addButtons()
 
     makeConstraints()
-    
+
     setNeedsFocusUpdate()
     updateFocusIfNeeded()
   }
@@ -102,7 +102,7 @@ class DialogView: UIView {
   private func addLabel() {
     label = UILabel()
     label.text = text
-    label.font = UIFont(name: Constants.strings.fontName, size: isTV ? 32 : 17)
+    label.font = UIFont(name: Constants.Strings.fontName, size: isTV ? 32 : 17)
     label.numberOfLines = 0
     label.textAlignment = .center
     label.textColor = .black
@@ -112,7 +112,7 @@ class DialogView: UIView {
   private func addButtons() {
     firstButton = AppButton()
     firstButton.setTitle(firstButtonText, for: .normal)
-    firstButton.titleLabel?.font = UIFont(name: Constants.strings.fontName, size: isTV ? 32 : 17)
+    firstButton.titleLabel?.font = UIFont(name: Constants.Strings.fontName, size: isTV ? 32 : 17)
     firstButton.setTitleColor(.black, for: .normal)
     firstButton.addTarget(self, action: #selector(first), for: .touchUpInside)
     firstButton.addTarget(self, action: #selector(first), for: .primaryActionTriggered)
@@ -120,7 +120,7 @@ class DialogView: UIView {
 
     secondButton = AppButton()
     secondButton.setTitle(secondButtonText, for: .normal)
-    secondButton.titleLabel?.font = UIFont(name: Constants.strings.fontName, size: isTV ? 32 : 17)
+    secondButton.titleLabel?.font = UIFont(name: Constants.Strings.fontName, size: isTV ? 32 : 17)
     secondButton.setTitleColor(.black, for: .normal)
     secondButton.addTarget(self, action: #selector(second), for: .touchUpInside)
     secondButton.addTarget(self, action: #selector(second), for: .primaryActionTriggered)
@@ -133,7 +133,7 @@ class DialogView: UIView {
       blurEffectView.topAnchor.constraint(equalTo: topAnchor),
       blurEffectView.bottomAnchor.constraint(equalTo: bottomAnchor),
       blurEffectView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      blurEffectView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      blurEffectView.leadingAnchor.constraint(equalTo: leadingAnchor)
     ])
 
     containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -141,7 +141,7 @@ class DialogView: UIView {
       containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
       containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
       containerView.widthAnchor.constraint(equalToConstant: isTV ? 500 : 250),
-      containerView.heightAnchor.constraint(equalToConstant: isTV ? 300 : 150),
+      containerView.heightAnchor.constraint(equalToConstant: isTV ? 300 : 150)
     ])
 
     backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -149,28 +149,28 @@ class DialogView: UIView {
       backgroundImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
       backgroundImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
       backgroundImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-      backgroundImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+      backgroundImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
     ])
 
     label.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
       label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+      label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)
     ])
 
     firstButton.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       firstButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
-      firstButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+      firstButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)
     ])
 
     secondButton.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       secondButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
-      secondButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
+      secondButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16)
     ])
-    
+
   }
 
   // MARK: - View lifecycle
@@ -218,14 +218,15 @@ class DialogView: UIView {
   // MARK: - Animation
 
   func animate(isShowing: Bool, completion: ((Bool) -> Void)? = nil) {
-    UIView.animate(withDuration: 0.5, animations: {
+    UIView.animate(withDuration: 0.5,
+                   animations: {
       self.alpha = isShowing ? 1 : 0
-    }) { finished in
+    }, completion: { finished in
       if !isShowing {
         self.removeFromSuperview()
         completion?(finished)
       }
-    }
+    })
   }
 
   // MARK: - Show
@@ -256,4 +257,3 @@ class DialogView: UIView {
     case second
   }
 }
-

@@ -26,7 +26,7 @@ class FireSpriteView: SpriteView {
 
     stopWhenCollideTypes = []
 
-    frames.idel = Frames(images: [#imageLiteral(resourceName: "fire"), #imageLiteral(resourceName: "fire_2"), #imageLiteral(resourceName: "fire_3"), #imageLiteral(resourceName: "fire_4"), #imageLiteral(resourceName: "fire_5")], duration: 0.1)
+    frames?.idel = Frames(images: [#imageLiteral(resourceName: "fire"), #imageLiteral(resourceName: "fire_2"), #imageLiteral(resourceName: "fire_3"), #imageLiteral(resourceName: "fire_4"), #imageLiteral(resourceName: "fire_5")], duration: 0.1)
   }
 
   override func didRechedDesiredPoint() {

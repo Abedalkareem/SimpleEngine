@@ -8,12 +8,12 @@
 
 import UIKit
 
-class UserDefaultsHelper {
+enum UserDefaultsHelper {
 
   // TODO: To support sound control in future
-  class var isSoundOff: Bool {
+  static var isSoundOff: Bool {
     get {
-      return UserDefaults.standard.bool(forKey: "sound")
+      UserDefaults.standard.bool(forKey: "sound")
     }
     set {
       UserDefaults.standard.setValue(newValue, forKey: "sound")

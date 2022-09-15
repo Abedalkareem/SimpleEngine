@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-  
+
   ///
   /// Scale the view with the givin `x` and `y`.
   ///
@@ -29,5 +29,5 @@ extension UIView {
       self.alpha = alpha
     }
   }
-  
+
 }

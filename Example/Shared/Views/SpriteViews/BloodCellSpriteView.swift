@@ -6,8 +6,8 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import SimpleEngine
+import UIKit
 
 class BloodCellSpriteView: SpriteView {
 
@@ -32,7 +32,7 @@ class BloodCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = Frames(images: [#imageLiteral(resourceName: "blood_cell")])
+    frames?.idel = Frames(images: [#imageLiteral(resourceName: "blood_cell")])
   }
 
   // MARK: -
@@ -58,7 +58,7 @@ class BloodCellSpriteView: SpriteView {
     startAnimationWith(frames: frames,
                        repeatCount: 1,
                        stopOtherAnimations: false) {
-      self.frames.idel = Frames(images: [#imageLiteral(resourceName: "infected_6")])
+      self.frames?.idel = Frames(images: [#imageLiteral(resourceName: "infected_6")])
       self.updateFrames()
     }
   }

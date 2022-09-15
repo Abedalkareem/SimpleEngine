@@ -9,7 +9,7 @@
 import UIKit
 
 class AppButton: UIButton {
-  
+
   override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
     if context.nextFocusedView == self {
       animate(scaleX: 1.1, y: 1.1)
@@ -17,5 +17,5 @@ class AppButton: UIButton {
       animate(scaleX: 1, y: 1)
     }
   }
-  
+
 }

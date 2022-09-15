@@ -72,7 +72,6 @@ opt_in_rules:
   - identifier_name
   - implicit_getter
   - implicit_return
-  - implicitly_unwrapped_optional
   - is_disjoint
   - joined_default_parameter
   - large_tuple

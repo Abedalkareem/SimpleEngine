@@ -6,8 +6,8 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import SimpleEngine
+import UIKit
 
 class LevelsViewController: BaseGameViewController {
 
@@ -36,7 +36,7 @@ class LevelsViewController: BaseGameViewController {
 
   private func setupViews() {
     analogView.isHidden = true
-    let level = Status.currentLevel+1
+    let level = Status.currentLevel + 1
     titleLabel.text = "mission_\(level)_title".localize
     descriptionLabel.text = "mission_\(level)_description".localize
     bodyImageView.image = UIImage(named: "level_\(level)")
@@ -99,7 +99,7 @@ class LevelsViewController: BaseGameViewController {
   // MARK: - ViewController instance
 
   static func instance() -> LevelsViewController {
-    return UIStoryboard.create(storyboard: .main, controller: LevelsViewController.self)
+     UIStoryboard.create(storyboard: .main, controller: LevelsViewController.self)
   }
 
   // MARK: - deinit

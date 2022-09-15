@@ -6,8 +6,8 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import SimpleEngine
+import UIKit
 
 class WhiteCellSpriteView: SpriteView {
 
@@ -43,7 +43,7 @@ class WhiteCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames.idel = Frames(images: [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")])
+    frames?.idel = Frames(images: [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")])
   }
 
   // MARK: - View lifecycle

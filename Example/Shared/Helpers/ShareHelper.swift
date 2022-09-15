@@ -11,13 +11,13 @@ import UIKit
 class ShareHelper: NSObject {
 
   class func share(url: URL, string: String, sourceView: UIView) -> UIViewController? {
-    var vc: UIViewController?
+    var viewController: UIViewController?
     #if os(iOS)
-    vc = UIActivityViewController(activityItems: [string, url], applicationActivities: nil)
-    vc?.popoverPresentationController?.sourceView = sourceView
-    vc?.popoverPresentationController?.sourceRect = sourceView.bounds
+    viewController = UIActivityViewController(activityItems: [string, url], applicationActivities: nil)
+    viewController?.popoverPresentationController?.sourceView = sourceView
+    viewController?.popoverPresentationController?.sourceRect = sourceView.bounds
     #endif
-    return vc
+    return viewController
   }
 
 }

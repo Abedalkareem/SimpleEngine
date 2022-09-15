@@ -8,14 +8,14 @@
 
 import UIKit
 
-class Status {
+enum Status {
 
   ///
   /// Return the current level.
   ///
   static var currentLevel: Int {
     get {
-      return UserDefaults.standard.integer(forKey: "currentLevel")
+      UserDefaults.standard.integer(forKey: "currentLevel")
     }
     set {
       UserDefaults.standard.set(newValue, forKey: "currentLevel")

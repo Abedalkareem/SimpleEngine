@@ -6,8 +6,8 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import SimpleEngine
+import UIKit
 
 class GameOverViewController: UIViewController {
 
@@ -47,13 +47,13 @@ class GameOverViewController: UIViewController {
   }
 
   @IBAction private func share(_ sender: UIButton) {
-    guard let url = URL(string: Constants.links.appLink) else {
+    guard let url = URL(string: Constants.Links.appLink) else {
       return
     }
     GameKitHelper.shared.report(achievement: .achievement11)
     guard let viewController = ShareHelper.share(url: url,
-                                           string: "help_string".localize,
-                                           sourceView: sender) else {
+                                                 string: "help_string".localize,
+                                                 sourceView: sender) else {
       return
     }
     present(viewController, animated: true, completion: nil)
@@ -62,6 +62,6 @@ class GameOverViewController: UIViewController {
   // MARK: - ViewController instance
 
   static func instance() -> GameOverViewController {
-    return UIStoryboard.create(storyboard: .game, controller: GameOverViewController.self)
+    UIStoryboard.create(storyboard: .game, controller: GameOverViewController.self)
   }
 }

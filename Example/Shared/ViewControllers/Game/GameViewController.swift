@@ -6,27 +6,27 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import SimpleEngine
+import UIKit
 
 class GameViewController: BaseGameViewController {
-  
+
   // MARK: - IBOutlets
-  
+
   @IBOutlet private weak var movingBackgroundView: MovingBackgroundView!
   @IBOutlet private weak var livesView: LivesView!
   @IBOutlet private weak var progressView: ProgressView!
-  
+
   // MARK: - Private properties
-  
+
   private var virusSprite: VirusSpriteView!
   private var dialogView: DialogView?
-  
+
   private var bloodTimer: Timer?
   private var whiteTimer: Timer?
   private var livesNotification: NSObjectProtocol?
   private var adDismissedNotification: NSObjectProtocol?
-  
+
   private let numberOfLives = 4
   private var goalNumber = 0
   private var currentNumber = 0.0
@@ -35,50 +35,50 @@ class GameViewController: BaseGameViewController {
   private var gameDifficulty: Double {
     Double(Status.currentLevel + 1) * 0.1
   }
-  
+
   override var preferredFocusedView: UIView? {
-    return analogView
+    analogView
   }
-  
+
   // MARK: - ViewController lifecycle
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     setGameDifficulty()
-    
+
     addVirus()
     startBloodTimer()
     startWhiteTimer()
-    
+
     observeForLives()
     addNotificationCenterObservers()
-    
+
     playBackgroundMusic()
-    
+
     livesView.livesCount = numberOfLives
-    
+
 //    analogView.isHidden = isTV
   }
-  
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     movingBackgroundView.view = StreamBackgroundView(frame: view.bounds)
   }
-  
+
   private func playBackgroundMusic() {
     SimpleMusicPlayer.shared.playBackgroundMusicWith(music: Music.gameBackground)
   }
-  
+
   private func setGameDifficulty() {
     goalNumber = Int(gameDifficulty * 50)
     bloodTimerInterval = (0.5 + gameDifficulty) * 2
     whiteTimerInterval = (1 - gameDifficulty) * 1.5
     currentNumber = 0
   }
-  
+
   // MARK: - Observers
-  
+
   private func observeForLives() {
     livesView.livesDidUpdate { [weak self] numberOfLives in
       guard let self = self else { return }
@@ -91,26 +91,28 @@ class GameViewController: BaseGameViewController {
         }
       }
     }
-    
+
   }
-  
+
   private func addNotificationCenterObservers() {
     #if os(iOS)
-    livesNotification = NotificationCenter.default.addObserver(forName: .livesChanged, object: nil, queue: .main) { [weak self] _ in
+    livesNotification = NotificationCenter.default
+      .addObserver(forName: .livesChanged, object: nil, queue: .main) { [weak self] _ in
       guard let numberOfLives = self?.numberOfLives else {
         return
       }
       self?.livesView.add(numberOfLives)
-    }
-    
-    adDismissedNotification = NotificationCenter.default.addObserver(forName: .adDismissed, object: nil, queue: .main) { [weak self] _ in
+      }
+
+    adDismissedNotification = NotificationCenter.default
+      .addObserver(forName: .adDismissed, object: nil, queue: .main) { [weak self] _ in
       self?.showGameOverController()
-    }
+      }
     #endif
   }
-  
+
   // MARK: - Dialogs
-  
+
   private func showGetMoreLivesDialog() {
     guard dialogView == nil else {
       return
@@ -128,18 +130,17 @@ class GameViewController: BaseGameViewController {
       }
     }
   }
-  
+
   private func showPauseDialog() {
     guard dialogView == nil else {
       return
     }
-    
+
     dialogView = DialogView.show(in: view,
                                  text: "paused".localize,
                                  firstButton: "resume".localize,
                                  secondButton: "end".localize,
-                                 cancelWhenFirstButtonClick: true)
-    { [unowned self] action in
+                                 cancelWhenFirstButtonClick: true) { [unowned self] action in
       self.dialogView = nil
       if action == .second {
         self.showGameOverController()
@@ -148,35 +149,35 @@ class GameViewController: BaseGameViewController {
       }
     }
   }
-  
+
   // MARK: - Timers
-  
+
   private func startBloodTimer() {
     bloodTimer = Timer.scheduledTimer(withTimeInterval: bloodTimerInterval,
                                       repeats: true) { [weak self] _ in
       self?.addBloodCells()
     }
   }
-  
+
   private func stopBloodTimer() {
     bloodTimer?.invalidate()
     bloodTimer = nil
   }
-  
+
   private func startWhiteTimer() {
     whiteTimer = Timer.scheduledTimer(withTimeInterval: whiteTimerInterval,
                                       repeats: true) { [weak self] _ in
       self?.addWhiteCells()
     }
   }
-  
+
   private func stopWhiteTimer() {
     whiteTimer?.invalidate()
     whiteTimer = nil
   }
-  
+
   // MARK: - Collision
-  
+
   override func objectsDidCollide(object1: ObjectView, object2: ObjectView) -> Bool {
     switch (object1.type, object2.type) {
     case (CollideTypes.virus, CollideTypes.whiteCell):
@@ -196,12 +197,12 @@ class GameViewController: BaseGameViewController {
     }
     return true
   }
-  
+
   private func collideBetween(virus: ObjectView, whiteCell: ObjectView) -> Bool {
     livesView.remove(1)
     return true
   }
-  
+
   private func collideBetween(fire: ObjectView, blood: ObjectView) -> Bool {
     currentNumber += 1
     progressView.update(CGFloat(currentNumber / Double(goalNumber)))
@@ -213,9 +214,9 @@ class GameViewController: BaseGameViewController {
     }
     return true
   }
-  
+
   // MARK: - Sprites Adding
-  
+
   private func addVirus() {
     virusSprite = VirusSpriteView()
     virusSprite.attachTo(analogView)
@@ -225,58 +226,58 @@ class GameViewController: BaseGameViewController {
     virusSprite.frame.origin = CGPoint(x: x, y: y)
     sceneView.addSubview(virusSprite)
   }
-  
+
   private func addBloodCells() {
     let bloodCellSprite = BloodCellSpriteView()
     let width = CGFloat(bloodCellSprite.width)
-    let randomY = CGFloat.random(in: width...(view.bounds.height-width))
+    let randomY = CGFloat.random(in: width...(view.bounds.height - width))
     bloodCellSprite.frame.origin = CGPoint(x: -width, y: randomY)
     sceneView.addSubview(bloodCellSprite)
     bloodCellSprite.moveTo(x: view.bounds.width, y: randomY)
   }
-  
+
   private func addWhiteCells() {
     let bloodCellSprite = WhiteCellSpriteView(virusPoint: virusSprite.center)
     let width = CGFloat(bloodCellSprite.width)
-    let randomY = CGFloat.random(in: width...(view.bounds.height-width))
+    let randomY = CGFloat.random(in: width...(view.bounds.height - width))
     bloodCellSprite.frame.origin = CGPoint(x: -width, y: randomY)
     sceneView.addSubview(bloodCellSprite)
     bloodCellSprite.moveTo(x: view.bounds.width, y: randomY)
   }
-  
+
   // MARK: - Show ViewControllers
-  
+
   private func showLevelsController() {
     let viewController = LevelsViewController.instance()
     changeViewController(viewController)
   }
-  
+
   private func showGameOverController() {
     let viewController = GameOverViewController.instance()
     changeViewController(viewController)
   }
-  
+
   // MARK: - Pause and Resume callbacks
-  
+
   override func didPause() {
     showPauseDialog()
     stopBloodTimer()
     stopWhiteTimer()
   }
-  
+
   override func didResume() {
     startBloodTimer()
     startWhiteTimer()
   }
-  
+
   // MARK: - ViewController instance
-  
+
   static func instance() -> GameViewController {
-    return UIStoryboard.create(storyboard: .game, controller: GameViewController.self)
+    UIStoryboard.create(storyboard: .game, controller: GameViewController.self)
   }
-  
+
   // MARK: - deinit
-  
+
   deinit {
     if let livesNotification = livesNotification {
       NotificationCenter.default.removeObserver(livesNotification)
@@ -285,7 +286,7 @@ class GameViewController: BaseGameViewController {
       NotificationCenter.default.removeObserver(adDismissedNotification)
     }
   }
-  
+
   //  override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
   //    event?.allPresses.dffzsz
   //  }

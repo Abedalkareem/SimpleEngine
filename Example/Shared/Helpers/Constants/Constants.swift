@@ -9,12 +9,12 @@
 import Foundation
 
 enum Constants {
-  enum strings {
+  enum Strings {
     static let adID = ""
     static let fontName = "RetroComputer"
   }
 
-  enum links {
+  enum Links {
     static let appLink = "https://apps.apple.com/gm/app/id1503292940"
   }
 }

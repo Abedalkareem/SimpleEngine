@@ -10,7 +10,7 @@ import Foundation
 import SimpleEngine
 
 enum Music: String, MusicType {
-  
+
   var format: String {
     var type: Type!
     switch self {

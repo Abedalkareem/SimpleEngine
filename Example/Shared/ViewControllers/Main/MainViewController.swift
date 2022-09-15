@@ -6,27 +6,27 @@
 //  Copyright © 2020 abedalkareem. All rights reserved.
 //
 
-import UIKit
-import SimpleEngine
 import GameController
+import SimpleEngine
+import UIKit
 
 class MainViewController: BaseGameViewController {
-  
+
   // MARK: - IBOutlets
-  
-  @IBOutlet weak var playButton: AppButton!
+
+  @IBOutlet private weak var playButton: AppButton!
   @IBOutlet private weak var movingBackgroundView: MovingBackgroundView!
 
   // MARK: - Private properties
 
   private var bloodTimer: Timer?
-  
+
   override var preferredFocusedView: UIView? {
-    return playButton
+    playButton
   }
 
   // MARK: - ViewController lifecycle
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -34,7 +34,7 @@ class MainViewController: BaseGameViewController {
     playBackgroundMusic()
     authenticateUser()
   }
-  
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     movingBackgroundView.view = StreamBackgroundView(frame: view.bounds)
@@ -45,15 +45,15 @@ class MainViewController: BaseGameViewController {
     super.viewDidDisappear(animated)
     stopBloodTimer()
   }
-  
+
   private func setupViews() {
     analogView.isHidden = true
   }
 
   func authenticateUser() {
-    GameKitHelper.shared.authenticateUser { (vc) in
-      if let vc = vc {
-        self.present(vc, animated: true, completion: nil)
+    GameKitHelper.shared.authenticateUser { viewController in
+      if let viewController = viewController {
+        self.present(viewController, animated: true, completion: nil)
       }
     }
   }
@@ -80,7 +80,7 @@ class MainViewController: BaseGameViewController {
   private func addBloodCells() {
     let bloodCellSprite = BloodCellSpriteView()
     let width = CGFloat(bloodCellSprite.width)
-    let randomY = CGFloat.random(in: width...(view.bounds.height-width))
+    let randomY = CGFloat.random(in: width...(view.bounds.height - width))
     bloodCellSprite.frame.origin = CGPoint(x: -width, y: randomY)
     sceneView.addSubview(bloodCellSprite)
     bloodCellSprite.moveTo(x: view.bounds.width, y: randomY)
@@ -95,19 +95,19 @@ class MainViewController: BaseGameViewController {
   }
 
   @IBAction private func topPlayers(_ sender: Any) {
-    let vc = GameKitHelper.shared.getGameCenterControllerWith(viewState: .leaderboards)
-    present(vc, animated: true, completion: nil)
+    let viewController = GameKitHelper.shared.getGameCenterControllerWith(viewState: .leaderboards)
+    present(viewController, animated: true, completion: nil)
   }
 
   @IBAction private func achievements(_ sender: Any) {
-    let vc = GameKitHelper.shared.getGameCenterControllerWith(viewState: .achievements)
-    present(vc, animated: true, completion: nil)
+    let viewController = GameKitHelper.shared.getGameCenterControllerWith(viewState: .achievements)
+    present(viewController, animated: true, completion: nil)
   }
 
   // MARK: - ViewController instance
 
   static func instance() -> MainViewController {
-    return UIStoryboard.create(storyboard: .main, controller: MainViewController.self)
+    UIStoryboard.create(storyboard: .main, controller: MainViewController.self)
   }
 
 }

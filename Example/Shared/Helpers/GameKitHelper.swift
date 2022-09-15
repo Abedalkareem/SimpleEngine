@@ -6,8 +6,8 @@
 //  Copyright © 2019 abedalkareem. All rights reserved.
 //
 
-import UIKit
 import GameKit
+import UIKit
 
 class GameKitHelper: NSObject {
 
@@ -17,19 +17,19 @@ class GameKitHelper: NSObject {
 
   func authenticateUser(_ authenticateHandler: @escaping (UIViewController?) -> Void) {
     let player = GKLocalPlayer.local
-    player.authenticateHandler = { vc, error in
+    player.authenticateHandler = { viewController, error in
       guard error == nil else {
         print(error?.localizedDescription ?? "")
         return
       }
-      authenticateHandler(vc)
+      authenticateHandler(viewController)
     }
   }
 
   func report(score: Int64) {
     let reportedScore = GKScore(leaderboardIdentifier: leaderboardID)
     reportedScore.value = score
-    GKScore.report([reportedScore]) { (error) in
+    GKScore.report([reportedScore]) { error in
       guard error == nil else {
         print(error?.localizedDescription ?? "")
         return
@@ -42,19 +42,19 @@ class GameKitHelper: NSObject {
     let achievement = GKAchievement(identifier: achievement.identifier)
     achievement.percentComplete = percentComplete
     achievement.showsCompletionBanner = true
-    GKAchievement.report([achievement]) { (error) in
+    GKAchievement.report([achievement]) { error in
       print(error?.localizedDescription ?? "")
     }
   }
 
   func getGameCenterControllerWith(viewState: GKGameCenterViewControllerState) -> GKGameCenterViewController {
-    let vc = GKGameCenterViewController()
-    vc.gameCenterDelegate = self
-    vc.viewState = viewState
+    let viewController = GKGameCenterViewController()
+    viewController.gameCenterDelegate = self
+    viewController.viewState = viewState
     if viewState == .leaderboards {
-      vc.leaderboardIdentifier = leaderboardID
+      viewController.leaderboardIdentifier = leaderboardID
     }
-    return vc
+    return viewController
   }
 
 }
@@ -69,7 +69,7 @@ extension GameKitHelper: GKGameCenterControllerDelegate {
 enum Achievement: String {
 
   var identifier: String {
-    return rawValue
+    rawValue
   }
 
   case achievement1 = "start_the_attack"
