@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleEngine'
-  s.version          = '0.5.11'
+  s.version          = '0.6.0'
   s.summary          = 'A simple 2D game engine.'
 
 # This description is used to generate tags and improve search results.
@@ -28,10 +28,10 @@ A simple 2D game engine to make a simple beautiful iOS Games!
   s.source           = { :git => 'https://github.com/Abedalkareem/SimpleEngine.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/AbedalkareemOmr'
   s.swift_version = '5.0'
-  s.ios.deployment_target = '9.3'
-  s.tvos.deployment_target = '9.3'
+  s.ios.deployment_target = '14.0'
+  s.tvos.deployment_target = '14.0'
 
-  s.source_files = 'SimpleEngine/SimpleEngine/**/*'
+  s.source_files = 'SimpleEngine/SimpleEngine/**/*.swift'
   
   # s.resource_bundles = {
   #   'BlinkingLabel' => ['BlinkingLabel/Assets/*.png']
