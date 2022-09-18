@@ -9,7 +9,7 @@
 import GameController
 import UIKit
 
-/// An Analog controller to control the `Sprite` movement.
+/// An Analog controller to control the `SpriteView` movement.
 @IBDesignable
 open class AnalogView: UIView {
 
@@ -17,12 +17,14 @@ open class AnalogView: UIView {
 
   // MARK: - IBInspectables
 
+  /// The analog image.
   @IBInspectable open var analogImage: UIImage = UIImage() {
     didSet {
       analogImageView.image = analogImage
     }
   }
 
+  /// The analog background image.
   @IBInspectable open var backgroundImage: UIImage = UIImage() {
      didSet {
        backgroundImageView.image = backgroundImage
@@ -31,6 +33,7 @@ open class AnalogView: UIView {
 
   // MARK: - Properties
 
+  /// An analog object that give `x`, `y`, and `Direction`.
   open var analog: Analog = Analog(direction: .center, x: 0, y: 0) {
     didSet {
       analogMoved?(analog)
@@ -202,11 +205,11 @@ open class AnalogView: UIView {
     ///
     public static var alpha: CGFloat = 0.5
     ///
-    /// Analog size. The default is `150`.
+    /// Analog size. The default is `140`.
     ///
     public static var analogSize: CGFloat = 140
     ///
-    /// Analog margen. The default is `0.5`.
+    /// Analog margen. The default is `15`.
     ///
     public static var margen: CGFloat = 15
   }

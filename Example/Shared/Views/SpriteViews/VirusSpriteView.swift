@@ -35,12 +35,11 @@ class VirusSpriteView: SpriteView {
 
     let defaultDuration = 0.5
     let idelDuration = 1.0
-    frames?.top = Frames(images: [#imageLiteral(resourceName: "move_top_1"), #imageLiteral(resourceName: "move_top_2"), #imageLiteral(resourceName: "move_top_3")], duration: defaultDuration)
-    frames?.left = Frames(images: [#imageLiteral(resourceName: "move_for_1"), #imageLiteral(resourceName: "move_for_2"), #imageLiteral(resourceName: "move_for_3")], duration: defaultDuration)
-    frames?.right = Frames(images: [#imageLiteral(resourceName: "move_back_1"), #imageLiteral(resourceName: "move_back_2"), #imageLiteral(resourceName: "move_back_3")], duration: defaultDuration)
-    frames?.bottom = Frames(images: [#imageLiteral(resourceName: "move_bottom_1"), #imageLiteral(resourceName: "move_bottom_2"), #imageLiteral(resourceName: "move_bottom_3")], duration: defaultDuration)
-    frames?.idel = Frames(images: [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")], duration: idelDuration)
-
+    framesHolder = FramesHolder(idel: Frames(images: [#imageLiteral(resourceName: "idel_1"), #imageLiteral(resourceName: "idel_2")], duration: idelDuration))
+    framesHolder?.top = Frames(images: [#imageLiteral(resourceName: "move_top_1"), #imageLiteral(resourceName: "move_top_2"), #imageLiteral(resourceName: "move_top_3")], duration: defaultDuration)
+    framesHolder?.left = Frames(images: [#imageLiteral(resourceName: "move_for_1"), #imageLiteral(resourceName: "move_for_2"), #imageLiteral(resourceName: "move_for_3")], duration: defaultDuration)
+    framesHolder?.right = Frames(images: [#imageLiteral(resourceName: "move_back_1"), #imageLiteral(resourceName: "move_back_2"), #imageLiteral(resourceName: "move_back_3")], duration: defaultDuration)
+    framesHolder?.bottom = Frames(images: [#imageLiteral(resourceName: "move_bottom_1"), #imageLiteral(resourceName: "move_bottom_2"), #imageLiteral(resourceName: "move_bottom_3")], duration: defaultDuration)
   }
 
   // MARK: - View lifecycle

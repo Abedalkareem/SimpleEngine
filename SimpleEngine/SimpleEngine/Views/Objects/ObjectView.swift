@@ -94,7 +94,7 @@ open class ObjectView: UIView {
   ///
   /// A method will be called when any object collided with this object.
   ///
-  /// - Parameter object: The object the collided.
+  /// - Parameter object: The object that collided with this current object.
   ///
   /// - Returns: Return true if the object should report the collide to the view controller.
   /// The defualt is `true`.

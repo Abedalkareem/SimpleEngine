@@ -32,7 +32,7 @@ class BloodCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames?.idel = Frames(images: [#imageLiteral(resourceName: "blood_cell")])
+    framesHolder = FramesHolder(idel: Frames(images: [#imageLiteral(resourceName: "blood_cell")]))
   }
 
   // MARK: -
@@ -58,7 +58,7 @@ class BloodCellSpriteView: SpriteView {
     startAnimationWith(frames: frames,
                        repeatCount: 1,
                        stopOtherAnimations: false) {
-      self.frames?.idel = Frames(images: [#imageLiteral(resourceName: "infected_6")])
+      self.framesHolder = FramesHolder(idel: Frames(images: [#imageLiteral(resourceName: "infected_6")]))
       self.updateFrames()
     }
   }

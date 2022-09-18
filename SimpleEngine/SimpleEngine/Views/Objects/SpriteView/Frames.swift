@@ -28,15 +28,15 @@ open class FramesHolder {
   open var topRight: Frames?
   open var bottomRight: Frames?
 
-  init(idel: Frames,
-       top: Frames? = nil,
-       left: Frames? = nil,
-       right: Frames? = nil,
-       bottom: Frames? = nil,
-       topLeft: Frames? = nil,
-       bottomLeft: Frames? = nil,
-       topRight: Frames? = nil,
-       bottomRight: Frames? = nil) {
+  public init(idel: Frames,
+              top: Frames? = nil,
+              left: Frames? = nil,
+              right: Frames? = nil,
+              bottom: Frames? = nil,
+              topLeft: Frames? = nil,
+              bottomLeft: Frames? = nil,
+              topRight: Frames? = nil,
+              bottomRight: Frames? = nil) {
     self.top = top
     self.left = left
     self.right = right

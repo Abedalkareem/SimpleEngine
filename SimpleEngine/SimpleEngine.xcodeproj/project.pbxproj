@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -79,11 +79,11 @@
 			isa = PBXGroup;
 			children = (
 				C6FF067928D0167100FE013E /* BaseGameViewController.swift */,
+				C6FF066428D0167100FE013E /* Views */,
 				C6FF067728D0167100FE013E /* Extensions */,
 				C6FF067A28D0167100FE013E /* Helpers */,
 				C6FF067628D0167100FE013E /* Info.plist */,
 				C6FF066328D0167100FE013E /* SimpleEngine.h */,
-				C6FF066428D0167100FE013E /* Views */,
 			);
 			path = SimpleEngine;
 			sourceTree = "<group>";
@@ -243,6 +243,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C6FF068F28D0189500FE013E /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

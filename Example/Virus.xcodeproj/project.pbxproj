@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,7 +43,6 @@
 		C6E28B7A2517BE6D005642A6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28B792517BE6D005642A6 /* Helpers.swift */; };
 		C6E28B7D2517BED2005642A6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E28B792517BE6D005642A6 /* Helpers.swift */; };
 		C6E93FEA2423417900971D1B /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FE92423417900971D1B /* ShareHelper.swift */; };
-		C6E93FEE2423465200971D1B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */; };
 		C6F55F4225165EA8000B39AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F55F4125165EA8000B39AA /* AppDelegate.swift */; };
 		C6F55F4C25165EAA000B39AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F55F4A25165EAA000B39AA /* LaunchScreen.storyboard */; };
 		C6F55F5D25166057000B39AA /* button_clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = C6DC70EA241CB7A300D4AB55 /* button_clicked.wav */; };
@@ -61,7 +60,6 @@
 		C6F55F9C251662D3000B39AA /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70E6241CB39300D4AB55 /* Status.swift */; };
 		C6F55F9D251662D3000B39AA /* GameKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B523312421EE4C00061421 /* GameKitHelper.swift */; };
 		C6F55F9E251662D3000B39AA /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70DE241CA44300D4AB55 /* Music.swift */; };
-		C6F55F9F251662D3000B39AA /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */; };
 		C6F55FA7251662F7000B39AA /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5233B24221B9000061421 /* String+Helpers.swift */; };
 		C6F55FAA251662FA000B39AA /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC70E3241CB2F800D4AB55 /* UIStoryboard.swift */; };
 		C6F55FAD25166303000B39AA /* CollideTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF686F2417692D008F9B02 /* CollideTypes.swift */; };
@@ -155,7 +153,6 @@
 		C6DC70F0241F306900D4AB55 /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		C6E28B792517BE6D005642A6 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C6E93FE92423417900971D1B /* ShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareHelper.swift; sourceTree = "<group>"; };
-		C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		C6F55F3F25165EA8000B39AA /* VirusTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirusTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F55F4125165EA8000B39AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6F55F4B25165EAA000B39AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -385,7 +382,6 @@
 				C6A869CA2424661700BA6B49 /* Constants */,
 				C6E93FEF2423465500971D1B /* Extensions */,
 				C6DC70DE241CA44300D4AB55 /* Music.swift */,
-				C6E93FED2423465200971D1B /* UserDefaultsHelper.swift */,
 				C6B523312421EE4C00061421 /* GameKitHelper.swift */,
 				C6DC70E6241CB39300D4AB55 /* Status.swift */,
 				C6E93FE92423417900971D1B /* ShareHelper.swift */,
@@ -587,6 +583,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C6FF069028D018A400FE013E /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -605,6 +602,7 @@
 		};
 		C6FF069128D018CB00FE013E /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -628,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F55F9F251662D3000B39AA /* UserDefaultsHelper.swift in Sources */,
 				C6F55FCB2516635D000B39AA /* LevelsViewController.swift in Sources */,
 				C6F55FC425166354000B39AA /* DialogView.swift in Sources */,
 				C6F55FC025166350000B39AA /* StreamBackgroundView.swift in Sources */,
@@ -684,7 +681,6 @@
 				C6B5234A2422301700061421 /* TalkingVirusSpriteView.swift in Sources */,
 				C61EF5AA2517617A008E86AD /* UIView+Animation.swift in Sources */,
 				C6FF687D2417692E008F9B02 /* VirusSpriteView.swift in Sources */,
-				C6E93FEE2423465200971D1B /* UserDefaultsHelper.swift in Sources */,
 				C6940E3A24232436006260B3 /* ProgressView.swift in Sources */,
 				C6DC70E7241CB39300D4AB55 /* Status.swift in Sources */,
 				C6A869C92423EE6C00BA6B49 /* DialogView.swift in Sources */,

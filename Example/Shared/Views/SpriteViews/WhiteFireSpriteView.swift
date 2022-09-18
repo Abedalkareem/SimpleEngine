@@ -30,7 +30,7 @@ class WhiteFireSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames?.idel = Frames(images: [#imageLiteral(resourceName: "white_fire")], duration: 0.1)
+    framesHolder = FramesHolder(idel: Frames(images: [#imageLiteral(resourceName: "white_fire")], duration: 0.1))
   }
 
   // MARK: -

@@ -50,7 +50,7 @@ open class SimpleMusicPlayer: NSObject {
   private var cachedMusic = [String: AVAudioPlayer]()
 
   ///
-  /// Start playing the background music for ever.
+  /// Start playing the background music forever.
   ///
   open func playBackgroundMusicWith<M: MusicType>(music: M) {
     guard let path = Bundle.main.path(forResource: music.rawValue, ofType: music.format) else {

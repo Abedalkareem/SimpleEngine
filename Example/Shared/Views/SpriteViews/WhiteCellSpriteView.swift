@@ -43,7 +43,7 @@ class WhiteCellSpriteView: SpriteView {
 
     stopWhenCollideTypes = [CollideTypes.virus, CollideTypes.fire]
 
-    frames?.idel = Frames(images: [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")])
+    framesHolder = FramesHolder(idel: Frames(images: [#imageLiteral(resourceName: "white_cell"), #imageLiteral(resourceName: "white_cell")]))
   }
 
   // MARK: - View lifecycle
